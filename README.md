@@ -2,7 +2,7 @@
   <img src="https://img.shields.io/badge/license-MIT-blue.svg" alt="License">
   <a href="https://github.com/ADW-19/llmpic"><img src="https://img.shields.io/badge/github-ADW--19%2Fllmpic-lightgrey.svg" alt="GitHub"></a>
   <img src="https://img.shields.io/badge/python-≥3.10-green.svg" alt="Python">
-  <img src="https://img.shields.io/badge/version-0.2.0-orange.svg" alt="Version">
+  <img src="https://img.shields.io/badge/version-0.2.1-orange.svg" alt="Version">
 </p>
 
 <h1 align="center">llmpic</h1>
