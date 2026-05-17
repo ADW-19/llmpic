@@ -71,6 +71,102 @@ Traditional Python charting means wrestling with matplotlib's verbose API — `p
 | Concurrency | Manual threading | **`AsyncllmPIC.batch()` parallel generation** |
 | Security | None | **Dual-layer: 32 regex + optional LLM review** |
 
+### 👀 See the difference for yourself
+
+**Task**: A grouped bar chart comparing 4 regions × 4 quarters, with value labels, custom colors, dashed grid, title, axis labels, and a legend.
+
+<table>
+<tr>
+<td><strong>Traditional matplotlib</strong> — 30+ lines, 100+ API calls to memorize</td>
+<td><strong>llmpic</strong> — 1 line, plain English</td>
+</tr>
+<tr>
+<td>
+
+```python
+import matplotlib.pyplot as plt
+import numpy as np
+
+regions  = ["North", "South", "East", "West"]
+quarters = ["Q1", "Q2", "Q3", "Q4"]
+data = np.array([
+    [120, 145, 160, 180],
+    [ 95, 110, 130, 155],
+    [140, 165, 180, 200],
+    [ 80,  95, 110, 125],
+])
+
+x = np.arange(len(regions))
+w = 0.2
+colors = ["#4C72B0", "#55A868",
+          "#C44E52", "#8172B2"]
+
+fig, ax = plt.subplots(figsize=(10, 6), dpi=150)
+for i, q in enumerate(quarters):
+    bars = ax.bar(x + i * w, data[:, i], w,
+                  label=q, color=colors[i])
+    for bar in bars:
+        h = bar.get_height()
+        ax.text(bar.get_x() + bar.get_width() / 2,
+                h + 1, f"{h:.0f}",
+                ha="center", va="bottom", fontsize=9)
+
+ax.set_title("Quarterly Sales by Region (2025)",
+             fontsize=14, pad=12)
+ax.set_xlabel("Region")
+ax.set_ylabel("Sales (K USD)")
+ax.set_xticks(x + w * 1.5)
+ax.set_xticklabels(regions)
+ax.legend(title="Quarter", loc="upper left")
+ax.grid(axis="y", linestyle="--", alpha=0.4)
+fig.tight_layout()
+plt.savefig("sales.png", dpi=150)
+plt.close()
+```
+
+</td>
+<td>
+
+```python
+from llmpic import llmPIC
+
+lp = llmPIC(api_key="sk-...",
+            base_url="https://api.openai.com/v1")
+
+# Step 1: render — LLM writes matplotlib code,
+# safety check + sandbox execute it for you.
+result = lp.bar(
+    "Quarterly sales by region 2025: "
+    "North=[120,145,160,180], "
+    "South=[95,110,130,155], "
+    "East=[140,165,180,200], "
+    "West=[80,95,110,125]. "
+    "Add value labels, dashed grid, legend."
+).render()
+
+result.save("sales.png")
+
+# Want to tweak it later? Use natural language:
+v2 = result.edit("make Q4 bars red, "
+                 "title 'Annual Report'")
+v2.save("sales_v2.png")
+
+# Need the underlying matplotlib code? It's right there:
+print(result.code)
+```
+
+**That's it.** A chart that conveys the same insight —
+*generated*, not hand-coded.
+
+No `set_xticklabels`. No `bar.get_x() + bar.get_width()/2`.
+No Stack Overflow tabs open.
+
+</td>
+</tr>
+</table>
+
+> 💥 **30+ lines of API drudgery → a few lines of plain English.** llmpic still hands you the generated matplotlib code via `result.code` if you want to fine-tune it manually. The exact rendered output depends on the LLM's code generation — if you need pixel-perfect control, `result.edit("...")` lets you iterate without rewriting from scratch.
+
 ---
 
 ## ✨ Features

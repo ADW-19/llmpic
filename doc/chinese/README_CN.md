@@ -71,6 +71,107 @@ lp.bar("各地区销售额").data(df).style({"color_scheme":"warm"}).save("bar.p
 | 并发处理 | 手动线程管理 | **`AsyncllmPIC.batch()` 并发生成** |
 | 安全防护 | 无 | **双重防护：32 条正则 + 可选 LLM 审查** |
 
+### 👀 一眼看出区别
+
+**任务**：一张「4 个地区 × 4 个季度」的分组柱状图，需要数值标签、自定义配色、虚线网格、标题、坐标轴标签和图例。
+
+<table>
+<tr>
+<td><strong>传统 matplotlib</strong> — 30+ 行，背上百个 API</td>
+<td><strong>llmpic</strong> — 1 行中文描述</td>
+</tr>
+<tr>
+<td>
+
+```python
+import matplotlib.pyplot as plt
+import numpy as np
+
+regions  = ["华北", "华南", "华东", "华西"]
+quarters = ["Q1", "Q2", "Q3", "Q4"]
+data = np.array([
+    [120, 145, 160, 180],
+    [ 95, 110, 130, 155],
+    [140, 165, 180, 200],
+    [ 80,  95, 110, 125],
+])
+
+x = np.arange(len(regions))
+w = 0.2
+colors = ["#4C72B0", "#55A868",
+          "#C44E52", "#8172B2"]
+
+# 还得手动配中文字体！
+plt.rcParams["font.sans-serif"] = ["SimHei"]
+plt.rcParams["axes.unicode_minus"] = False
+
+fig, ax = plt.subplots(figsize=(10, 6), dpi=150)
+for i, q in enumerate(quarters):
+    bars = ax.bar(x + i * w, data[:, i], w,
+                  label=q, color=colors[i])
+    for bar in bars:
+        h = bar.get_height()
+        ax.text(bar.get_x() + bar.get_width() / 2,
+                h + 1, f"{h:.0f}",
+                ha="center", va="bottom", fontsize=9)
+
+ax.set_title("2025 各地区季度销售额",
+             fontsize=14, pad=12)
+ax.set_xlabel("地区")
+ax.set_ylabel("销售额（万元）")
+ax.set_xticks(x + w * 1.5)
+ax.set_xticklabels(regions)
+ax.legend(title="季度", loc="upper left")
+ax.grid(axis="y", linestyle="--", alpha=0.4)
+fig.tight_layout()
+plt.savefig("sales.png", dpi=150)
+plt.close()
+```
+
+</td>
+<td>
+
+```python
+from llmpic import llmPIC
+
+lp = llmPIC(api_key="sk-...",
+            base_url="https://api.openai.com/v1")
+
+# Step 1：render —— LLM 写 matplotlib 代码，
+# 安全检查 + 沙箱执行，全部帮你搞定
+# 顺便中文字体跨平台自动配好（默认 chinese_font=True）
+result = lp.bar(
+    "2025 年各地区季度销售额："
+    "华北=[120,145,160,180]，"
+    "华南=[95,110,130,155]，"
+    "华东=[140,165,180,200]，"
+    "华西=[80,95,110,125]。"
+    "加上数值标签、虚线网格、图例。"
+).render()
+
+result.save("sales.png")
+
+# 想调整？用自然语言迭代：
+v2 = result.edit("把 Q4 柱子改成红色，"
+                 "标题改成《年度报告》")
+v2.save("sales_v2.png")
+
+# 需要底层生成的 matplotlib 代码？随手可取：
+print(result.code)
+```
+
+**就这样。** 传达同样信息量的图表——
+是**生成**出来的，不是手敲出来的。
+
+不需要 `set_xticklabels`，不需要 `bar.get_x() + bar.get_width()/2`，
+不需要 手动配中文字体，也不需要 Stack Overflow。
+
+</td>
+</tr>
+</table>
+
+> 💥 **30+ 行 API 般的苦差 → 几行中文描述。** 如果你仍需要手动调优生成的 matplotlib 代码，随时可以通过 `result.code` 拿到。最终渲染效果依赖 LLM 的代码生成能力 —— 如需像素级别的控制，用 `result.edit("...")` 逐步迭代即可，不用从头重写。
+
 ---
 
 ## ✨ 核心特性
