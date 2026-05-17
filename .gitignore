@@ -19,6 +19,7 @@ output/
 *.png
 *.svg
 *.pdf
+!llmpic_logo.png
 
 # IDE
 .vscode/
