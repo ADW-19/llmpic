@@ -491,19 +491,19 @@ lp = llmPIC(..., safety_level="full")
 
 llmpic 兼容**所有提供 OpenAI 兼容接口**的大模型服务（需要支持 `chat/completions` 和 JSON 结构化输出）：
 
-| 服务商 | base_url | 推荐模型 |
+| 服务商 | base_url | 模型示例 |
 |--------|----------|---------|
-| OpenAI | `https://api.openai.com/v1` | `gpt-4o`, `gpt-4o-mini` |
-| DeepSeek | `https://api.deepseek.com/v1` | `deepseek-chat` |
+| OpenAI | `https://api.openai.com/v1` | `gpt-5.5`, `gpt-5.5-mini` |
+| DeepSeek | `https://api.deepseek.com/v1` | `deepseek-v4-pro` |
 | Azure OpenAI | `https://{resource}.openai.azure.com/openai/deployments/{deployment}` | 你的部署名称 |
-| 智谱 GLM | `https://open.bigmodel.cn/api/paas/v4` | `glm-4-plus` |
+| 智谱 GLM | `https://open.bigmodel.cn/api/paas/v5` | `glm-5` |
 | 月之暗面 Moonshot | `https://api.moonshot.cn/v1` | `moonshot-v1-8k` |
 | 阿里通义千问 | `https://dashscope.aliyuncs.com/compatible-mode/v1` | `qwen-plus` |
 | 百度文心一言 | `https://qianfan.baidubce.com/v2` | `ernie-4.0-turbo-8k` |
-| Ollama（本地） | `http://localhost:11434/v1` | `llama3`, `qwen2.5` |
+| Ollama（本地） | `http://localhost:11434/v1` | `llama3`, `qwen3.5` |
 | vLLM（本地） | `http://localhost:8000/v1` | 你部署的模型 |
 
-> **提示**：图表质量与代码生成能力直接相关。推荐使用 GPT-4o、DeepSeek-V3、GLM-4 等代码能力强的模型。本地模型可能生成不够可靠的代码——建议增大 `max_retries` 和 `max_fix_attempts` 参数。
+> **提示**：图表质量与代码生成能力直接相关。推荐使用 GPT-5.5、DeepSeek-V4、GLM-5 等代码能力强的模型。本地模型可能生成不够可靠的代码——建议增大 `max_retries` 和 `max_fix_attempts` 参数。
 
 ---
 

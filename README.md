@@ -484,17 +484,17 @@ lp = llmPIC(..., safety_level="full")
 
 llmpic works with **any OpenAI-compatible API endpoint** that supports `chat/completions` with JSON structured output:
 
-| Provider | base_url | model (suggested) |
+| Provider | base_url | model (example) |
 |----------|----------|-------------------|
-| OpenAI | `https://api.openai.com/v1` | `gpt-4o`, `gpt-4o-mini` |
-| DeepSeek | `https://api.deepseek.com/v1` | `deepseek-chat` |
+| OpenAI | `https://api.openai.com/v1` | `gpt-5.5`, `gpt-5.5-mini` |
+| DeepSeek | `https://api.deepseek.com/v1` | `deepseek-v4-pro` |
 | Azure OpenAI | `https://{resource}.openai.azure.com/openai/deployments/{deployment}` | Your deployment name |
-| GLM (Zhipu) | `https://open.bigmodel.cn/api/paas/v4` | `glm-4-plus` |
-| Ollama (local) | `http://localhost:11434/v1` | `llama3`, `qwen2.5` |
+| GLM (Zhipu) | `https://open.bigmodel.cn/api/paas/v5` | `glm-5` |
+| Ollama (local) | `http://localhost:11434/v1` | `llama3`, `qwen3.5` |
 | vLLM (local) | `http://localhost:8000/v1` | Your served model |
 | Groq | `https://api.groq.com/openai/v1` | `llama-3.3-70b` |
 
-> **Note**: For best chart quality, use a model with strong code generation capabilities (GPT-4o, DeepSeek-V3, GLM-4, etc.). Local models may produce less reliable code — consider increasing `max_retries` and `max_fix_attempts`.
+> **Note**: For best chart quality, use a model with strong code generation capabilities (GPT-5.5, DeepSeek-V4, GLM-5, etc.). Local models may produce less reliable code — consider increasing `max_retries` and `max_fix_attempts`.
 
 ---
 
