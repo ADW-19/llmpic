@@ -1434,11 +1434,13 @@ lp.plot("print chart").style({"dpi": 300}).save("print.png")
 
 ### pandas or seaborn not available
 
-**Cause**: Installed `llmpic` without `[full]` extras.
+**Cause**: pandas / seaborn not properly installed in the environment (e.g. version conflicts).
 
 **Fix**:
 ```bash
-pip install llmpic[full]
+pip install llmpic --upgrade
+# or install them individually
+pip install pandas seaborn
 ```
 
 The SDK gracefully falls back to pure matplotlib when pandas/seaborn aren't available, but some LLM-generated code may reference them.

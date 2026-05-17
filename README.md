@@ -94,8 +94,7 @@ Traditional Python charting means wrestling with matplotlib's verbose API — `p
 ## 📦 Installation
 
 ```bash
-pip install llmpic          # Core: matplotlib, numpy, openai
-pip install llmpic[full]    # + pandas, seaborn, scikit-learn, scipy
+pip install llmpic          # All-in-one: matplotlib, numpy, openai, pandas, seaborn, scikit-learn, scipy
 ```
 
 **Requirements:**

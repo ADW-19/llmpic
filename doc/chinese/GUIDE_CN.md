@@ -1450,11 +1450,13 @@ lp.plot("打印图表").style({"dpi": 300}).save("print.png")
 
 ### pandas 或 seaborn 不可用
 
-**原因**：安装时没有包含 `[full]` 额外依赖。
+**原因**：环境中未正常安装 pandas / seaborn（例如被锁定版本冲突覆盖）。
 
 **解决**：
 ```bash
-pip install llmpic[full]
+pip install llmpic --upgrade
+# 或单独补装
+pip install pandas seaborn
 ```
 
 SDK 会自动降级为纯 matplotlib，但部分 LLM 生成的代码可能会引用 pandas/seaborn，导致执行失败。

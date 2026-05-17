@@ -94,8 +94,7 @@ lp.bar("各地区销售额").data(df).style({"color_scheme":"warm"}).save("bar.p
 ## 📦 安装
 
 ```bash
-pip install llmpic          # 核心包：matplotlib + numpy + openai
-pip install llmpic[full]    # 完整包：+ pandas, seaborn, scikit-learn, scipy
+pip install llmpic          # 一键安装：matplotlib + numpy + openai + pandas + seaborn + scikit-learn + scipy
 ```
 
 **环境要求：**
