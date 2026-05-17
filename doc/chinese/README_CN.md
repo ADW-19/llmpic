@@ -596,6 +596,21 @@ lp = llmPIC(
 
 ---
 
+## 🙏 致谢
+
+llmpic 站在以下优秀开源项目的肩膀上构建：
+
+- [SciPy](https://scipy.org/) — 科学计算
+- [scikit-learn](https://scikit-learn.org/) — 机器学习工具
+- [pandas](https://pandas.pydata.org/) — 数据分析与 DataFrame
+- [NumPy](https://numpy.org/) — 数值计算
+- [Matplotlib](https://matplotlib.org/) — 图表渲染引擎
+- [seaborn](https://seaborn.pydata.org/) — 统计数据可视化
+
+衷心感谢这些项目的维护者与贡献者。
+
+---
+
 ## 📄 开源协议
 
 [MIT](../../LICENSE) © 2026 ADW-19

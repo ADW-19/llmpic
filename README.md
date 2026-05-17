@@ -587,6 +587,21 @@ lp = llmPIC(
 
 ---
 
+## 🙏 Acknowledgements
+
+llmpic is built on the shoulders of these excellent open-source libraries:
+
+- [SciPy](https://scipy.org/) — scientific computing
+- [scikit-learn](https://scikit-learn.org/) — machine learning utilities
+- [pandas](https://pandas.pydata.org/) — data analysis & DataFrame
+- [NumPy](https://numpy.org/) — numerical computing
+- [Matplotlib](https://matplotlib.org/) — chart rendering engine
+- [seaborn](https://seaborn.pydata.org/) — statistical data visualization
+
+Heartfelt thanks to all maintainers and contributors of these projects.
+
+---
+
 ## 📄 License
 
 [MIT](./LICENSE) © 2026 ADW-19
