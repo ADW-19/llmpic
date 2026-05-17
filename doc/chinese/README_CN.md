@@ -5,7 +5,9 @@
   <img src="https://img.shields.io/badge/version-0.2.1-orange.svg" alt="Version">
 </p>
 
-<h1 align="center">llmpic</h1>
+<p align="center"><img src="../../llmpic_logo.png" alt="llmpic logo" width="120"></p>
+
+<h1 align="center">LLMPIC</h1>
 <p align="center"><strong>自然语言驱动的图表生成 Python SDK</strong></p>
 
 <p align="center">
@@ -156,6 +158,12 @@ asyncio.run(main())
 | `.radar()` | 雷达图 |
 | `.subplots()` | 子图仪表盘 |
 | `.custom()` | 智能推荐 |
+
+## 📮 官方联系方式
+
+- **小红书 ID**：[ADW_AI](https://xhslink.com/m/AQw13M5WIPc)
+
+---
 
 ## 📄 License
 
