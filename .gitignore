@@ -41,3 +41,9 @@ Thumbs.db
 # MkDocs build output
 site/
 
+
+#test
+text
+tests
+test_*
+.pytest_cache

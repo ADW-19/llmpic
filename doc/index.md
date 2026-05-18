@@ -40,4 +40,4 @@ lp.bar("Sales by region").data(df).save("bar.png") # Save to file
 
 ---
 
-License [MIT](https://github.com/ADW-19/llmpic/blob/main/LICENSE) | Version 0.2.1 | Python >= 3.10
+License [MIT](https://github.com/ADW-19/llmpic/blob/main/LICENSE) | Version 0.2.2 | Python >= 3.10

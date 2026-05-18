@@ -293,11 +293,18 @@ def _extract_code(content: str) -> Optional[str]:
         pass
 
     # 2. Try truncated JSON: {"code": "..."  without closing braces
-    m = re.search(r'"code"\s*:\s*"(.+?)"?(?:\s*\}?\s*$|$)', content, re.DOTALL)
+    #    Use character-class alternation to properly skip JSON-escaped quotes (\").
+    #    The old regex (.+?) would stop at the first " inside the code, truncating it.
+    m = re.search(r'"code"\s*:\s*"((?:[^"\\]|\\.)*)(?:"|$)', content)
     if m:
         code = m.group(1)
-        # Unescape JSON-escaped newlines and quotes
-        code = code.replace('\\n', '\n').replace('\\"', '"').replace('\\\\', '\\')
+        # Restore JSON-escaped sequences to their literal form
+        code = (code.replace('\\"', '\x00')      # temp placeholder for escaped quotes
+                    .replace('\\n', '\n')
+                    .replace('\\t', '\t')
+                    .replace('\\r', '\r')
+                    .replace('\\\\', '\\')
+                    .replace('\x00', '"'))
         if 'plt.' in code or 'ax.' in code:
             return code.strip()
 

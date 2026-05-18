@@ -28,27 +28,38 @@ COLOR_SCHEMES = {
     "grayscale": ["#333333", "#666666", "#999999", "#BBBBBB", "#DDDDDD"],
 }
 
-# ── System prompt ──
+# ── System prompts ──
 
 SYSTEM_PROMPT = """\
 You are a Python data visualization code generator. Produce chart code using the following pre-imported libraries:
 
   plt  — matplotlib.pyplot (fig,ax = plt.subplots(...); all plotting: plot, scatter, bar, pie, hist, boxplot, imshow, fill_between, stackplot, polar axes, subplots, etc.)
-  mpl  — matplotlib (full module: mpl.patches, mpl.ticker, mpl.dates, mpl.colors, mpl.cm, mpl.ticker, etc.)
+  mpl  — matplotlib (full module: mpl.patches, mpl.ticker, mpl.dates, mpl.colors, mpl.cm, etc.)
   np   — numpy (generating data: np.linspace, np.arange, np.random, np.sin/cos, np.array, etc.)
   pd   — pandas (DataFrame/Series, may not be available — guard with 'if pd is not None')
   sns  — seaborn (statistical plots: sns.heatmap, sns.boxplot, sns.histplot, sns.kdeplot; may not be available)
   Figure — matplotlib.figure.Figure class
 
-## Rules
+## Mandatory Rules
 - Always create figure: fig, ax = plt.subplots(figsize=(w, h))
 - NEVER call plt.show(), plt.savefig(), or plt.close() — system handles output rendering
 - NEVER use: open(), os, sys, subprocess, requests, socket, eval/exec, pickle, ctypes
 - Match labels/titles language to the user's query language
 - If user provides no data, generate plausible demo data with numpy
-- Use sns for statistical/advanced charts when appropriate; fall back to pure matplotlib if sns unavailable
 - Add clear axis labels, title, and legend when multiple series exist
 - For Chinese/Japanese/Korean text, Unicode is fully supported
+
+## Critical Pitfalls — NEVER do these (they WILL crash)
+- DO NOT use `sns.kdeplot(data)` without `ax=ax` — always pass the axes: `sns.kdeplot(data, ax=ax)`
+- DO NOT use `sns.boxplot(palette=...)` without `hue=` — this is deprecated. Use `hue=<col>` with `palette` or drop `palette`
+- DO NOT use `df.corr()` unless `pd is not None` is verified first. Guard with `if 'pd' in dir():`
+- DO NOT write `sns.heatmap(annotate=...)` — the correct parameter is `annot=True`
+- DO NOT call `ax.set_xticklabels()` with wrong number of labels — use `ax.set_xticks()` first
+- DO NOT use variables that haven't been defined — read the Data section carefully for available variable names
+- When using `ax.imshow()`, always call `plt.colorbar(im, ax=ax)` AFTER creating the image
+- For radar charts, ALWAYS repeat the first data point at the end to close the polygon loop
+- For pie charts, NEVER pass more than 8-10 categories — group small ones into "Others"
+- If DataFrame columns are listed in the Data section, use THOSE EXACT column names in your code
 
 ## Output Format
 Reply ONLY with valid JSON: {"code": "<full python code with \\n for newlines>"}
@@ -57,30 +68,96 @@ No markdown fences, no explanation, no extra text outside the JSON object."""
 # ── Chart type prompts ──
 
 CHART_TYPE_PROMPTS = {
-    "line": "Line chart (折线图). Use ax.plot(). Multiple series: different colors + legend.",
-    "scatter": "Scatter chart (散点图). Use ax.scatter(). 3rd variable → color/size.",
-    "bar": "Bar chart (柱状图). Use ax.bar() or ax.barh(). Add value labels on bars.",
-    "pie": "Pie chart (饼图). Use ax.pie() with autopct='%1.1f%%' and legend.",
-    "hist": "Histogram (直方图). Use ax.hist(). Overlay KDE via sns.kdeplot if seaborn available.",
-    "heatmap": "Heatmap (热力图). Use ax.imshow() or sns.heatmap(). Add colorbar and annotate cells.",
-    "boxplot": "Boxplot (箱线图). Use ax.boxplot() or sns.boxplot(). Show outliers, add labels.",
-    "area": "Area chart (面积图). Use ax.fill_between() or ax.stackplot(). Set alpha 0.3-0.7.",
-    "radar": "Radar chart (雷达图). Use polar axes: plt.subplots(subplot_kw={'projection':'polar'}). Close the polygon loop.",
-    "subplots": "Dashboard (子图仪表盘). Use fig, axes = plt.subplots(nrows, ncols, figsize=(w,h)). Add fig.suptitle(). Each subplot is a different chart.",
-    "custom": "Pick best chart type (line/bar/scatter/pie/hist/boxplot/heatmap/area/radar) for the data & query.",
+    "line": (
+        "Line chart (折线图). Use ax.plot(x, y). "
+        "Multiple series: call ax.plot() once per series with different colors + legend. "
+        "PITFALLS: ensure x and y arrays have the same length. Use np.linspace for x if only y data provided."
+    ),
+    "scatter": (
+        "Scatter chart (散点图). Use ax.scatter(x, y). "
+        "3rd variable → color/size via c= and s= parameters. "
+        "PITFALLS: x and y must have same length. If using colorbar, call plt.colorbar(scatter, ax=ax)."
+    ),
+    "bar": (
+        "Bar chart (柱状图). Use ax.bar() or ax.barh() for horizontal. "
+        "Add value labels on bars with ax.text(x, height+offset, f'{val}'). "
+        "PITFALLS: for grouped bars, calculate x positions with np.arange + width offsets. "
+        "Always set xticks to the center of grouped bar clusters."
+    ),
+    "pie": (
+        "Pie chart (饼图). Use ax.pie(values, labels=labels, autopct='%1.1f%%'). "
+        "Add legend with ax.legend(). "
+        "PITFALLS: max 6-8 slices — group small categories into 'Others'. "
+        "Explode only 1 slice at most. Donut: use wedgeprops={'width': 0.4}."
+    ),
+    "hist": (
+        "Histogram (直方图). Use ax.hist(data, bins=N). "
+        "Overlay KDE: if sns available, call sns.kdeplot(data, ax=ax, color='red', linewidth=2). "
+        "PITFALLS: sns.kdeplot MUST receive ax=ax keyword. "
+        "For multiple distributions, call ax.hist() once per dataset with alpha=0.5 and label=."
+    ),
+    "heatmap": (
+        "Heatmap (热力图). Use sns.heatmap() or ax.imshow(). "
+        "With sns: sns.heatmap(data, annot=True, fmt='.2f', cmap='coolwarm', ax=ax). "
+        "With imshow: im = ax.imshow(data, cmap='coolwarm', aspect='auto'); plt.colorbar(im, ax=ax). "
+        "PITFALLS: the parameter is annot=True NOT annotate=True. "
+        "For correlation matrices, always mask or round values. Use fmt='.2f' for floats, fmt='d' for ints."
+    ),
+    "boxplot": (
+        "Boxplot (箱线图). Use ax.boxplot([data1, data2, ...], labels=[...]) for pure matplotlib. "
+        "Use sns.boxplot(x=col, y=col, data=df, ax=ax) for seaborn with DataFrame. "
+        "PITFALLS: NEVER use sns.boxplot(palette=...) without hue=. "
+        "If you have multiple groups as separate arrays, use ax.boxplot(), not sns.boxplot(). "
+        "Always set showmeans=True or showfliers=True explicitly if needed."
+    ),
+    "area": (
+        "Area chart (面积图). Use ax.fill_between(x, y1, alpha=0.5) for single area. "
+        "Use ax.stackplot(x, y1, y2, y3, labels=[...], alpha=0.6) for stacked areas. "
+        "PITFALLS: for stackplot, all y arrays must have same length as x. "
+        "Always call ax.legend() after stackplot. Set alpha 0.4-0.7 for readability."
+    ),
+    "radar": (
+        "Radar chart (雷达图). Use polar axes: fig, ax = plt.subplots(subplot_kw={'projection': 'polar'}). "
+        "Compute angles with np.linspace(0, 2*np.pi, N, endpoint=False). "
+        "CRITICAL PITFALL: ALWAYS repeat the first value at the end to close the polygon: "
+        "values = list(values) + [values[0]]; angles = list(angles) + [angles[0]]. "
+        "Use ax.fill(angles, values, alpha=0.25) + ax.plot(angles, values). "
+        "Set ax.set_xticks(angles[:-1]) and ax.set_xticklabels(categories)."
+    ),
+    "subplots": (
+        "Dashboard (子图仪表盘). Use fig, axes = plt.subplots(nrows, ncols, figsize=(w, h)). "
+        "axes is a 2D array — access with axes[i, j] for (nrows, ncols) or axes[i] for single row/col. "
+        "PITFALLS: check axes.ndim — if 1D, use axes[i]; if 2D, use axes[i, j]. "
+        "Add fig.suptitle() for overall title. Call plt.tight_layout() at the end. "
+        "Each subplot should be a DIFFERENT chart type per the query."
+    ),
+    "custom": (
+        "Auto-detect the best chart type for the data & query. "
+        "Choose from: line, scatter, bar, pie, hist, boxplot, heatmap, area, radar. "
+        "Consider: data type (categorical vs numeric), number of variables, trend vs comparison vs distribution. "
+        "Default to bar for categorical comparisons, line for time series, scatter for two numeric columns."
+    ),
 }
 
 # ── Auto-fix prompt (code repair) ──
 
 FIX_PROMPT = """\
-Fix this matplotlib code error. Output JSON: {{"code":"<fixed code>"}}
+Fix this matplotlib chart code. Make MINIMAL changes — only fix the error, change nothing else.
+Output JSON: {{"code":"<fixed code>"}}
 
 Error: {error}
 
 Current code:
 {code}
 
-Fixed JSON only, no explanation."""
+## Fix Guidelines
+- If the error is NameError (undefined variable/column), check the Data info and use the correct column names or variable names
+- If the error is ValueError about array lengths, ensure x and y have matching dimensions
+- If the error is about seaborn, make sure you passed ax=ax to the seaborn function
+- If the error is about missing data, generate demo data with numpy
+- Keep all styling, labels, and logic identical — ONLY fix what caused the error
+
+JSON only, no explanation."""
 
 # ── Edit prompt (iterative modification) ──
 

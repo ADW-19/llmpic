@@ -2,7 +2,7 @@
   <img src="https://img.shields.io/badge/license-MIT-blue.svg" alt="License">
   <a href="https://github.com/ADW-19/llmpic"><img src="https://img.shields.io/badge/github-ADW--19%2Fllmpic-lightgrey.svg" alt="GitHub"></a>
   <img src="https://img.shields.io/badge/python-≥3.10-green.svg" alt="Python">
-  <img src="https://img.shields.io/badge/version-0.2.1-orange.svg" alt="Version">
+  <img src="https://img.shields.io/badge/version-0.2.2-orange.svg" alt="Version">
   <img src="https://img.shields.io/badge/pypi-llmpic-blue.svg" alt="PyPI">
 </p>
 
@@ -182,7 +182,7 @@ pip install llmpic          # All-in-one: matplotlib, numpy, openai, pandas, sea
 ```python
 from llmpic import llmPIC, AsyncllmPIC, ChartResult, PlotBuilder, AsyncPlotBuilder
 import llmpic
-print(llmpic.__version__)  # → "0.2.0"
+print(llmpic.__version__)  # → "0.2.2"
 ```
 
 ---

@@ -188,12 +188,20 @@ class SandboxExecutor:
             try:
                 return self._execute(code, style, format)
             except concurrent.futures.TimeoutError:
-                return (None, f"Code execution timed out ({self._timeout}s). Check for infinite loops.")
+                return (None, f"Timeout ({self._timeout}s). Possible infinite loop or too many iterations. Use smaller data ranges or fewer loops.")
             except SyntaxError as e:
-                return (None, f"Syntax error in generated code: {e}")
+                return (None, f"SyntaxError: {e.msg} (line {e.lineno}, col {e.offset}). Fix the syntax on that line.")
+            except NameError as e:
+                return (None, f"NameError: {e}. Check that all variables are defined before use and column names match the data.")
+            except ValueError as e:
+                return (None, f"ValueError: {e}. Check array shapes, data types, and parameter values.")
+            except TypeError as e:
+                return (None, f"TypeError: {e}. Check argument types and function signatures.")
             except Exception as e:
-                tb = traceback.format_exc()
-                return (None, f"Execution error: {e}\n\n{tb}")
+                tb_lines = traceback.format_exc().strip().split('\n')
+                # Keep last 6 lines of traceback (error + context, skip deep internals)
+                tb_short = '\n'.join(tb_lines[-8:]) if len(tb_lines) > 8 else '\n'.join(tb_lines)
+                return (None, f"{type(e).__name__}: {e}\n\n{tb_short}")
 
     def _execute(self, code: str, style: dict, format: str = 'png') -> tuple:
         """Core sandboxed execution in a thread-limited environment."""

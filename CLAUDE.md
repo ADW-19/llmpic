@@ -4,7 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Project overview
 
-**llmpic** (v0.2.1, Python >= 3.10) is an LLM-powered chart generation SDK. Users describe charts in natural language (English/Chinese/Japanese/Korean) and llmpic produces matplotlib charts via OpenAI-compatible LLM endpoints. Package name on PyPI: `llmpic`.
+**llmpic** (v0.2.2, Python >= 3.10) is an LLM-powered chart generation SDK. Users describe charts in natural language (English/Chinese/Japanese/Korean) and llmpic produces matplotlib charts via OpenAI-compatible LLM endpoints. Package name on PyPI: `llmpic`.
 
 ## Common commands
 

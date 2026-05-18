@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "llmpic"
-version = "0.2.1"
+version = "0.2.2"
 description = "LLM-powered chart generation Python SDK — create charts with natural language"
 readme = "README.md"
 requires-python = ">=3.10"
