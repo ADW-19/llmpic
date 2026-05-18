@@ -12,7 +12,8 @@
 <p align="center"><strong>Natural Language → Production Charts. One line.</strong></p>
 
 <p align="center">
-  <a href="./doc/chinese/README_CN.md">中文</a> &nbsp;|&nbsp;
+  <a href="./doc/README_CN.md">中文</a> &nbsp;|&nbsp;
+  <a href="https://ADW-19.github.io/llmpic/">Documentation</a> &nbsp;|&nbsp;
   <a href="./doc/english/API_REFERENCE_EN.md">API Reference</a> &nbsp;|&nbsp;
   <a href="./doc/english/GUIDE_EN.md">User Guide</a>
 </p>
@@ -28,28 +29,6 @@ lp.plot("Monthly sales trend, 12 months").show()   # Jupyter inline
 lp.plot("CPU usage over 30 days").save()            # → ~/llmpic_charts/
 lp.bar("Sales by region").data(df).style({"color_scheme":"warm"}).save("bar.png")
 ```
-
----
-
-## Table of Contents
-
-- [Why llmpic?](#-why-llmpic)
-- [Features](#-features)
-- [Installation](#-installation)
-- [Quick Start](#-quick-start)
-- [Chart Types](#-chart-types)
-- [Core Workflow](#-core-workflow)
-- [Async & Batch](#-async--batch)
-- [Iterative Editing](#-iterative-editing)
-- [Output Formats](#-output-formats)
-- [Style Customization](#-style-customization)
-- [Security](#-security)
-- [Provider Compatibility](#-provider-compatibility)
-- [Environment Variables](#-environment-variables)
-- [Architecture](#-architecture)
-- [Documentation](#-documentation)
-- [Official Contact](#-official-contact)
-- [License](#-license)
 
 ---
 
@@ -671,7 +650,7 @@ lp = llmPIC(
 | [User Guide](./doc/english/GUIDE_EN.md) | EN | Advanced usage, best practices, troubleshooting |
 | [使用指南](./doc/chinese/GUIDE_CN.md) | 中文 | 进阶用法、最佳实践、故障排查 |
 | [Jupyter Demos](./notebook_examples/) | EN/中文 | Ready-to-run demo notebooks |
-| [中文首页](./doc/chinese/README_CN.md) | 中文 | 完整中文 README |
+| [中文首页](./doc/README_CN.md) | 中文 | 完整中文 README |
 
 ---
 

@@ -6,15 +6,16 @@
   <img src="https://img.shields.io/badge/pypi-llmpic-blue.svg" alt="PyPI">
 </p>
 
-<p align="center"><img src="../../llmpic_logo.png" alt="llmpic logo" width="120"></p>
+<p align="center"><img src="../llmpic_logo.png" alt="llmpic logo" width="120"></p>
 
 <h1 align="center">LLMPIC</h1>
 <p align="center"><strong>自然语言驱动 · 一行代码出图</strong></p>
 
 <p align="center">
-  <a href="../../README.md">English</a> &nbsp;|&nbsp;
-  <a href="./API_REFERENCE_CN.md">API 参考</a> &nbsp;|&nbsp;
-  <a href="./GUIDE_CN.md">使用指南</a>
+  <a href="https://github.com/ADW-19/llmpic">English</a> &nbsp;|&nbsp;
+  <a href="https://ADW-19.github.io/llmpic/">文档官网</a> &nbsp;|&nbsp;
+  <a href="chinese/API_REFERENCE_CN.md">API 参考</a> &nbsp;|&nbsp;
+  <a href="chinese/GUIDE_CN.md">使用指南</a>
 </p>
 
 ---
@@ -28,28 +29,6 @@ lp.plot("过去12个月的销售趋势").show()          # Jupyter 内联显示
 lp.plot("30天CPU使用率趋势").save()            # → ~/llmpic_charts/
 lp.bar("各地区销售额").data(df).style({"color_scheme":"warm"}).save("bar.png")
 ```
-
----
-
-## 目录
-
-- [为什么选择 llmpic？](#-为什么选择-llmpic)
-- [核心特性](#-核心特性)
-- [安装](#-安装)
-- [快速入门](#-快速入门)
-- [图表类型](#-图表类型)
-- [核心工作流](#-核心工作流)
-- [异步与批量生成](#-异步与批量生成)
-- [迭代编辑](#-迭代编辑)
-- [输出格式](#-输出格式)
-- [样式定制](#-样式定制)
-- [安全保障](#-安全保障)
-- [LLM 服务商兼容性](#-llm-服务商兼容性)
-- [环境变量配置](#-环境变量配置)
-- [架构总览](#-架构总览)
-- [文档导航](#-文档导航)
-- [官方联系方式](#-官方联系方式)
-- [开源协议](#-开源协议)
 
 ---
 
@@ -680,12 +659,12 @@ lp = llmPIC(
 
 | 文档 | 语言 | 说明 |
 |------|------|------|
-| [API 参考](./API_REFERENCE_CN.md) | 中文 | 所有类、方法、参数的详细说明 |
-| [API Reference](../english/API_REFERENCE_EN.md) | EN | Complete class, method, and parameter reference |
-| [使用指南](./GUIDE_CN.md) | 中文 | 进阶用法、最佳实践、故障排查 |
-| [User Guide](../english/GUIDE_EN.md) | EN | Advanced usage, best practices, troubleshooting |
-| [Jupyter 演示](../../notebook_examples/) | 中/EN | 开箱即用的 Jupyter Notebook |
-| [English README](../../README.md) | EN | Full English README |
+| [API 参考](chinese/API_REFERENCE_CN.md) | 中文 | 所有类、方法、参数的详细说明 |
+| [API Reference](english/API_REFERENCE_EN.md) | EN | Complete class, method, and parameter reference |
+| [使用指南](chinese/GUIDE_CN.md) | 中文 | 进阶用法、最佳实践、故障排查 |
+| [User Guide](english/GUIDE_EN.md) | EN | Advanced usage, best practices, troubleshooting |
+| [Jupyter 演示](https://github.com/ADW-19/llmpic/tree/main/notebook_examples) | 中/EN | 开箱即用的 Jupyter Notebook |
+| [English README](https://github.com/ADW-19/llmpic) | EN | Full English README |
 
 ---
 
@@ -713,4 +692,4 @@ llmpic 站在以下优秀开源项目的肩膀上构建：
 
 ## 📄 开源协议
 
-[MIT](../../LICENSE) © 2026 ADW-19
+[MIT](https://github.com/ADW-19/llmpic/blob/main/LICENSE) © 2026 ADW-19

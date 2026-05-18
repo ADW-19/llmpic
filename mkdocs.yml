@@ -1,0 +1,79 @@
+site_name: llmpic
+site_description: Natural Language → Production Charts. One line.
+site_url: https://ADW-19.github.io/llmpic/
+site_author: ADW-19
+
+docs_dir: doc
+
+repo_name: llmpic
+repo_url: https://github.com/ADW-19/llmpic
+edit_uri: edit/main/doc/
+
+theme:
+  name: material
+  language: en
+  palette:
+    - scheme: default
+      primary: teal
+      accent: teal
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+    - scheme: slate
+      primary: teal
+      accent: teal
+      toggle:
+        icon: material/brightness-4
+        name: Switch to light mode
+  font:
+    text: Roboto
+    code: Roboto Mono
+  features:
+    - navigation.tabs
+    - navigation.tabs.sticky
+    - navigation.sections
+    - navigation.expand
+    - navigation.instant
+    - navigation.top
+    - search.suggest
+    - search.highlight
+    - content.tabs.link
+    - content.code.copy
+
+extra:
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/ADW-19/llmpic
+    - icon: fontawesome/brands/x-twitter
+      link: https://xhslink.com/m/AQw13M5WIPc
+  generator: false
+
+extra_css:
+  - stylesheets/extra.css
+
+markdown_extensions:
+  - pymdownx.highlight
+  - tables
+  - attr_list
+  - md_in_html
+  - admonition
+  - pymdownx.details
+  - pymdownx.mark
+
+nav:
+  - Home: index.md
+  - English:
+      - Getting Started: english/GUIDE_EN.md
+      - API Reference: english/API_REFERENCE_EN.md
+  - 中文文档:
+      - 使用指南: chinese/GUIDE_CN.md
+      - API 参考: chinese/API_REFERENCE_CN.md
+
+plugins:
+  - search:
+      lang:
+        - en
+        - zh
+
+watch:
+  - doc

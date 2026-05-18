@@ -4,27 +4,6 @@
 
 ---
 
-## Table of Contents
-
-- [Getting Started](#getting-started)
-- [Chart Types in Detail](#chart-types-in-detail)
-- [Data Input Methods](#data-input-methods)
-- [Style Customization](#style-customization)
-- [Output Formats](#output-formats)
-- [Iterative Editing](#iterative-editing)
-- [Auto-Fix Mechanism](#auto-fix-mechanism)
-- [Async & Batch Generation](#async--batch-generation)
-- [Security Model](#security-model)
-- [Multi-Language Support](#multi-language-support)
-- [Provider Setup Guide](#provider-setup-guide)
-- [Workflow Patterns & Cookbook](#workflow-patterns--cookbook)
-- [Cost Optimization](#cost-optimization)
-- [Integration Patterns](#integration-patterns)
-- [Best Practices](#best-practices)
-- [Troubleshooting](#troubleshooting)
-
----
-
 ## Getting Started
 
 ### SDK Initialization
@@ -1464,4 +1443,4 @@ for i in range(0, len(requests), 3):
 
 ---
 
-← [Back to Home](../../README.md)
+← [Back to Home](../index.md)
