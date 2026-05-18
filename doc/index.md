@@ -1,4 +1,4 @@
-# llmpic
+# **LLMPIC**
 
 **Natural Language → Production Charts. One line.**
 
@@ -25,7 +25,6 @@ lp.bar("Sales by region").data(df).save("bar.png") # Save to file
 
 - [Getting Started (EN)](english/GUIDE_EN.md)
 - [API Reference (EN)](english/API_REFERENCE_EN.md)
-- [快速入门 (中文)](README_CN.md)
 - [使用指南 (中文)](chinese/GUIDE_CN.md)
 - [API 参考 (中文)](chinese/API_REFERENCE_CN.md)
 
