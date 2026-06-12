@@ -25,6 +25,9 @@ try:
 except ImportError:
     sns = None
 
+import cartopy.crs as ccrs
+import cartopy.feature as cfeature
+
 logger = logging.getLogger(__name__)
 
 # ══════════════════════════════════════════════
@@ -125,6 +128,9 @@ def _build_namespace():
         ns['pd'] = pd
     if sns is not None:
         ns['sns'] = sns
+    # Cartopy — mandatory dependency, always available
+    ns['ccrs'] = ccrs
+    ns['cfeature'] = cfeature
     return ns
 
 

@@ -190,6 +190,26 @@ lp.radar("雷达图: 产品A [4,3,5,2,4] vs 产品B [3,4,4,3,5], 维度: 速度,
 
 LLM 提示词：`Radar chart (雷达图). Use polar axes: plt.subplots(subplot_kw={'projection':'polar'}). Close the polygon loop.`
 
+### map — 地理地图（v0.3.0 新增）
+
+适用场景：世界地图、国家/地区视图、等值区域图、地理散点标记图。
+
+```python
+# 世界地图（LLM 自动生成主要城市演示数据）
+lp.map("世界人口分布等值区域图，Blues配色").save("world.png")
+
+# 传入真实数据（含经纬度列的 DataFrame）
+lp.map("日本地震震中分布，震级颜色映射").data(eq_df).save("japan.png")
+
+# 特定国家/地区
+lp.map("中国主要城市GDP分布，大圆点表示高GDP").data(city_df).save("china.png")
+
+# 世界城市散点图
+lp.map("世界主要城市标记: 东京、纽约、伦敦、巴黎、北京、悉尼，按人口规模标记大小").save("cities.png")
+```
+
+LLM 提示词：`Geographic map (地图). Use cartopy (ccrs, cfeature) with PlateCarree projection.`
+
 ### subplots — 综合仪表盘
 
 适用场景：多图综合展示、高管汇报。
@@ -647,7 +667,7 @@ requests: List[Tuple[str, str]]
 # 每个元组: (图表类型, 查询描述)
 # 图表类型必须为以下之一：
 #   "line" "scatter" "bar" "pie" "hist" "heatmap"
-#   "boxplot" "area" "radar" "subplots" "custom"
+#   "boxplot" "area" "radar" "map" "subplots" "custom"
 ```
 
 > 注意：`batch()` 使用默认样式，且不支持为每张图绑定不同数据。如需为每张图自定义数据/样式/格式，请用下面的 Builder 方式。

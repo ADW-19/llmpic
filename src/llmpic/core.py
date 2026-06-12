@@ -14,7 +14,7 @@ from openai import OpenAI, AsyncOpenAI
 from .safety import CodeSafetyChecker
 from .sandbox import SandboxExecutor
 from .templates import (
-    DEFAULT_STYLE, COLOR_SCHEMES, CHART_TYPE_PROMPTS,
+    DEFAULT_STYLE, DEFAULT_MAP_STYLE, COLOR_SCHEMES, CHART_TYPE_PROMPTS,
     SYSTEM_PROMPT, FIX_PROMPT, EDIT_PROMPT,
     detect_language, LANGUAGE_HINTS,
 )
@@ -348,7 +348,7 @@ class PlotBuilder:
     def style(self, style_spec) -> 'PlotBuilder':
         if isinstance(style_spec, str):
             style_spec = json.loads(style_spec)
-        self._style = {**DEFAULT_STYLE, **style_spec}
+        self._style = {**self._style, **style_spec}
         self._result = None
         return self
 
@@ -451,7 +451,7 @@ class AsyncPlotBuilder:
     def style(self, style_spec) -> 'AsyncPlotBuilder':
         if isinstance(style_spec, str):
             style_spec = json.loads(style_spec)
-        self._style = {**DEFAULT_STYLE, **style_spec}
+        self._style = {**self._style, **style_spec}
         self._result = None
         return self
 
@@ -624,6 +624,21 @@ class llmPIC:
     def custom(self, query: str) -> PlotBuilder:
         return PlotBuilder(self, "custom", query)
 
+    def map(self, query: str) -> PlotBuilder:
+        """Generate a geographic map chart.
+
+        Supports choropleth maps, scatter point maps, and world maps.
+        Uses cartopy for projections if installed, falls back to pure matplotlib.
+
+        Examples:
+            sdk.map("World population by country").save("world.png")
+            sdk.map("China major cities, red markers").save("china.png")
+            sdk.map("Earthquake epicenters in Japan").data(df).save("japan.png")
+        """
+        builder = PlotBuilder(self, "map", query)
+        builder._style = {**DEFAULT_STYLE, **DEFAULT_MAP_STYLE}
+        return builder
+
     # ── Internal: LLM code generation ──
 
     def _generate_code(self, user_prompt: str, system_prompt: str = None) -> Tuple[Optional[str], dict]:
@@ -765,6 +780,16 @@ class AsyncllmPIC:
 
     def custom(self, query: str) -> AsyncPlotBuilder:
         return AsyncPlotBuilder(self, "custom", query)
+
+    def map(self, query: str) -> AsyncPlotBuilder:
+        """Generate a geographic map chart (async).
+
+        Supports choropleth maps, scatter point maps, and world maps.
+        Uses cartopy for projections if installed, falls back to pure matplotlib.
+        """
+        builder = AsyncPlotBuilder(self, "map", query)
+        builder._style = {**DEFAULT_STYLE, **DEFAULT_MAP_STYLE}
+        return builder
 
     # ── Batch ──
 

@@ -75,6 +75,7 @@ heatmap(query: str)   -> PlotBuilder   # 热力图
 boxplot(query: str)   -> PlotBuilder   # 箱线图
 area(query: str)      -> PlotBuilder   # 面积图
 radar(query: str)     -> PlotBuilder   # 雷达图 / 蜘蛛图
+map(query: str)       -> PlotBuilder   # 地理地图
 subplots(query: str)  -> PlotBuilder   # 多图仪表盘
 custom(query: str)    -> PlotBuilder   # 智能推荐最佳图表类型
 ```
@@ -161,7 +162,7 @@ async def batch(
 | `requests` | `List[Tuple[str, str]]` | `(图表类型, 查询描述)` 的列表 |
 
 **图表类型可选值：**
-`"line"` `"scatter"` `"bar"` `"pie"` `"hist"` `"heatmap"` `"boxplot"` `"area"` `"radar"` `"subplots"` `"custom"`
+`"line"` `"scatter"` `"bar"` `"pie"` `"hist"` `"heatmap"` `"boxplot"` `"area"` `"radar"` `"map"` `"subplots"` `"custom"`
 
 **返回值：** `List[ChartResult]`，与输入请求顺序一一对应。
 
@@ -525,7 +526,7 @@ def execute(
 
 沙箱提供以下保障：
 
-1. **受限命名空间** — 仅包含安全内置函数 + `mpl`(matplotlib)、`plt`(代理)、`np`(numpy)、`pd`(pandas，若可用)、`sns`(seaborn，若可用)、`Figure`
+1. **受限命名空间** — 仅包含安全内置函数 + `mpl`(matplotlib)、`plt`(代理)、`np`(numpy)、`pd`(pandas，若可用)、`sns`(seaborn，若可用)、`ccrs`(cartopy.crs)、`cfeature`(cartopy.feature)、`Figure`
 2. **plt 拦截** — `plt.show()`、`plt.savefig()`、`plt.close()` 均为空操作
 3. **Figure.savefig 拦截** — 代码无法直接写入文件；沙箱统一接管渲染
 4. **Figure.__init__ 追踪** — 沙箱检测代码创建的图形对象
@@ -661,6 +662,33 @@ DEFAULT_STYLE = {
 ```
 
 所有键可通过 `.style()` 覆盖。未指定的键使用以上默认值。
+
+### DEFAULT_MAP_STYLE（地图默认样式）
+
+```python
+DEFAULT_MAP_STYLE = {
+    "figsize": [12, 8],
+    "dpi": 150,
+    "color_scheme": "blues",
+    "title_fontsize": 15,
+    "label_fontsize": 11,
+    "tick_fontsize": 9,
+    "grid": True,
+    "grid_alpha": 0.4,
+    "tight_layout": True,
+    "facecolor": "white",
+    "projection": "PlateCarree",
+    "coastline_width": 0.5,
+    "borders_style": ":",
+    "borders_width": 0.4,
+    "land_color": "#F5F5DC",
+    "ocean_color": "#E6F2FF",
+    "marker_size": 60,
+    "cmap": "Blues",
+}
+```
+
+使用 `.map()` 方法时自动应用。所有键可通过 `.style()` 覆盖。地图专属键（projection, coastline_width, borders_style, borders_width, land_color, ocean_color, marker_size, cmap）作为样式提示传给 LLM。
 
 ### COLOR_SCHEMES（配色方案）
 

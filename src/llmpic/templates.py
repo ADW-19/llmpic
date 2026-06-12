@@ -17,6 +17,29 @@ DEFAULT_STYLE = {
     "facecolor": "white",
 }
 
+# ── Map default style (stable, never changes between runs) ──
+
+DEFAULT_MAP_STYLE = {
+    "figsize": [12, 8],
+    "dpi": 150,
+    "color_scheme": "blues",
+    "title_fontsize": 15,
+    "label_fontsize": 11,
+    "tick_fontsize": 9,
+    "grid": True,
+    "grid_alpha": 0.4,
+    "tight_layout": True,
+    "facecolor": "white",
+    "projection": "PlateCarree",       # fixed: equirectangular projection
+    "coastline_width": 0.5,
+    "borders_style": ":",              # dotted borders
+    "borders_width": 0.4,
+    "land_color": "#F5F5DC",           # beige land
+    "ocean_color": "#E6F2FF",          # pale blue ocean
+    "marker_size": 60,
+    "cmap": "Blues",                   # fixed colormap for choropleth
+}
+
 # ── Color schemes ──
 
 COLOR_SCHEMES = {
@@ -39,6 +62,8 @@ You are a Python data visualization code generator. Produce chart code using the
   pd   — pandas (DataFrame/Series, may not be available — guard with 'if pd is not None')
   sns  — seaborn (statistical plots: sns.heatmap, sns.boxplot, sns.histplot, sns.kdeplot; may not be available)
   Figure — matplotlib.figure.Figure class
+  ccrs — cartopy.crs (coordinate reference systems: PlateCarree, Orthographic, Mollweide, etc.)
+  cfeature — cartopy.feature (geographic features: COASTLINE, BORDERS, LAND, OCEAN, RIVERS, LAKES)
 
 ## Mandatory Rules
 - Always create figure: fig, ax = plt.subplots(figsize=(w, h))
@@ -48,6 +73,7 @@ You are a Python data visualization code generator. Produce chart code using the
 - If user provides no data, generate plausible demo data with numpy
 - Add clear axis labels, title, and legend when multiple series exist
 - For Chinese/Japanese/Korean text, Unicode is fully supported
+- For map charts: use PlateCarree projection (the default). Always pass transform=ccrs.PlateCarree() for lat/lon data (the data CRS). Use consistent colormap (cmap='Blues') and feature styling per the Style section.
 
 ## Critical Pitfalls — NEVER do these (they WILL crash)
 - DO NOT use `sns.kdeplot(data)` without `ax=ax` — always pass the axes: `sns.kdeplot(data, ax=ax)`
@@ -131,6 +157,32 @@ CHART_TYPE_PROMPTS = {
         "Add fig.suptitle() for overall title. Call plt.tight_layout() at the end. "
         "Each subplot should be a DIFFERENT chart type per the query."
     ),
+    "map": (
+        "Geographic map (地图/地図/지도). "
+        "Create map axes: fig, ax = plt.subplots(figsize=(w,h), "
+        "subplot_kw={'projection': ccrs.PlateCarree()}). "
+        "Add features: ax.add_feature(cfeature.COASTLINE, linewidth=0.5); "
+        "ax.add_feature(cfeature.BORDERS, linestyle=':', linewidth=0.4); "
+        "ax.add_feature(cfeature.LAND, facecolor='#F5F5DC'); "
+        "ax.add_feature(cfeature.OCEAN, facecolor='#E6F2FF'). "
+        "For scatter/point data: ax.scatter(lons, lats, c=values, cmap='Blues', s=60, "
+        "transform=ccrs.PlateCarree(), edgecolor='white', linewidth=0.5). "
+        "Add colorbar for continuous values: plt.colorbar(sc, ax=ax, shrink=0.7). "
+        "Set map extent: ax.set_extent([lon_min, lon_max, lat_min, lat_max]) "
+        "or ax.set_global() for world maps. "
+        "Add gridlines: gl = ax.gridlines(draw_labels=True, linewidth=0.3, alpha=0.5); "
+        "gl.top_labels = False; gl.right_labels = False. "
+        "For world city maps, generate demo data with major cities: "
+        "Tokyo(35.7,139.8), NYC(40.7,-74.0), London(51.5,-0.1), "
+        "Paris(48.9,2.3), Sydney(-33.9,151.2), Beijing(39.9,116.4), "
+        "Moscow(55.8,37.6), Delhi(28.6,77.2), Rio(-22.9,-43.2), "
+        "Cairo(30.0,31.2), Lagos(6.5,3.4), LA(34.1,-118.2). "
+        "PITFALLS: always pass transform=ccrs.PlateCarree() for data in lat/lon. "
+        "Never mix projections without explicit transform. "
+        "For set_extent, order is [west, east, south, north] in degrees. "
+        "Avoid too many features — coastlines + borders + land/ocean are sufficient. "
+        "For choropleth with country boundaries, use naturalearth_lowres data if available."
+    ),
     "custom": (
         "Auto-detect the best chart type for the data & query. "
         "Choose from: line, scatter, bar, pie, hist, boxplot, heatmap, area, radar. "
@@ -155,6 +207,7 @@ Current code:
 - If the error is ValueError about array lengths, ensure x and y have matching dimensions
 - If the error is about seaborn, make sure you passed ax=ax to the seaborn function
 - If the error is about missing data, generate demo data with numpy
+- If the error is about cartopy features (COASTLINE, BORDERS, etc.), try without those features or use simpler alternatives
 - Keep all styling, labels, and logic identical — ONLY fix what caused the error
 
 JSON only, no explanation."""

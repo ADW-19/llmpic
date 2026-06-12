@@ -2,7 +2,7 @@
   <img src="https://img.shields.io/badge/license-MIT-blue.svg" alt="License">
   <a href="https://github.com/ADW-19/llmpic"><img src="https://img.shields.io/badge/github-ADW--19%2Fllmpic-lightgrey.svg" alt="GitHub"></a>
   <img src="https://img.shields.io/badge/python-≥3.10-green.svg" alt="Python">
-  <img src="https://img.shields.io/badge/version-0.2.2-orange.svg" alt="Version">
+  <img src="https://img.shields.io/badge/version-0.3.0-orange.svg" alt="Version">
   <img src="https://img.shields.io/badge/pypi-llmpic-blue.svg" alt="PyPI">
 </p>
 
@@ -30,7 +30,7 @@ Traditional Python charting means wrestling with matplotlib's verbose API — `p
 |---|---|---|
 | Lines of code | 15–40 lines | **1–3 lines** |
 | API knowledge | 100+ functions | **0** (natural language) |
-| Chart types | Manual selection | **11 types + auto-detect** |
+| Chart types | Manual selection | **12 types + auto-detect** |
 | Iteration | Rewrite entire block | **`result.edit("make bars red")`** |
 | Jupyter | `plt.show()` only | **`result.show()` inline** |
 | Multi-format | Separate savefig calls | **Single `save()` — PNG/SVG/PDF** |
@@ -113,20 +113,23 @@ lp.bar(
 
 ---
 
-**6 of the 11 supported chart types** shown below (line, scatter, bar, pie, heatmap, radar). See [Chart Types](#-chart-types) for the full list.
+**6 of the 12 supported chart types** shown below (line, scatter, bar, pie, heatmap, radar). See [Chart Types](#-chart-types) for the full list.
 
 ```python
 from llmpic import llmPIC
 
 lp = llmPIC(api_key="sk-...", base_url="https://api.openai.com/v1")
 
-# 6 of 11 chart types — one line each, zero matplotlib knowledge needed
+# 6 of 12 chart types — one line each, zero matplotlib knowledge needed
 lp.plot("2025 revenue trend, blue filled area").data(df).save("revenue.png")
 lp.scatter("Customer age vs annual spend, trend line").data(df).save("scatter.png")
 lp.bar("Q4 product revenue comparison, horizontal").data(df).save("bar.png")
 lp.pie("Market share distribution, explode largest slice").data(df).save("pie.png")
 lp.heatmap("Weekly user activity heatmap, Blues theme").data(df).save("heatmap.png")
 lp.radar("Product capability 6-dim assessment").data(df).save("radar.png")
+
+# Map chart (v0.3.0) — world map with cartopy or pure matplotlib fallback
+lp.map("World population by country, choropleth").data(df).save("world.png")
 ```
 
 <p align="center"><i>All 6 charts above — actual llmpic V0.2.2 output, not mockups</i></p>
@@ -175,7 +178,7 @@ lp.radar("Product capability 6-dim assessment").data(df).save("radar.png")
 ## ✨ Features
 
 - 🗣️ **Natural Language Input** — English, Chinese, Japanese, Korean
-- 📊 **11 Chart Types** — Line, Scatter, Bar, Pie, Histogram, Heatmap, Boxplot, Area, Radar, Subplots, Auto-detect
+- 📊 **12 Chart Types** — Line, Scatter, Bar, Pie, Histogram, Heatmap, Boxplot, Area, Radar, Map, Subplots, Auto-detect
 - 🔗 **Fluent Builder API** — chain `.data()` → `.style()` → `.format()` → `.save()` / `.render()`
 - 📓 **Jupyter Inline** — `result.show()` renders directly below notebook cells
 - ⚡ **Async Batch** — `AsyncllmPIC.batch()` generates multiple charts concurrently (total time ≈ slowest one)
@@ -183,6 +186,7 @@ lp.radar("Product capability 6-dim assessment").data(df).save("radar.png")
 - ✏️ **Iterative Editing** — `result.edit("make bars red, increase title size")` refines charts with natural language
 - 📦 **Multi-Format** — PNG (raster), SVG (vector), PDF (print) from a single `save()`
 - 🌍 **Multi-Language Labels** — Auto-detects query language and matches chart titles/labels
+- 🗺️ **Map Charts** — Geographic maps via cartopy; world maps, choropleth, scatter points, country/regional views
 - 🛡️ **Dual Safety** — 32 precompiled regex patterns (~0ms) + optional LLM semantic review
 - 💻 **Cross-Platform** — Windows / Linux / macOS, automatic CJK font configuration
 - 🔄 **Exponential Retry** — LLM calls retry with backoff (1s, 2s, 4s) on transient failures
@@ -206,7 +210,7 @@ pip install llmpic          # All-in-one: matplotlib, numpy, openai, pandas, sea
 ```python
 from llmpic import llmPIC, AsyncllmPIC, ChartResult, PlotBuilder, AsyncPlotBuilder
 import llmpic
-print(llmpic.__version__)  # → "0.2.2"
+print(llmpic.__version__)  # → "0.3.0"
 ```
 
 ---
@@ -284,6 +288,9 @@ lp.heatmap("Feature correlation").data(corr_df).save("heatmap.png")
 # Multi-chart dashboard
 lp.subplots("2x2: trend line, region bar, customer scatter, growth histogram").save("dash.png")
 
+# Geographic map (v0.3.0)
+lp.map("World population by country, Blues color").data(df).save("world.png")
+
 # Let the LLM pick the best chart type
 lp.custom("Analyze user retention trends").data(df).save("auto.png")
 
@@ -313,6 +320,7 @@ result.edit("Change to bar chart, use red color").edit(
 | `.boxplot()` | Boxplot | Statistical distribution comparison | `ax.boxplot()` / `sns.boxplot()` |
 | `.area()` | Area | Stacked trends, composition over time | `ax.fill_between()` / `ax.stackplot()` |
 | `.radar()` | Radar | Multi-dim comparison, capability assessment | Polar axes |
+| `.map()` | Map | Geographic maps, choropleth, world/country/regional | `cartopy` or `ax.scatter()` |
 | `.subplots()` | Dashboard | Multi-chart composite views | `plt.subplots(nrows, ncols)` |
 | `.custom()` | Auto | LLM picks the best type automatically | Context-aware selection |
 
@@ -627,7 +635,8 @@ lp = llmPIC(
 │                      llmPIC / AsyncllmPIC                    │
 │  ┌──────────┐   ┌──────────┐   ┌──────────┐   ┌──────────┐ │
 │  │  .plot() │   │  .bar()  │   │  .pie()  │   │  .custom()│ │
-│  │.scatter()│   │ .hist()  │   │.heatmap()│   │   ... 11  │ │
+│  │.scatter()│   │ .hist()  │   │.heatmap()│   │   ... 12  │ │
+│  │  .map()  │   │.boxplot()│   │ .area()  │   │ .radar()  │ │
 │  └────┬─────┘   └────┬─────┘   └────┬─────┘   └────┬─────┘ │
 │       └──────────────┴──────────────┴──────────────┘        │
 │                          │                                   │

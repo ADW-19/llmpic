@@ -2,7 +2,7 @@
   <img src="https://img.shields.io/badge/license-MIT-blue.svg" alt="License">
   <a href="https://github.com/ADW-19/llmpic"><img src="https://img.shields.io/badge/github-ADW--19%2Fllmpic-lightgrey.svg" alt="GitHub"></a>
   <img src="https://img.shields.io/badge/python-≥3.10-green.svg" alt="Python">
-  <img src="https://img.shields.io/badge/version-0.2.2-orange.svg" alt="Version">
+  <img src="https://img.shields.io/badge/version-0.3.0-orange.svg" alt="Version">
   <img src="https://img.shields.io/badge/pypi-llmpic-blue.svg" alt="PyPI">
 </p>
 
@@ -30,7 +30,7 @@
 |---|---|---|
 | 代码量 | 15–40 行 | **1–3 行** |
 | API 门槛 | 100+ 个函数 | **0**（自然语言） |
-| 图表类型 | 手动选择 | **11 种 + 智能推荐** |
+| 图表类型 | 手动选择 | **12 种 + 智能推荐** |
 | 修改迭代 | 重写大段代码 | **`result.edit("改成红色柱子")`** |
 | Jupyter | 仅 `plt.show()` | **`result.show()` 内联渲染** |
 | 多格式导出 | 多次 savefig | **一个 `save()` 搞定 PNG/SVG/PDF** |
@@ -113,23 +113,26 @@ lp.bar(
 
 ---
 
-**以下展示 11 种图表类型中的 6 种**（折线图、散点图、柱状图、饼图、热力图、雷达图），完整列表见 [核心特性](#-核心特性)。
+**以下展示 12 种图表类型中的 6 种**（折线图、散点图、柱状图、饼图、热力图、雷达图），完整列表见 [核心特性](#-核心特性)。
 
 ```python
 from llmpic import llmPIC
 
 lp = llmPIC(api_key="sk-...", base_url="https://api.openai.com/v1")
 
-# 支持 11 种图表类型 — 一行代码出图，无需 matplotlib 知识
+# 支持 12 种图表类型 — 一行代码出图，无需 matplotlib 知识
 lp.plot("2025年度营收趋势，蓝色填充区域").data(df).save("revenue.png")
 lp.scatter("客户年龄 vs 年消费额，带趋势线").data(df).save("scatter.png")
 lp.bar("Q4产品营收对比，水平柱状图").data(df).save("bar.png")
 lp.pie("市场份额分布，最大扇区突出显示").data(df).save("pie.png")
 lp.heatmap("周活跃用户热力图，Blues主题").data(df).save("heatmap.png")
 lp.radar("产品能力六维评估").data(df).save("radar.png")
+
+# 地图图表 (v0.3.0) — 支持 cartopy 或纯 matplotlib 回退
+lp.map("世界人口分布等值区域图").data(df).save("world.png")
 ```
 
-<p align="center"><i>以上 6 张图表 — 全部为 llmpic V0.2.2 实际输出，非示意图</i></p>
+<p align="center"><i>以上 6 张图表 — 全部为 llmpic V0.3.0 实际输出，非示意图</i></p>
 
 <table>
 <tr>
@@ -175,7 +178,7 @@ lp.radar("产品能力六维评估").data(df).save("radar.png")
 ## ✨ 核心特性
 
 - 🗣️ **自然语言输入** — 支持中文、英文、日文、韩文
-- 📊 **11 种图表类型** — 折线图、散点图、柱状图、饼图、直方图、热力图、箱线图、面积图、雷达图、子图仪表盘、智能推荐
+- 📊 **12 种图表类型** — 折线图、散点图、柱状图、饼图、直方图、热力图、箱线图、面积图、雷达图、地图、子图仪表盘、智能推荐
 - 🔗 **流式构建器 API** — 链式调用 `.data()` → `.style()` → `.format()` → `.save()` / `.render()`
 - 📓 **Jupyter 内联显示** — `result.show()` 在 cell 下方直接渲染图表
 - ⚡ **异步批量生成** — `AsyncllmPIC.batch()` 多图表并发生成（总耗时≈最慢那张）
@@ -184,6 +187,7 @@ lp.radar("产品能力六维评估").data(df).save("radar.png")
 - 📦 **多格式导出** — 一个 `save()` 搞定 PNG（位图）/ SVG（矢量）/ PDF（打印）
 - 🌍 **多语言标签** — 自动检测查询语言，图表标题/坐标轴自动匹配中文
 - 🛡️ **双重安全** — 32 条预编译正则（~0ms）+ 可选 LLM 语义审查
+- 🗺️ **地图图表** — 基于 cartopy 的地理地图；世界地图、等值区域图、散点标记图、国家/地区视图
 - 💻 **跨平台** — Windows / Linux / macOS 全兼容，中文字体自动配置
 - 🔄 **指数退避重试** — LLM 调用失败自动重试（1s, 2s, 4s）
 - 📊 **JSON 结构化输出** — 使用 JSON mode 稳定提取 LLM 生成的 matplotlib 代码
@@ -206,7 +210,7 @@ pip install llmpic          # 一键安装：matplotlib + numpy + openai + panda
 ```python
 from llmpic import llmPIC, AsyncllmPIC, ChartResult, PlotBuilder, AsyncPlotBuilder
 import llmpic
-print(llmpic.__version__)  # → "0.2.2"
+print(llmpic.__version__)  # → "0.3.0"
 ```
 
 ---
@@ -291,6 +295,9 @@ lp.heatmap("多特征相关性热力图").data(corr_df).save("heatmap.png")
 # 综合仪表盘
 lp.subplots("2x2看板: 趋势折线图, 地区对比柱状图, 客户分布散点图, 增长分布直方图").save("dash.png")
 
+# 地理地图 (v0.3.0)
+lp.map("世界人口分布等值区域图，Blues配色").data(df).save("world.png")
+
 # 智能推荐图表类型
 lp.custom("分析用户留存率变化趋势及影响因素").data(df).save("auto.png")
 
@@ -320,6 +327,7 @@ result.edit("改成柱状图，使用红色系").edit(
 | `.boxplot()` | 箱线图 | 多组数据统计分布对比 | `ax.boxplot()` / `sns.boxplot()` |
 | `.area()` | 面积图 | 堆积趋势、成分变化 | `ax.fill_between()` / `ax.stackplot()` |
 | `.radar()` | 雷达图 | 多维指标对比、能力评估 | 极坐标轴 |
+| `.map()` | 地图 | 地理地图、等值区域图、世界/国家/地区 | `cartopy` 或 `ax.scatter()` |
 | `.subplots()` | 综合仪表盘 | 多图表综合展示 | `plt.subplots(nrows, ncols)` |
 | `.custom()` | 智能推荐 | LLM 自动判断最佳图表类型 | 上下文感知 |
 
@@ -636,7 +644,8 @@ lp = llmPIC(
 │                    llmPIC / AsyncllmPIC                     │
 │  ┌──────────┐   ┌──────────┐   ┌──────────┐   ┌──────────┐ │
 │  │ .plot()  │   │ .bar()   │   │ .pie()   │   │.custom() │ │
-│  │.scatter()│   │ .hist()  │   │.heatmap()│   │ ...共11种 │ │
+│  │.scatter()│   │ .hist()  │   │.heatmap()│   │ ...共12种 │ │
+│  │ .map()   │   │.boxplot()│   │ .area()  │   │ .radar() │ │
 │  └────┬─────┘   └────┬─────┘   └────┬─────┘   └────┬─────┘ │
 │       └──────────────┴──────────────┴──────────────┘        │
 │                          │                                   │

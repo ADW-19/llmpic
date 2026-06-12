@@ -75,6 +75,7 @@ heatmap(query: str)   -> PlotBuilder   # Heatmap
 boxplot(query: str)   -> PlotBuilder   # Boxplot
 area(query: str)      -> PlotBuilder   # Area chart
 radar(query: str)     -> PlotBuilder   # Radar / spider chart
+map(query: str)       -> PlotBuilder   # Geographic map
 subplots(query: str)  -> PlotBuilder   # Multi-chart dashboard
 custom(query: str)    -> PlotBuilder   # Auto-detect best chart type
 ```
@@ -161,7 +162,7 @@ Generates multiple charts concurrently using `asyncio.gather`. Total time ≈ th
 | `requests` | `List[Tuple[str, str]]` | List of `(chart_type, query)` pairs |
 
 **Valid chart_type values:**
-`"line"` `"scatter"` `"bar"` `"pie"` `"hist"` `"heatmap"` `"boxplot"` `"area"` `"radar"` `"subplots"` `"custom"`
+`"line"` `"scatter"` `"bar"` `"pie"` `"hist"` `"heatmap"` `"boxplot"` `"area"` `"radar"` `"map"` `"subplots"` `"custom"`
 
 **Returns:** `List[ChartResult]` in the same order as the input requests.
 
@@ -525,7 +526,7 @@ def execute(
 
 The sandbox provides the following guarantees:
 
-1. **Restricted namespace** — only safe builtins + `mpl` (matplotlib), `plt` (proxied), `np` (numpy), `pd` (pandas, if available), `sns` (seaborn, if available), `Figure`
+1. **Restricted namespace** — only safe builtins + `mpl` (matplotlib), `plt` (proxied), `np` (numpy), `pd` (pandas, if available), `sns` (seaborn, if available), `ccrs` (cartopy.crs), `cfeature` (cartopy.feature), `Figure`
 2. **plt interception** — `plt.show()`, `plt.savefig()`, `plt.close()` are all no-ops
 3. **Figure.savefig intercepted** — code cannot write files directly; the sandbox handles rendering
 4. **Figure.__init__ tracked** — the sandbox detects which figure was created by the code
@@ -661,6 +662,33 @@ DEFAULT_STYLE = {
 ```
 
 All keys can be overridden via `.style()`. Unspecified keys use these defaults.
+
+### DEFAULT_MAP_STYLE
+
+```python
+DEFAULT_MAP_STYLE = {
+    "figsize": [12, 8],
+    "dpi": 150,
+    "color_scheme": "blues",
+    "title_fontsize": 15,
+    "label_fontsize": 11,
+    "tick_fontsize": 9,
+    "grid": True,
+    "grid_alpha": 0.4,
+    "tight_layout": True,
+    "facecolor": "white",
+    "projection": "PlateCarree",
+    "coastline_width": 0.5,
+    "borders_style": ":",
+    "borders_width": 0.4,
+    "land_color": "#F5F5DC",
+    "ocean_color": "#E6F2FF",
+    "marker_size": 60,
+    "cmap": "Blues",
+}
+```
+
+Applied automatically when using `.map()`. All keys can be overridden via `.style()`. Map-only keys (projection, coastline_width, borders_style, borders_width, land_color, ocean_color, marker_size, cmap) are passed to the LLM as style hints.
 
 ### COLOR_SCHEMES
 

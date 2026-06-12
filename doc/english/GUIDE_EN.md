@@ -190,6 +190,26 @@ lp.radar("Radar: Product A [4,3,5,2,4] vs Product B [3,4,4,3,5], categories: Spe
 
 LLM hint: `Radar chart. Use polar axes: plt.subplots(subplot_kw={'projection':'polar'}). Close the polygon loop.`
 
+### map — Geographic Map (v0.3.0)
+
+Best for: world maps, country/regional views, choropleth, geographic scatter plots.
+
+```python
+# World map with demo data (LLM generates major world cities)
+lp.map("World population by country, Blues choropleth").save("world.png")
+
+# Map with real data (DataFrame with lat/lon columns)
+lp.map("Earthquake epicenters in Japan, magnitude color scale").data(eq_df).save("japan.png")
+
+# Specific country/region
+lp.map("China major cities GDP, larger markers for bigger GDP").data(city_df).save("china.png")
+
+# World cities scatter
+lp.map("Major cities: Tokyo, NYC, London, Paris, Beijing, Sydney, marked with population size").save("cities.png")
+```
+
+LLM hint: `Geographic map. Use cartopy (ccrs, cfeature) with PlateCarree projection.`
+
 ### subplots — Dashboard
 
 Best for: multi-chart composite views, executive summaries.
@@ -653,7 +673,7 @@ requests: List[Tuple[str, str]]
 # Each tuple: (chart_type, query)
 # chart_type must be one of:
 #   "line" "scatter" "bar" "pie" "hist" "heatmap"
-#   "boxplot" "area" "radar" "subplots" "custom"
+#   "boxplot" "area" "radar" "map" "subplots" "custom"
 ```
 
 > Note: `batch()` uses default style and no data attachments. For custom data/style per chart, use the builder approach below.
