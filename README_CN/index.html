@@ -1,0 +1,2019 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Natural Language → Production Charts. One line.">
+      
+      
+        <meta name="author" content="ADW-19">
+      
+      
+        <link rel="canonical" href="https://ADW-19.github.io/llmpic/README_CN/">
+      
+      
+      
+      
+        
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+    
+    
+      
+        <title>README CN - LLMPIC</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="teal" data-md-color-accent="teal">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#llmpic" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="LLMPIC" class="md-header__button md-logo" aria-label="LLMPIC" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            LLMPIC
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              README CN
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="teal" data-md-color-accent="teal"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="teal" data-md-color-accent="teal"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/ADW-19/llmpic" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    llmpic
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href=".." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../english/GUIDE_EN/" class="md-tabs__link">
+          
+  
+  
+  English
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../chinese/GUIDE_CN/" class="md-tabs__link">
+          
+  
+  
+  中文文档
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="LLMPIC" class="md-nav__button md-logo" aria-label="LLMPIC" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    LLMPIC
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/ADW-19/llmpic" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    llmpic
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    English
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    English
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../english/GUIDE_EN/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Getting Started
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../english/API_REFERENCE_EN/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    API Reference
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    中文文档
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    中文文档
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../chinese/GUIDE_CN/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    使用指南
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../chinese/API_REFERENCE_CN/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    API 参考
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#llmpic" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        💡 为什么选择 llmpic？
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="💡 为什么选择 llmpic？">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        同一张图，两种写法
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ✨ 核心特性
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📦 安装
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="📦 安装">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        验证安装
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🚀 快速入门
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🚀 快速入门">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-sdk" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. 初始化 SDK
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. 你的第一张图表
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. 带真实数据出图
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-30" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. 常用代码模板（30秒速查）
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📊 图表类型
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🔗 核心工作流
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🔗 核心工作流">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        构建器模式详解
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#chartresult" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ChartResult — 结果对象的完全用法
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ⚡ 异步与批量生成
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="⚡ 异步与批量生成">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        手动控制并发
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_11" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ✏️ 迭代编辑
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_12" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📦 输出格式
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_13" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🎨 样式定制
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🎨 样式定制">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6 种预设配色方案
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_14" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        所有样式参数
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_15" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        样式定制示例
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_16" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🛡️ 安全保障
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🛡️ 安全保障">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#0ms" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        第一层：正则模式匹配（~0ms，零延迟）
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_17" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        第二层：沙箱执行
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_18" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        安全级别配置
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#llm" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🌐 LLM 服务商兼容性
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_19" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🔧 环境变量配置
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_20" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🏗 架构总览
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_21" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📖 文档导航
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_22" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📮 官方联系方式
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_23" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🙏 致谢
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_24" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📄 开源协议
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<p align="center">
+  <img src="https://img.shields.io/badge/license-MIT-blue.svg" alt="License">
+  <a href="https://github.com/ADW-19/llmpic"><img src="https://img.shields.io/badge/github-ADW--19%2Fllmpic-lightgrey.svg" alt="GitHub"></a>
+  <img src="https://img.shields.io/badge/python-≥3.10-green.svg" alt="Python">
+  <img src="https://img.shields.io/badge/version-0.3.0-orange.svg" alt="Version">
+  <img src="https://img.shields.io/badge/pypi-llmpic-blue.svg" alt="PyPI">
+</p>
+
+<p align="center"><img src="../llmpic_logo.png" alt="llmpic logo" width="120"></p>
+
+<h1 align="center">LLMPIC</h1>
+<p align="center"><strong>自然语言驱动 · 一行代码出图</strong></p>
+
+<p align="center">
+  <a href="https://github.com/ADW-19/llmpic">English</a> &nbsp;|&nbsp;
+  <a href="https://ADW-19.github.io/llmpic/">文档官网</a> &nbsp;|&nbsp;
+  <a href="chinese/API_REFERENCE_CN.md">API 参考</a> &nbsp;|&nbsp;
+  <a href="chinese/GUIDE_CN.md">使用指南</a> &nbsp;|&nbsp;
+  <a href="../notebook_examples/llmpic_demo_cn.ipynb">Notebook 示例</a>
+</p>
+
+<hr />
+<h2 id="llmpic">💡 为什么选择 llmpic？</h2>
+<p>传统 Python 画图，你需要死记硬背 matplotlib 那上百个 API —— <code>plt.subplots()</code>、<code>ax.set_xticklabels()</code>、<code>fig.tight_layout()</code> —— 一张图几十行代码，查文档的时间比分析数据的时间还长。</p>
+<p><strong>llmpic</strong> 让 Python 绘图进入<strong>大模型时代</strong>。用中文、英文、日文或韩文描述需求，即刻生成可投入生产的高质量 matplotlib 图表。</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>传统 matplotlib 画图</th>
+<th>llmpic</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>代码量</td>
+<td>15–40 行</td>
+<td><strong>1–3 行</strong></td>
+</tr>
+<tr>
+<td>API 门槛</td>
+<td>100+ 个函数</td>
+<td><strong>0</strong>（自然语言）</td>
+</tr>
+<tr>
+<td>图表类型</td>
+<td>手动选择</td>
+<td><strong>12 种 + 智能推荐</strong></td>
+</tr>
+<tr>
+<td>修改迭代</td>
+<td>重写大段代码</td>
+<td><strong><code>result.edit("改成红色柱子")</code></strong></td>
+</tr>
+<tr>
+<td>Jupyter</td>
+<td>仅 <code>plt.show()</code></td>
+<td><strong><code>result.show()</code> 内联渲染</strong></td>
+</tr>
+<tr>
+<td>多格式导出</td>
+<td>多次 savefig</td>
+<td><strong>一个 <code>save()</code> 搞定 PNG/SVG/PDF</strong></td>
+</tr>
+<tr>
+<td>报错修复</td>
+<td>人工调试</td>
+<td><strong>LLM 自动修复（最多2轮）</strong></td>
+</tr>
+<tr>
+<td>并发处理</td>
+<td>手动线程管理</td>
+<td><strong><code>AsyncllmPIC.batch()</code> 并发生成</strong></td>
+</tr>
+<tr>
+<td>安全防护</td>
+<td>无</td>
+<td><strong>双重防护：32 条正则 + 可选 LLM 审查</strong></td>
+</tr>
+</tbody>
+</table>
+<h3 id="_1">同一张图，两种写法</h3>
+<p><strong>任务</strong>：分组柱状图 — 3 个产品 × 4 个季度，带数值标签、自定义配色、虚线网格、标题、图例。</p>
+<table>
+<tr>
+<td width="50%"><b>传统 matplotlib — 35 行</b></td>
+<td width="50%"><b>llmpic — 2 行</b></td>
+</tr>
+<tr>
+<td>
+
+
+<pre><code class="language-python">import matplotlib.pyplot as plt
+import numpy as np
+
+products = [&quot;云服务&quot;, &quot;AI&quot;, &quot;安全&quot;]
+quarters = [&quot;Q1&quot;,&quot;Q2&quot;,&quot;Q3&quot;,&quot;Q4&quot;]
+data = np.array([
+    [120,145,160,180],
+    [ 95,110,130,155],
+    [140,165,180,200],
+])
+x = np.arange(len(quarters))
+w = 0.25
+colors = [&quot;#3498DB&quot;,&quot;#2ECC71&quot;,&quot;#E74C3C&quot;]
+
+fig, ax = plt.subplots(figsize=(10,6),dpi=150)
+for i, p in enumerate(products):
+    bars = ax.bar(x+i*w, data[i], w,
+                  label=p, color=colors[i])
+    for bar in bars:
+        h = bar.get_height()
+        ax.text(bar.get_x()+bar.get_width()/2,
+                h+1, f&quot;{h:.0f}&quot;, ha=&quot;center&quot;,
+                va=&quot;bottom&quot;, fontsize=9)
+ax.set_xticks(x + w)
+ax.set_xticklabels(quarters)
+ax.set_title(&quot;各产品季度营收&quot;,
+             fontsize=14, pad=12)
+ax.set_ylabel(&quot;营收（万元）&quot;)
+ax.legend(loc=&quot;upper left&quot;)
+ax.grid(axis=&quot;y&quot;, linestyle=&quot;--&quot;, alpha=0.4)
+fig.tight_layout()
+plt.savefig(&quot;revenue.png&quot;, dpi=150)
+plt.close()
+</code></pre>
+
+
+</td>
+<td>
+
+
+<pre><code class="language-python">from llmpic import llmPIC
+lp = llmPIC(api_key=&quot;sk-...&quot;,
+            base_url=&quot;https://api.openai.com/v1&quot;)
+
+lp.bar(
+    &quot;各产品季度营收：&quot;
+    &quot;云服务=[120,145,160,180]，&quot;
+    &quot;AI=[95,110,130,155]，&quot;
+    &quot;安全=[140,165,180,200]。&quot;
+    &quot;分组柱状图，加数值标签，&quot;
+    &quot;虚线网格，图例。&quot;
+).style({
+    &quot;figsize&quot;: [10, 6], &quot;dpi&quot;: 150,
+    &quot;color_scheme&quot;: &quot;cool&quot;,
+}).save(&quot;revenue.png&quot;)
+</code></pre>
+
+
+</td>
+</tr>
+</table>
+
+<hr />
+<p><strong>以下展示 12 种图表类型中的 6 种</strong>（折线图、散点图、柱状图、饼图、热力图、雷达图），完整列表见 <a href="#-核心特性">核心特性</a>。</p>
+<pre><code class="language-python">from llmpic import llmPIC
+
+lp = llmPIC(api_key=&quot;sk-...&quot;, base_url=&quot;https://api.openai.com/v1&quot;)
+
+# 支持 12 种图表类型 — 一行代码出图，无需 matplotlib 知识
+lp.plot(&quot;2025年度营收趋势，蓝色填充区域&quot;).data(df).save(&quot;revenue.png&quot;)
+lp.scatter(&quot;客户年龄 vs 年消费额，带趋势线&quot;).data(df).save(&quot;scatter.png&quot;)
+lp.bar(&quot;Q4产品营收对比，水平柱状图&quot;).data(df).save(&quot;bar.png&quot;)
+lp.pie(&quot;市场份额分布，最大扇区突出显示&quot;).data(df).save(&quot;pie.png&quot;)
+lp.heatmap(&quot;周活跃用户热力图，Blues主题&quot;).data(df).save(&quot;heatmap.png&quot;)
+lp.radar(&quot;产品能力六维评估&quot;).data(df).save(&quot;radar.png&quot;)
+
+# 地图图表 (v0.3.0) — 支持 cartopy 或纯 matplotlib 回退
+lp.map(&quot;世界人口分布等值区域图&quot;).data(df).save(&quot;world.png&quot;)
+</code></pre>
+<p align="center"><i>以上 6 张图表 — 全部为 llmpic V0.3.0 实际输出，非示意图</i></p>
+
+<table>
+<tr>
+  <td width="50%" align="center">
+    <b>plot — 折线图</b><br>
+    <code>lp.plot("年度营收趋势，蓝色填充区域").data(df).save()</code><br>
+    <img src="../assets/demo_line.png" width="95%"/>
+  </td>
+  <td width="50%" align="center">
+    <b>scatter — 散点图</b><br>
+    <code>lp.scatter("年龄 vs 消费额，带趋势线").data(df).save()</code><br>
+    <img src="../assets/demo_scatter.png" width="95%"/>
+  </td>
+</tr>
+<tr>
+  <td width="50%" align="center">
+    <b>bar — 柱状图</b><br>
+    <code>lp.bar("产品营收对比，水平柱状图").data(df).save()</code><br>
+    <img src="../assets/demo_bar.png" width="95%"/>
+  </td>
+  <td width="50%" align="center">
+    <b>pie — 饼图</b><br>
+    <code>lp.pie("市场份额分布，最大扇区突出").data(df).save()</code><br>
+    <img src="../assets/demo_pie.png" width="95%"/>
+  </td>
+</tr>
+<tr>
+  <td width="50%" align="center">
+    <b>heatmap — 热力图</b><br>
+    <code>lp.heatmap("周活跃用户热力图，Blues主题").data(df).save()</code><br>
+    <img src="../assets/demo_heatmap.png" width="95%"/>
+  </td>
+  <td width="50%" align="center">
+    <b>radar — 雷达图</b><br>
+    <code>lp.radar("产品能力六维评估").data(df).save()</code><br>
+    <img src="../assets/demo_radar.png" width="95%"/>
+  </td>
+</tr>
+</table>
+
+<hr />
+<h2 id="_2">✨ 核心特性</h2>
+<ul>
+<li>🗣️ <strong>自然语言输入</strong> — 支持中文、英文、日文、韩文</li>
+<li>📊 <strong>12 种图表类型</strong> — 折线图、散点图、柱状图、饼图、直方图、热力图、箱线图、面积图、雷达图、地图、子图仪表盘、智能推荐</li>
+<li>🔗 <strong>流式构建器 API</strong> — 链式调用 <code>.data()</code> → <code>.style()</code> → <code>.format()</code> → <code>.save()</code> / <code>.render()</code></li>
+<li>📓 <strong>Jupyter 内联显示</strong> — <code>result.show()</code> 在 cell 下方直接渲染图表</li>
+<li>⚡ <strong>异步批量生成</strong> — <code>AsyncllmPIC.batch()</code> 多图表并发生成（总耗时≈最慢那张）</li>
+<li>🔧 <strong>自动修复</strong> — 代码执行出错时，LLM 自动修正（最多 2 轮）</li>
+<li>✏️ <strong>迭代编辑</strong> — <code>result.edit("改成红色，加网格")</code> 用自然语言逐步修改图表</li>
+<li>📦 <strong>多格式导出</strong> — 一个 <code>save()</code> 搞定 PNG（位图）/ SVG（矢量）/ PDF（打印）</li>
+<li>🌍 <strong>多语言标签</strong> — 自动检测查询语言，图表标题/坐标轴自动匹配中文</li>
+<li>🛡️ <strong>双重安全</strong> — 32 条预编译正则（~0ms）+ 可选 LLM 语义审查</li>
+<li>🗺️ <strong>地图图表</strong> — 基于 cartopy 的地理地图；世界地图、等值区域图、散点标记图、国家/地区视图</li>
+<li>💻 <strong>跨平台</strong> — Windows / Linux / macOS 全兼容，中文字体自动配置</li>
+<li>🔄 <strong>指数退避重试</strong> — LLM 调用失败自动重试（1s, 2s, 4s）</li>
+<li>📊 <strong>JSON 结构化输出</strong> — 使用 JSON mode 稳定提取 LLM 生成的 matplotlib 代码</li>
+</ul>
+<hr />
+<h2 id="_3">📦 安装</h2>
+<pre><code class="language-bash">pip install llmpic          # 一键安装：matplotlib + numpy + openai + pandas + seaborn + scikit-learn + scipy
+</code></pre>
+<p><strong>环境要求：</strong>
+- Python ≥ 3.10
+- 任意兼容 OpenAI API 的大模型接口（OpenAI、DeepSeek、Azure、智谱 GLM、Ollama 等）
+- 中文/日文/韩文图表需要系统安装对应字体（首次运行时自动检测）</p>
+<h3 id="_4">验证安装</h3>
+<pre><code class="language-python">from llmpic import llmPIC, AsyncllmPIC, ChartResult, PlotBuilder, AsyncPlotBuilder
+import llmpic
+print(llmpic.__version__)  # → &quot;0.3.0&quot;
+</code></pre>
+<hr />
+<h2 id="_5">🚀 快速入门</h2>
+<h3 id="1-sdk">1. 初始化 SDK</h3>
+<pre><code class="language-python">from llmpic import llmPIC
+
+# OpenAI
+lp = llmPIC(
+    api_key=&quot;sk-your-openai-key&quot;,
+    base_url=&quot;https://api.openai.com/v1&quot;,
+    model=&quot;gpt-4o&quot;,
+)
+
+# DeepSeek（国内推荐，性价比高）
+lp = llmPIC(
+    api_key=&quot;sk-your-deepseek-key&quot;,
+    base_url=&quot;https://api.deepseek.com/v1&quot;,
+    model=&quot;deepseek-chat&quot;,
+)
+
+# 智谱 GLM
+lp = llmPIC(
+    api_key=&quot;your-zhipu-key&quot;,
+    base_url=&quot;https://open.bigmodel.cn/api/paas/v4&quot;,
+    model=&quot;glm-4-plus&quot;,
+)
+
+# 任何兼容 OpenAI 接口的服务都可以
+lp = llmPIC(
+    api_key=&quot;your-key&quot;,
+    base_url=&quot;https://your-endpoint/v1&quot;,
+    model=&quot;your-model&quot;,
+)
+</code></pre>
+<h3 id="2">2. 你的第一张图表</h3>
+<pre><code class="language-python"># 基础用法 — 一句话出图
+lp.plot(&quot;过去12个月的月度销售趋势&quot;).save(&quot;sales.png&quot;)
+
+# Jupyter 内联显示
+lp.plot(&quot;30天内CPU使用率变化&quot;).render().show()
+
+# 默认保存路径（不传参数 → 用户主目录）
+lp.plot(&quot;温度变化趋势&quot;).save()  # → ~/llmpic_charts/chart_20250101_120000.png
+</code></pre>
+<h3 id="3">3. 带真实数据出图</h3>
+<pre><code class="language-python">import pandas as pd
+
+df = pd.read_csv(&quot;sales.csv&quot;)
+lp.bar(&quot;2024年各地区销售额对比&quot;).data(df).style({
+    &quot;color_scheme&quot;: &quot;warm&quot;,
+    &quot;figsize&quot;: [12, 7],
+    &quot;title_fontsize&quot;: 16,
+}).save(&quot;regional_sales.png&quot;)
+</code></pre>
+<h3 id="4-30">4. 常用代码模板（30秒速查）</h3>
+<pre><code class="language-python"># 折线图 + SVG 输出
+lp.plot(&quot;CPU使用率趋势&quot;).format('svg').save(&quot;cpu.svg&quot;)
+
+# 散点图 + DataFrame
+lp.scatter(&quot;年龄与收入的相关性分析&quot;).data(df).save(&quot;scatter.png&quot;)
+
+# 饼图 + 内联数据
+lp.pie(&quot;市场份额: A产品=40%, B产品=25%, C产品=20%, D产品=15%&quot;).save(&quot;pie.png&quot;)
+
+# 热力图 + 相关性矩阵
+lp.heatmap(&quot;多特征相关性热力图&quot;).data(corr_df).save(&quot;heatmap.png&quot;)
+
+# 综合仪表盘
+lp.subplots(&quot;2x2看板: 趋势折线图, 地区对比柱状图, 客户分布散点图, 增长分布直方图&quot;).save(&quot;dash.png&quot;)
+
+# 地理地图 (v0.3.0)
+lp.map(&quot;世界人口分布等值区域图，Blues配色&quot;).data(df).save(&quot;world.png&quot;)
+
+# 智能推荐图表类型
+lp.custom(&quot;分析用户留存率变化趋势及影响因素&quot;).data(df).save(&quot;auto.png&quot;)
+
+# 查看生成的代码
+result = lp.plot(&quot;测试图&quot;).render()
+print(result.code)           # LLM 生成的 matplotlib 代码
+print(result.token_usage)    # {'input': 320, 'output': 180}
+
+# 迭代修改
+result = lp.plot(&quot;月度销售: 1月=100, 2月=120&quot;).render()
+result.edit(&quot;改成柱状图，使用红色系&quot;).edit(
+    &quot;标题改为'第一季度收入'，添加网格线&quot;).save(&quot;final.png&quot;)
+</code></pre>
+<hr />
+<h2 id="_6">📊 图表类型</h2>
+<table>
+<thead>
+<tr>
+<th>方法</th>
+<th>图表类型</th>
+<th>适用场景</th>
+<th>LLM 提示词</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>.plot()</code></td>
+<td>折线图</td>
+<td>趋势分析、时间序列、连续数据</td>
+<td><code>ax.plot()</code></td>
+</tr>
+<tr>
+<td><code>.scatter()</code></td>
+<td>散点图</td>
+<td>相关性分析、聚类可视化</td>
+<td><code>ax.scatter()</code></td>
+</tr>
+<tr>
+<td><code>.bar()</code></td>
+<td>柱状图</td>
+<td>分类对比、排名</td>
+<td><code>ax.bar()</code> / <code>ax.barh()</code></td>
+</tr>
+<tr>
+<td><code>.pie()</code></td>
+<td>饼图</td>
+<td>占比分布、市场份额</td>
+<td><code>ax.pie(autopct='%1.1f%%')</code></td>
+</tr>
+<tr>
+<td><code>.hist()</code></td>
+<td>直方图</td>
+<td>数据分布、频率统计</td>
+<td><code>ax.hist()</code></td>
+</tr>
+<tr>
+<td><code>.heatmap()</code></td>
+<td>热力图</td>
+<td>相关性矩阵、二维密度</td>
+<td><code>ax.imshow()</code> / <code>sns.heatmap()</code></td>
+</tr>
+<tr>
+<td><code>.boxplot()</code></td>
+<td>箱线图</td>
+<td>多组数据统计分布对比</td>
+<td><code>ax.boxplot()</code> / <code>sns.boxplot()</code></td>
+</tr>
+<tr>
+<td><code>.area()</code></td>
+<td>面积图</td>
+<td>堆积趋势、成分变化</td>
+<td><code>ax.fill_between()</code> / <code>ax.stackplot()</code></td>
+</tr>
+<tr>
+<td><code>.radar()</code></td>
+<td>雷达图</td>
+<td>多维指标对比、能力评估</td>
+<td>极坐标轴</td>
+</tr>
+<tr>
+<td><code>.map()</code></td>
+<td>地图</td>
+<td>地理地图、等值区域图、世界/国家/地区</td>
+<td><code>cartopy</code> 或 <code>ax.scatter()</code></td>
+</tr>
+<tr>
+<td><code>.subplots()</code></td>
+<td>综合仪表盘</td>
+<td>多图表综合展示</td>
+<td><code>plt.subplots(nrows, ncols)</code></td>
+</tr>
+<tr>
+<td><code>.custom()</code></td>
+<td>智能推荐</td>
+<td>LLM 自动判断最佳图表类型</td>
+<td>上下文感知</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="_7">🔗 核心工作流</h2>
+<pre><code>  sdk.plot(&quot;需求描述&quot;)             ← 用自然语言描述图表需求
+    → PlotBuilder 构建器
+      .data(df)                   ← 传入真实数据（可选）
+      .style({...})               ← 自定义样式（可选）
+      .format('png')              ← 选择输出格式（可选）
+      .render()                   ← 触发：LLM 生成 → 安全检查 → 沙箱执行 → ChartResult
+      .save(&quot;路径.png&quot;)           ← 触发并保存到文件
+</code></pre>
+<h3 id="_8">构建器模式详解</h3>
+<pre><code class="language-python"># 所有图表方法返回 PlotBuilder 对象。构建器是惰性的——
+# 在调用 .render() / .save() 或访问 .image_bytes / .code 之前，什么都不会发生。
+
+builder = lp.plot(&quot;月度销售趋势&quot;)      # 返回 PlotBuilder —— 还没有调用 LLM
+builder = builder.data(df)              # 绑定数据
+builder = builder.style({&quot;figsize&quot;: [12, 6]})  # 设定样式
+builder = builder.format('svg')         # 设定格式
+
+result = builder.render()   # ← 到这里才执行：LLM生成 → 安全审查 → 沙箱执行
+result.save(&quot;chart.svg&quot;)    # 保存文件
+</code></pre>
+<h3 id="chartresult">ChartResult — 结果对象的完全用法</h3>
+<pre><code class="language-python">result = lp.plot(&quot;CPU使用率趋势&quot;).render()
+
+# 基本信息
+result.success           # bool — 是否成功
+result.code              # str  — LLM 生成的 matplotlib 代码
+result.token_usage       # dict — {'input': 320, 'output': 180}
+result.size_kb           # float — 图片大小 (KB)
+
+# 保存到文件
+result.save()            # → ~/llmpic_charts/chart_{timestamp}.png
+result.save(&quot;out.png&quot;)   # PNG
+result.save(&quot;out.svg&quot;)   # SVG
+result.save(&quot;out.pdf&quot;)   # PDF
+
+# Jupyter 内联展示
+result.show()
+
+# Base64 编码（前端嵌入）
+result.base64()          # data:image/png;base64,...
+result.base64_svg()      # data:image/svg+xml;base64,...
+
+# 访问其他格式（懒加载，首次访问时重新渲染并缓存）
+result.svg_bytes         # SVG 字节数据
+result.pdf_bytes         # PDF 字节数据
+result.svg               # SVG 字符串
+
+# 自然语言迭代修改
+v2 = result.edit(&quot;改成柱状图，使用暖色系&quot;)
+v3 = v2.edit(&quot;标题字号加大到18&quot;)
+</code></pre>
+<hr />
+<h2 id="_9">⚡ 异步与批量生成</h2>
+<p>使用 <code>AsyncllmPIC</code> 实现图表并发生成，总耗时接近最慢的那张图表。</p>
+<pre><code class="language-python">from llmpic import AsyncllmPIC
+import asyncio
+
+async def main():
+    lp = AsyncllmPIC(
+        api_key=&quot;sk-...&quot;,
+        base_url=&quot;https://api.deepseek.com/v1&quot;,
+        model=&quot;deepseek-chat&quot;,
+    )
+
+    # 批量生成：5 张图表并发执行
+    results = await lp.batch([
+        (&quot;plot&quot;,     &quot;过去12个月销售趋势&quot;),
+        (&quot;bar&quot;,      &quot;各地区销售额对比&quot;),
+        (&quot;pie&quot;,      &quot;市场份额分布&quot;),
+        (&quot;scatter&quot;,  &quot;用户年龄与消费金额关系&quot;),
+        (&quot;heatmap&quot;,  &quot;多维度特征相关性矩阵&quot;),
+    ])
+
+    for i, r in enumerate(results):
+        if r.success:
+            r.save(f&quot;batch_{i}.png&quot;)
+            print(f&quot;[{i}] 成功 — {r.size_kb:.1f}KB, &quot;
+                  f&quot;Token: 输入={r.token_usage['input']} 输出={r.token_usage['output']}&quot;)
+        else:
+            print(f&quot;[{i}] 失败: {r.error_message}&quot;)
+
+asyncio.run(main())
+</code></pre>
+<h3 id="_10">手动控制并发</h3>
+<pre><code class="language-python">async def main():
+    lp = AsyncllmPIC(...)
+
+    # 精细控制：不同图表使用不同格式
+    builders = [
+        lp.plot(&quot;CPU趋势&quot;).format('png'),
+        lp.bar(&quot;销售对比&quot;).data(df).style({&quot;color_scheme&quot;: &quot;warm&quot;}).format('svg'),
+        lp.pie(&quot;市场份额&quot;).format('pdf'),
+    ]
+    results = await asyncio.gather(*[b.render() for b in builders])
+    # 三张图表完全并发生成
+
+asyncio.run(main())
+</code></pre>
+<hr />
+<h2 id="_11">✏️ 迭代编辑</h2>
+<p>不需要为小修改重写整个需求 —— 用 <code>edit()</code> 逐步打磨图表。</p>
+<pre><code class="language-python"># 起点
+result = lp.plot(&quot;月度销售: 1月=100, 2月=120, 3月=90, 4月=150&quot;).render()
+
+# 逐步修改 —— 每次 .edit() 返回新 ChartResult，不改变原对象
+result = result.edit(&quot;换成柱状图&quot;)
+result = result.edit(&quot;柱子颜色用红色系，暖色调&quot;)
+result = result.edit(&quot;添加网格线，标题字号改大到18&quot;)
+result = result.edit(&quot;标题改为'2025年Q1销售报告'，Y轴加标签'营收（万元）'&quot;)
+
+result.save(&quot;final.png&quot;)
+result.show()
+</code></pre>
+<p><strong>原理：</strong> 每次 <code>edit()</code> 将当前代码 + 修改描述发给 LLM，LLM 返回修改后的代码，经过安全审查 → 沙箱执行的完整管线，返回新 <code>ChartResult</code>。原始 <code>ChartResult</code> 始终不变。</p>
+<hr />
+<h2 id="_12">📦 输出格式</h2>
+<table>
+<thead>
+<tr>
+<th>格式</th>
+<th>扩展名</th>
+<th>类型</th>
+<th>适用场景</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>PNG</td>
+<td><code>.png</code></td>
+<td>位图</td>
+<td>通用场景、快速预览、嵌入文档</td>
+</tr>
+<tr>
+<td>SVG</td>
+<td><code>.svg</code></td>
+<td>矢量</td>
+<td>网页嵌入、无限缩放、前端展示</td>
+</tr>
+<tr>
+<td>PDF</td>
+<td><code>.pdf</code></td>
+<td>矢量/打印</td>
+<td>学术论文、商业报告、印刷输出</td>
+</tr>
+</tbody>
+</table>
+<pre><code class="language-python"># 方式一：渲染前用 .format() 指定格式
+lp.plot(&quot;趋势&quot;).format('svg').save(&quot;chart.svg&quot;)
+lp.plot(&quot;趋势&quot;).format('pdf').save(&quot;chart.pdf&quot;)
+
+# 方式二：保存时根据扩展名自动切换格式
+result = lp.plot(&quot;趋势&quot;).render()     # 默认 PNG
+result.save(&quot;output.svg&quot;)             # → SVG（根据扩展名自动检测）
+result.save(&quot;output.pdf&quot;)             # → PDF
+
+# 方式三：通过属性访问其他格式（懒加载，首次访问时重新渲染）
+result = lp.plot(&quot;趋势&quot;).render()     # image_bytes 为 PNG
+svg_data = result.svg_bytes            # 懒加载，重新渲染为 SVG（并缓存）
+pdf_data = result.pdf_bytes            # 懒加载，重新渲染为 PDF（并缓存）
+</code></pre>
+<hr />
+<h2 id="_13">🎨 样式定制</h2>
+<h3 id="6">6 种预设配色方案</h3>
+<pre><code class="language-python">lp.plot(&quot;趋势&quot;).style({&quot;color_scheme&quot;: &quot;blues&quot;}).save(&quot;b.png&quot;)      # 蓝调
+lp.plot(&quot;趋势&quot;).style({&quot;color_scheme&quot;: &quot;warm&quot;}).save(&quot;w.png&quot;)       # 暖色
+lp.plot(&quot;趋势&quot;).style({&quot;color_scheme&quot;: &quot;cool&quot;}).save(&quot;c.png&quot;)       # 冷色
+lp.plot(&quot;趋势&quot;).style({&quot;color_scheme&quot;: &quot;pastel&quot;}).save(&quot;p.png&quot;)     # 柔和
+lp.plot(&quot;趋势&quot;).style({&quot;color_scheme&quot;: &quot;dark&quot;}).save(&quot;d.png&quot;)       # 暗色
+lp.plot(&quot;趋势&quot;).style({&quot;color_scheme&quot;: &quot;grayscale&quot;}).save(&quot;g.png&quot;)  # 灰度
+</code></pre>
+<h3 id="_14">所有样式参数</h3>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>类型</th>
+<th>默认值</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>figsize</code></td>
+<td><code>[int, int]</code></td>
+<td><code>[10, 6]</code></td>
+<td>图表尺寸（英寸），[宽, 高]</td>
+</tr>
+<tr>
+<td><code>dpi</code></td>
+<td><code>int</code></td>
+<td><code>150</code></td>
+<td>输出分辨率（每英寸像素数）</td>
+</tr>
+<tr>
+<td><code>color_scheme</code></td>
+<td><code>str</code></td>
+<td><code>"blues"</code></td>
+<td>配色方案：<code>blues</code> <code>warm</code> <code>cool</code> <code>pastel</code> <code>dark</code> <code>grayscale</code></td>
+</tr>
+<tr>
+<td><code>title_fontsize</code></td>
+<td><code>int</code></td>
+<td><code>14</code></td>
+<td>标题字号</td>
+</tr>
+<tr>
+<td><code>label_fontsize</code></td>
+<td><code>int</code></td>
+<td><code>12</code></td>
+<td>坐标轴标签字号</td>
+</tr>
+<tr>
+<td><code>tick_fontsize</code></td>
+<td><code>int</code></td>
+<td><code>10</code></td>
+<td>刻度标签字号</td>
+</tr>
+<tr>
+<td><code>grid</code></td>
+<td><code>bool</code></td>
+<td><code>True</code></td>
+<td>是否显示背景网格</td>
+</tr>
+<tr>
+<td><code>grid_alpha</code></td>
+<td><code>float</code></td>
+<td><code>0.3</code></td>
+<td>网格线透明度（0–1）</td>
+</tr>
+<tr>
+<td><code>tight_layout</code></td>
+<td><code>bool</code></td>
+<td><code>True</code></td>
+<td>是否自动调整布局避免裁剪</td>
+</tr>
+<tr>
+<td><code>facecolor</code></td>
+<td><code>str</code></td>
+<td><code>"white"</code></td>
+<td>图表背景色（支持任意 CSS 颜色）</td>
+</tr>
+</tbody>
+</table>
+<h3 id="_15">样式定制示例</h3>
+<pre><code class="language-python"># 学术论文级别
+lp.plot(&quot;实验结果对比&quot;).style({
+    &quot;figsize&quot;: [8, 5],
+    &quot;dpi&quot;: 300,
+    &quot;color_scheme&quot;: &quot;dark&quot;,
+    &quot;title_fontsize&quot;: 16,
+    &quot;label_fontsize&quot;: 14,
+}).save(&quot;paper.png&quot;)
+
+# PPT 汇报专用
+lp.bar(&quot;Q4营收对比&quot;).data(df).style({
+    &quot;figsize&quot;: [14, 8],
+    &quot;color_scheme&quot;: &quot;warm&quot;,
+    &quot;title_fontsize&quot;: 22,
+    &quot;label_fontsize&quot;: 16,
+    &quot;tick_fontsize&quot;: 14,
+    &quot;grid&quot;: False,
+    &quot;facecolor&quot;: &quot;#FAFAFA&quot;,
+    &quot;dpi&quot;: 200,
+}).save(&quot;ppt.png&quot;)
+
+# 也可以通过 JSON 字符串传入样式
+lp.plot(&quot;趋势&quot;).style('{&quot;color_scheme&quot;:&quot;cool&quot;,&quot;figsize&quot;:[12,8]}').save(&quot;trend.png&quot;)
+</code></pre>
+<hr />
+<h2 id="_16">🛡️ 安全保障</h2>
+<p>llmpic 在<strong>沙箱环境</strong>中执行 LLM 生成的代码，提供双层防护：</p>
+<h3 id="0ms">第一层：正则模式匹配（~0ms，零延迟）</h3>
+<p>32 条预编译正则表达式阻止已知危险模式：
+- <strong>系统命令</strong>：<code>os.system()</code>, <code>os.popen()</code>, <code>subprocess</code>
+- <strong>文件操作</strong>：<code>open()</code>（LLM 不应直接读写文件）
+- <strong>动态执行</strong>：<code>exec()</code>, <code>eval()</code>, <code>compile()</code>, <code>__import__()</code>
+- <strong>网络访问</strong>：<code>socket</code>, <code>urllib</code>, <code>requests</code>, <code>httpx</code>
+- <strong>危险模块</strong>：<code>shutil</code>, <code>ctypes</code>, <code>pickle</code>
+- <strong>反射逃逸</strong>：<code>__subclasses__</code>, <code>__bases__</code>, <code>__mro__</code></p>
+<h3 id="_17">第二层：沙箱执行</h3>
+<ul>
+<li><strong>受限命名空间</strong>：仅包含安全内置函数 + matplotlib, numpy, pandas, seaborn</li>
+<li><strong>Figure.savefig 拦截</strong>：阻止代码直接写文件，由沙箱统一接管渲染</li>
+<li><strong>plt.show() / plt.savefig() / plt.close() 阻断</strong>：全部拦截为空操作</li>
+<li><strong>超时熔断</strong>：ThreadPoolExecutor + 超时机制终止失控代码</li>
+<li><strong>全局互斥锁</strong>：模块级锁防止 matplotlib 全局状态竞争</li>
+</ul>
+<h3 id="_18">安全级别配置</h3>
+<pre><code class="language-python"># 快速模式（默认，推荐生产环境）
+lp = llmPIC(..., safety_level=&quot;fast&quot;)
+
+# 完整模式（正则 + LLM 语义审查，每张图额外增加约 1-2 秒）
+lp = llmPIC(..., safety_level=&quot;full&quot;)
+</code></pre>
+<p><strong>建议：</strong> 沙箱本身已经阻止所有实际执行路径，<code>fast</code> 模式在生产环境中足够安全。<code>full</code> 模式适用于对安全性有极高要求的场景。</p>
+<hr />
+<h2 id="llm">🌐 LLM 服务商兼容性</h2>
+<p>llmpic 兼容<strong>所有提供 OpenAI 兼容接口</strong>的大模型服务（需要支持 <code>chat/completions</code> 和 JSON 结构化输出）：</p>
+<table>
+<thead>
+<tr>
+<th>服务商</th>
+<th>base_url</th>
+<th>模型示例</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>OpenAI</td>
+<td><code>https://api.openai.com/v1</code></td>
+<td><code>gpt-5.5</code>, <code>gpt-5.5-mini</code></td>
+</tr>
+<tr>
+<td>DeepSeek</td>
+<td><code>https://api.deepseek.com/v1</code></td>
+<td><code>deepseek-v4-pro</code></td>
+</tr>
+<tr>
+<td>Azure OpenAI</td>
+<td><code>https://{resource}.openai.azure.com/openai/deployments/{deployment}</code></td>
+<td>你的部署名称</td>
+</tr>
+<tr>
+<td>智谱 GLM</td>
+<td><code>https://open.bigmodel.cn/api/paas/v5</code></td>
+<td><code>glm-5</code></td>
+</tr>
+<tr>
+<td>月之暗面 Moonshot</td>
+<td><code>https://api.moonshot.cn/v1</code></td>
+<td><code>moonshot-v1-8k</code></td>
+</tr>
+<tr>
+<td>阿里通义千问</td>
+<td><code>https://dashscope.aliyuncs.com/compatible-mode/v1</code></td>
+<td><code>qwen-plus</code></td>
+</tr>
+<tr>
+<td>百度文心一言</td>
+<td><code>https://qianfan.baidubce.com/v2</code></td>
+<td><code>ernie-4.0-turbo-8k</code></td>
+</tr>
+<tr>
+<td>Ollama（本地）</td>
+<td><code>http://localhost:11434/v1</code></td>
+<td><code>llama3</code>, <code>qwen3.5</code></td>
+</tr>
+<tr>
+<td>vLLM（本地）</td>
+<td><code>http://localhost:8000/v1</code></td>
+<td>你部署的模型</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p><strong>提示</strong>：图表质量与代码生成能力直接相关。推荐使用 GPT-5.5、DeepSeek-V4、GLM-5 等代码能力强的模型。本地模型可能生成不够可靠的代码——建议增大 <code>max_retries</code> 和 <code>max_fix_attempts</code> 参数。</p>
+</blockquote>
+<hr />
+<h2 id="_19">🔧 环境变量配置</h2>
+<p>推荐将 API 密钥存储在环境变量或 <code>.env</code> 文件中：</p>
+<pre><code class="language-bash"># .env 文件 或 Shell 配置
+export LLMPIC_API_KEY=&quot;sk-your-key&quot;
+export LLMPIC_BASE_URL=&quot;https://api.deepseek.com/v1&quot;
+export LLMPIC_MODEL=&quot;deepseek-chat&quot;
+</code></pre>
+<pre><code class="language-python">import os
+from llmpic import llmPIC
+
+lp = llmPIC(
+    api_key=os.getenv(&quot;LLMPIC_API_KEY&quot;),
+    base_url=os.getenv(&quot;LLMPIC_BASE_URL&quot;),
+    model=os.getenv(&quot;LLMPIC_MODEL&quot;, &quot;gpt-4o&quot;),
+)
+</code></pre>
+<hr />
+<h2 id="_20">🏗 架构总览</h2>
+<pre><code>┌─────────────────────────────────────────────────────────────┐
+│                    llmPIC / AsyncllmPIC                     │
+│  ┌──────────┐   ┌──────────┐   ┌──────────┐   ┌──────────┐ │
+│  │ .plot()  │   │ .bar()   │   │ .pie()   │   │.custom() │ │
+│  │.scatter()│   │ .hist()  │   │.heatmap()│   │ ...共12种 │ │
+│  │ .map()   │   │.boxplot()│   │ .area()  │   │ .radar() │ │
+│  └────┬─────┘   └────┬─────┘   └────┬─────┘   └────┬─────┘ │
+│       └──────────────┴──────────────┴──────────────┘        │
+│                          │                                   │
+│                  PlotBuilder / AsyncPlotBuilder              │
+│                  .data() .style() .format()                  │
+│                          │                                   │
+│                  .render() / .save()                         │
+│                          │                                   │
+│              ┌───────────┴───────────┐                      │
+│              │  1. LLM 代码生成      │  OpenAI 兼容 API      │
+│              │     (重试3次+指数退避) │                      │
+│              └───────────┬───────────┘                      │
+│                          │                                   │
+│              ┌───────────┴───────────┐                      │
+│              │  2. 安全审查          │  CodeSafetyChecker    │
+│              │     32条正则 + 可选LLM│                      │
+│              └───────────┬───────────┘                      │
+│                          │                                   │
+│              ┌───────────┴───────────┐                      │
+│              │  3. 沙箱执行          │  SandboxExecutor      │
+│              │     (自动修复失败代码) │  ThreadPool + 超时    │
+│              └───────────┬───────────┘                      │
+│                          │                                   │
+│                    ChartResult                               │
+│       .save() .show() .edit() .base64() .svg .pdf            │
+└─────────────────────────────────────────────────────────────┘
+</code></pre>
+<p><strong>每张图表的生成管线：</strong>
+1. <strong>LLM 代码生成</strong> — 自然语言 → matplotlib Python 代码（JSON 结构化输出，最多重试 3 次）
+2. <strong>安全审查</strong> — 32 条正则模式匹配 + 可选 LLM 语义审查
+3. <strong>沙箱执行</strong> — ThreadPoolExecutor 线程池 + 超时机制 + Figure 猴子补丁 + 受限命名空间
+4. <strong>自动修复</strong> — 执行失败时，将代码+错误信息发回 LLM 修正（最多 2 轮）
+5. <strong>返回结果</strong> — <code>ChartResult</code> 包含图像字节、源代码、Token 用量、懒加载格式转换</p>
+<hr />
+<h2 id="_21">📖 文档导航</h2>
+<table>
+<thead>
+<tr>
+<th>文档</th>
+<th>语言</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="../chinese/API_REFERENCE_CN/">API 参考</a></td>
+<td>中文</td>
+<td>所有类、方法、参数的详细说明</td>
+</tr>
+<tr>
+<td><a href="../english/API_REFERENCE_EN/">API Reference</a></td>
+<td>EN</td>
+<td>Complete class, method, and parameter reference</td>
+</tr>
+<tr>
+<td><a href="../chinese/GUIDE_CN/">使用指南</a></td>
+<td>中文</td>
+<td>进阶用法、最佳实践、故障排查</td>
+</tr>
+<tr>
+<td><a href="../english/GUIDE_EN/">User Guide</a></td>
+<td>EN</td>
+<td>Advanced usage, best practices, troubleshooting</td>
+</tr>
+<tr>
+<td><a href="https://github.com/ADW-19/llmpic/tree/main/notebook_examples">Jupyter 演示</a></td>
+<td>中/EN</td>
+<td>开箱即用的 Jupyter Notebook</td>
+</tr>
+<tr>
+<td><a href="https://github.com/ADW-19/llmpic">English README</a></td>
+<td>EN</td>
+<td>Full English README</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="_22">📮 官方联系方式</h2>
+<ul>
+<li><strong>小红书</strong>：<a href="https://xhslink.com/m/AQw13M5WIPc">ADW_AI</a></li>
+<li><strong>GitHub Issues</strong>：<a href="https://github.com/ADW-19/llmpic/issues">github.com/ADW-19/llmpic/issues</a></li>
+</ul>
+<hr />
+<h2 id="_23">🙏 致谢</h2>
+<p>llmpic 站在以下优秀开源项目的肩膀上构建：</p>
+<ul>
+<li><a href="https://scipy.org/">SciPy</a> — 科学计算</li>
+<li><a href="https://scikit-learn.org/">scikit-learn</a> — 机器学习工具</li>
+<li><a href="https://pandas.pydata.org/">pandas</a> — 数据分析与 DataFrame</li>
+<li><a href="https://numpy.org/">NumPy</a> — 数值计算</li>
+<li><a href="https://matplotlib.org/">Matplotlib</a> — 图表渲染引擎</li>
+<li><a href="https://seaborn.pydata.org/">seaborn</a> — 统计数据可视化</li>
+</ul>
+<p>衷心感谢这些项目的维护者与贡献者。</p>
+<hr />
+<h2 id="_24">📄 开源协议</h2>
+<p><a href="https://github.com/ADW-19/llmpic/blob/main/LICENSE">MIT</a> © 2026 ADW-19</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var labels=set.querySelector(".tabbed-labels");for(var tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+</div>
+      
+        
+<div class="md-social">
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://github.com/ADW-19/llmpic" target="_blank" rel="noopener" title="github.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+    </a>
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://xhslink.com/m/AQw13M5WIPc" target="_blank" rel="noopener" title="xhslink.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M357.2 48h70.6L273.6 224.2 455 464H313L201.7 318.6 74.5 464H3.8l164.9-188.5L-5.2 48h145.6l100.5 132.9zm-24.8 373.8h39.1L119.1 88h-42z"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.sections", "navigation.expand", "navigation.instant", "navigation.top", "search.suggest", "search.highlight", "content.tabs.link", "content.code.copy"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  </body>
+</html>

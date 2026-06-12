@@ -1,0 +1,4807 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Natural Language → Production Charts. One line.">
+      
+      
+        <meta name="author" content="ADW-19">
+      
+      
+        <link rel="canonical" href="https://ADW-19.github.io/llmpic/chinese/GUIDE_CN/">
+      
+      
+        <link rel="prev" href="../../english/API_REFERENCE_EN/">
+      
+      
+        <link rel="next" href="../API_REFERENCE_CN/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+    
+    
+      
+        <title>使用指南 - LLMPIC</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="teal" data-md-color-accent="teal">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#llmpic" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="LLMPIC" class="md-header__button md-logo" aria-label="LLMPIC" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            LLMPIC
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              使用指南
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="teal" data-md-color-accent="teal"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="teal" data-md-color-accent="teal"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/ADW-19/llmpic" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    llmpic
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../english/GUIDE_EN/" class="md-tabs__link">
+          
+  
+  
+  English
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="./" class="md-tabs__link">
+          
+  
+  
+  中文文档
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="LLMPIC" class="md-nav__button md-logo" aria-label="LLMPIC" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    LLMPIC
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/ADW-19/llmpic" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    llmpic
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    English
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    English
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../english/GUIDE_EN/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Getting Started
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../english/API_REFERENCE_EN/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    API Reference
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    中文文档
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    中文文档
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    使用指南
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    使用指南
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        快速上手
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="快速上手">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#sdk" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        SDK 初始化
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        参数选择指南
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        图表类型详解
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="图表类型详解">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#plot" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        plot — 折线图
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#scatter" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        scatter — 散点图
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bar" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        bar — 柱状图
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pie" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        pie — 饼图
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hist" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        hist — 直方图
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#heatmap" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        heatmap — 热力图
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#boxplot" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        boxplot — 箱线图
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#area" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        area — 面积图
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#radar" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        radar — 雷达图
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#map-v030" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        map — 地理地图（v0.3.0 新增）
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#subplots" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        subplots — 综合仪表盘
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#custom" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        custom — 智能推荐
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        数据输入方式
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="数据输入方式">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#llm" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        不传数据 —— LLM 自动生成演示数据
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dataframe" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        DataFrame（生产环境推荐）
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#numpy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        NumPy 数组
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        字典
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        列表 / 元组
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        纯文本
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        处理大数据集
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        样式定制
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="样式定制">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6 种预设配色方案
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        尺寸与分辨率
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_11" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        字体排版
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_12" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        网格与背景
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_13" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        完整样式组合
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#json" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        JSON 字符串传样式
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_14" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        输出格式
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="输出格式">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#png" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        PNG（默认）
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#svg" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        SVG — 矢量图
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pdf" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        PDF — 打印和报告
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_15" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        懒加载格式转换
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_16" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        默认保存路径
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#jupyter-notebook" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Jupyter Notebook 内联显示
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_17" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        迭代编辑
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="迭代编辑">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_18" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        基本用法
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#edit" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        edit() 工作原理
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_19" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        链式编辑
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#edit_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        edit() 保留上下文
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_20" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        自动修复机制
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="自动修复机制">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_21" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        工作流程
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_22" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        配置
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_23" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        触发条件
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_24" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        查看自动修复日志
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_25" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        异步与批量生成
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="异步与批量生成">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_26" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        异步单图表
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_27" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        批量并发生成（推荐）
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#batch" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        batch() 请求格式
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_28" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        为每张图自定义数据、样式和格式
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_29" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        批量任务中的错误处理
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_30" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        安全模型
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="安全模型">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_31" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        架构
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_32" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        第一层：正则模式（始终启用）
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_33" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        第二层：沙箱执行（始终启用）
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_34" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        安全级别选择
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_35" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        多语言支持
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="多语言支持">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_36" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        自动语言检测
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cjk" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        跨平台 CJK 字体支持
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_37" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        混合语言图表
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_38" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        各大模型服务商配置
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="各大模型服务商配置">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#openai" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        OpenAI
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#deepseek" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        DeepSeek（国内用户推荐，性价比高）
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#azure-openai" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Azure OpenAI
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#glm" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        智谱 GLM
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#moonshot" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        月之暗面 Moonshot
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_39" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        阿里通义千问
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_40" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        百度文心一言
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ollama" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Ollama（本地部署）
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#vllm" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        vLLM（自部署）
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_41" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        各服务商对比
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_42" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        实战工作流与代码模板
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="实战工作流与代码模板">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#jupyter" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        模板一：快速探索（Jupyter）
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_43" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        模板二：统一风格的报告
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_44" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        模板三：先粗后精迭代
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_45" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        模板四：一次调用，三格式导出
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_46" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        模板五：自动化日报生成
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_47" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        模板六：可复用图表函数
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ab" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        模板七：A/B 测试可视化
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_48" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        模板八：检查生成的代码（调试用）
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_49" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        成本优化
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="成本优化">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. 选择合适的模型
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. 描述具体（减少重试和修复）
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. 提供数据减少猜测
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. 用异步批量生成
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5-token" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. 追踪 Token 用量
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#6-sdk" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. 复用 SDK 实例
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_50" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        系统集成方案
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="系统集成方案">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#jupyter-notebook_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Jupyter Notebook 最佳实践
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#streamlit-gradio" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Streamlit / Gradio 集成
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fastapi-flask" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        FastAPI / Flask 集成
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_51" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        数据管道集成
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_52" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        最佳实践
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="最佳实践">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-fast" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. 生产环境使用 fast 安全模式
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-batch" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. 批量任务用异步 batch()
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. 描述尽量具体
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. 有真实数据就传进去
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5-edit" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. 用 edit() 迭代，不要重复描述
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#6_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. 合理设置超时时间
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#7-token" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7. 追踪 Token 用量
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#8-custom" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8. 不确定用什么图表时用 .custom()
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#9-sdk" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9. 只创建一次 SDK 实例
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#10" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10. 先检查成功再使用结果
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_53" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        故障排查
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="故障排查">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_54" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        生成的图表中文显示为方框 (□□□)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#llm_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        LLM 返回"无代码"或空白结果
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#code-execution-timed-out-30s" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        超时："Code execution timed out (30s)"
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_55" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        自动修复没有触发
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#svgpdf" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        SVG/PDF 保存后无法打开
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#modulenotfounderror-no-module-named-llmpic" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ModuleNotFoundError: No module named 'llmpic'
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#runtimeerror-no-running-event-loop" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        异步报错 RuntimeError: no running event loop
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_56" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        生成的图表和我描述的不一样
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_57" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        图片文件太大
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pandas-seaborn" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        pandas 或 seaborn 不可用
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#api" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        API 频率限制
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../API_REFERENCE_CN/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    API 参考
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        快速上手
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="快速上手">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#sdk" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        SDK 初始化
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        参数选择指南
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        图表类型详解
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="图表类型详解">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#plot" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        plot — 折线图
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#scatter" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        scatter — 散点图
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bar" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        bar — 柱状图
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pie" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        pie — 饼图
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hist" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        hist — 直方图
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#heatmap" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        heatmap — 热力图
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#boxplot" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        boxplot — 箱线图
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#area" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        area — 面积图
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#radar" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        radar — 雷达图
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#map-v030" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        map — 地理地图（v0.3.0 新增）
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#subplots" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        subplots — 综合仪表盘
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#custom" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        custom — 智能推荐
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        数据输入方式
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="数据输入方式">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#llm" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        不传数据 —— LLM 自动生成演示数据
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dataframe" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        DataFrame（生产环境推荐）
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#numpy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        NumPy 数组
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        字典
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        列表 / 元组
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        纯文本
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        处理大数据集
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        样式定制
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="样式定制">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6 种预设配色方案
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        尺寸与分辨率
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_11" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        字体排版
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_12" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        网格与背景
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_13" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        完整样式组合
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#json" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        JSON 字符串传样式
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_14" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        输出格式
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="输出格式">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#png" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        PNG（默认）
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#svg" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        SVG — 矢量图
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pdf" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        PDF — 打印和报告
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_15" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        懒加载格式转换
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_16" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        默认保存路径
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#jupyter-notebook" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Jupyter Notebook 内联显示
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_17" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        迭代编辑
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="迭代编辑">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_18" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        基本用法
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#edit" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        edit() 工作原理
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_19" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        链式编辑
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#edit_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        edit() 保留上下文
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_20" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        自动修复机制
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="自动修复机制">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_21" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        工作流程
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_22" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        配置
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_23" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        触发条件
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_24" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        查看自动修复日志
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_25" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        异步与批量生成
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="异步与批量生成">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_26" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        异步单图表
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_27" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        批量并发生成（推荐）
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#batch" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        batch() 请求格式
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_28" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        为每张图自定义数据、样式和格式
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_29" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        批量任务中的错误处理
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_30" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        安全模型
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="安全模型">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_31" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        架构
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_32" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        第一层：正则模式（始终启用）
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_33" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        第二层：沙箱执行（始终启用）
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_34" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        安全级别选择
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_35" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        多语言支持
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="多语言支持">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_36" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        自动语言检测
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cjk" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        跨平台 CJK 字体支持
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_37" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        混合语言图表
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_38" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        各大模型服务商配置
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="各大模型服务商配置">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#openai" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        OpenAI
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#deepseek" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        DeepSeek（国内用户推荐，性价比高）
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#azure-openai" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Azure OpenAI
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#glm" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        智谱 GLM
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#moonshot" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        月之暗面 Moonshot
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_39" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        阿里通义千问
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_40" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        百度文心一言
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ollama" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Ollama（本地部署）
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#vllm" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        vLLM（自部署）
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_41" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        各服务商对比
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_42" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        实战工作流与代码模板
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="实战工作流与代码模板">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#jupyter" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        模板一：快速探索（Jupyter）
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_43" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        模板二：统一风格的报告
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_44" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        模板三：先粗后精迭代
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_45" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        模板四：一次调用，三格式导出
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_46" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        模板五：自动化日报生成
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_47" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        模板六：可复用图表函数
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ab" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        模板七：A/B 测试可视化
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_48" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        模板八：检查生成的代码（调试用）
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_49" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        成本优化
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="成本优化">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. 选择合适的模型
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. 描述具体（减少重试和修复）
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. 提供数据减少猜测
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. 用异步批量生成
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5-token" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. 追踪 Token 用量
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#6-sdk" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. 复用 SDK 实例
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_50" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        系统集成方案
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="系统集成方案">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#jupyter-notebook_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Jupyter Notebook 最佳实践
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#streamlit-gradio" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Streamlit / Gradio 集成
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fastapi-flask" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        FastAPI / Flask 集成
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_51" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        数据管道集成
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_52" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        最佳实践
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="最佳实践">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-fast" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. 生产环境使用 fast 安全模式
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-batch" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. 批量任务用异步 batch()
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. 描述尽量具体
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. 有真实数据就传进去
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5-edit" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. 用 edit() 迭代，不要重复描述
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#6_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. 合理设置超时时间
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#7-token" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7. 追踪 Token 用量
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#8-custom" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8. 不确定用什么图表时用 .custom()
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#9-sdk" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9. 只创建一次 SDK 实例
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#10" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10. 先检查成功再使用结果
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_53" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        故障排查
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="故障排查">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_54" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        生成的图表中文显示为方框 (□□□)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#llm_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        LLM 返回"无代码"或空白结果
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#code-execution-timed-out-30s" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        超时："Code execution timed out (30s)"
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_55" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        自动修复没有触发
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#svgpdf" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        SVG/PDF 保存后无法打开
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#modulenotfounderror-no-module-named-llmpic" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ModuleNotFoundError: No module named 'llmpic'
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#runtimeerror-no-running-event-loop" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        异步报错 RuntimeError: no running event loop
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_56" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        生成的图表和我描述的不一样
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_57" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        图片文件太大
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pandas-seaborn" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        pandas 或 seaborn 不可用
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#api" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        API 频率限制
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<h1 id="llmpic">使用指南 — llmpic</h1>
+<blockquote>
+<p>进阶用法、完整工作流、最佳实践、故障排查。</p>
+</blockquote>
+<hr />
+<h2 id="_1">快速上手</h2>
+<h3 id="sdk">SDK 初始化</h3>
+<pre><code class="language-python">from llmpic import llmPIC
+
+lp = llmPIC(
+    api_key=&quot;sk-...&quot;,                    # 必填：API 密钥
+    base_url=&quot;https://api.openai.com/v1&quot;,# 必填：API 地址
+    model=&quot;gpt-4o&quot;,                      # 代码生成模型
+    # 以下为可选参数（附默认值）：
+    safety_level=&quot;fast&quot;,                 # 安全级别：&quot;fast&quot;(仅正则) 或 &quot;full&quot;(正则+LLM)
+    safety_model=None,                   # 安全审查模型（默认与 model 一致）
+    chinese_font=True,                   # 启用中文字体支持
+    timeout=30,                          # 代码执行超时（秒）
+    dpi=150,                             # 默认输出分辨率
+    output_dir=&quot;~/llmpic_charts&quot;,        # 默认保存目录
+    temperature=0.3,                     # LLM 生成温度（0-2）
+    max_tokens=2048,                     # LLM 最大输出 token 数
+    structured_output=True,              # 使用 JSON 结构化输出
+    max_retries=3,                       # LLM 调用失败重试次数（指数退避）
+    max_fix_attempts=2,                  # 代码执行失败自动修复次数
+)
+</code></pre>
+<h3 id="_2">参数选择指南</h3>
+<table>
+<thead>
+<tr>
+<th>场景</th>
+<th>推荐配置</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>生产环境 / 追求速度</td>
+<td><code>safety_level="fast"</code>, <code>model="gpt-4o-mini"</code></td>
+</tr>
+<tr>
+<td>最高安全要求</td>
+<td><code>safety_level="full"</code>，其他保持默认</td>
+</tr>
+<tr>
+<td>复杂的多图仪表盘</td>
+<td><code>timeout=60</code>, <code>max_tokens=4096</code></td>
+</tr>
+<tr>
+<td>本地模型（Ollama/vLLM）</td>
+<td><code>max_retries=5</code>, <code>structured_output=False</code>, <code>max_fix_attempts=3</code></td>
+</tr>
+<tr>
+<td>中文图表为主</td>
+<td><code>chinese_font=True</code>（默认即可）</td>
+</tr>
+<tr>
+<td>纯英文图表、追求小体积</td>
+<td><code>chinese_font=False</code>, <code>dpi=100</code></td>
+</tr>
+<tr>
+<td>印刷/论文出版</td>
+<td><code>dpi=300</code></td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="_3">图表类型详解</h2>
+<h3 id="plot">plot — 折线图</h3>
+<p>适用场景：趋势分析、时间序列、连续数据。</p>
+<pre><code class="language-python">lp.plot(&quot;2024年全年营收变化趋势&quot;).save(&quot;revenue.png&quot;)
+lp.plot(&quot;sin(x) 和 cos(x) 在 0 到 2π 的函数图像&quot;).save(&quot;trig.png&quot;)
+
+# 传入真实时序数据
+df = pd.read_csv(&quot;metrics.csv&quot;)  # 列：date, cpu, memory
+lp.plot(&quot;CPU和内存使用量随时间变化趋势&quot;).data(df).save(&quot;metrics.png&quot;)
+</code></pre>
+<p>LLM 提示词：<code>Line chart (折线图). Use ax.plot(). Multiple series: different colors + legend.</code></p>
+<h3 id="scatter">scatter — 散点图</h3>
+<p>适用场景：相关性分析、聚类可视化、异常值检测。</p>
+<pre><code class="language-python"># 传入 DataFrame
+lp.scatter(&quot;用户年龄与消费金额的分布关系&quot;).data(df).save(&quot;scatter.png&quot;)
+
+# 内联数据
+lp.scatter(&quot;散点图: x=[1,2,3,4,5], y=[2,4,1,8,7]&quot;).save(&quot;simple_scatter.png&quot;)
+
+# 三维散点图（颜色/大小作为第三维）
+lp.scatter(&quot;年龄vs收入，颜色按学历分组，点大小按购买频率&quot;).data(df).save(&quot;3d_scatter.png&quot;)
+</code></pre>
+<p>LLM 提示词：<code>Scatter chart (散点图). Use ax.scatter(). 3rd variable → color/size.</code></p>
+<h3 id="bar">bar — 柱状图</h3>
+<p>适用场景：分类数据对比、排名、前后对比。</p>
+<pre><code class="language-python"># 描述中直接内嵌数据
+lp.bar(&quot;各部门Q1预算: 研发=200万, 市场=150万, 销售=180万, 人事=100万&quot;).save(&quot;budget.png&quot;)
+
+# 横向柱状图
+lp.bar(&quot;全国GDP前十城市，横向排列&quot;).data(city_df).save(&quot;horizontal.png&quot;)
+
+# 分组柱状图
+lp.bar(&quot;各产品线月度销售额，分组柱状图&quot;).data(sales_df).save(&quot;grouped.png&quot;)
+
+# 堆叠柱状图
+lp.bar(&quot;各季度收入构成，堆叠柱状图&quot;).data(revenue_df).save(&quot;stacked.png&quot;)
+</code></pre>
+<p>LLM 提示词：<code>Bar chart (柱状图). Use ax.bar() or ax.barh(). Add value labels on bars.</code></p>
+<h3 id="pie">pie — 饼图</h3>
+<p>适用场景：占比分布、市场份额、预算分配。</p>
+<pre><code class="language-python"># 内联比例
+lp.pie(&quot;市场份额: A产品40%, B产品25%, C产品20%, 其他15%&quot;).save(&quot;market.png&quot;)
+
+# 传入 DataFrame
+lp.bar(&quot;各类别支出占比&quot;).data(budget_df).save(&quot;spending.png&quot;)
+
+# 环形图（通过自然语言描述即可）
+lp.pie(&quot;环形图：各部门营收占比&quot;).data(dept_df).save(&quot;donut.png&quot;)
+</code></pre>
+<p>LLM 提示词：<code>Pie chart (饼图). Use ax.pie() with autopct='%1.1f%%' and legend.</code></p>
+<h3 id="hist">hist — 直方图</h3>
+<p>适用场景：数据分布、频率统计、正态性检验。</p>
+<pre><code class="language-python"># 传入原始数据
+import numpy as np
+data = np.random.randn(1000)
+lp.hist(&quot;考试成绩分布，叠加KDE密度曲线&quot;).data(data).save(&quot;hist.png&quot;)
+
+# 指定分箱数
+lp.hist(&quot;居民收入分布，50个区间&quot;).data(income_data).save(&quot;income_hist.png&quot;)
+
+# 多组对比
+lp.hist(&quot;测试成绩: A组 vs B组，叠加直方图&quot;).data({
+    &quot;A组&quot;: np.random.normal(70, 10, 500),
+    &quot;B组&quot;: np.random.normal(75, 12, 500),
+}).save(&quot;compare_hist.png&quot;)
+</code></pre>
+<p>LLM 提示词：<code>Histogram (直方图). Use ax.hist(). Overlay KDE via sns.kdeplot if seaborn available.</code></p>
+<h3 id="heatmap">heatmap — 热力图</h3>
+<p>适用场景：相关性矩阵、二维密度、混淆矩阵。</p>
+<pre><code class="language-python"># 相关性矩阵
+lp.heatmap(&quot;多特征相关性矩阵，标注数值&quot;).data(corr_df).save(&quot;corr_heatmap.png&quot;)
+
+# 时间维度热力图
+lp.heatmap(&quot;按星期几和小时统计的网站流量热力图&quot;).data(traffic_df).save(&quot;traffic_heatmap.png&quot;)
+</code></pre>
+<p>LLM 提示词：<code>Heatmap (热力图). Use ax.imshow() or sns.heatmap(). Add colorbar and annotate cells.</code></p>
+<h3 id="boxplot">boxplot — 箱线图</h3>
+<p>适用场景：多组数据统计分布对比。</p>
+<pre><code class="language-python"># 多组对比
+lp.boxplot(&quot;实验结果: 对照组 vs 实验组A vs 实验组B 的分布对比&quot;).save(&quot;boxplot.png&quot;)
+
+# 传入 DataFrame（一列为分组，一列为数值）
+lp.boxplot(&quot;各部门薪资分布对比&quot;).data(hr_df).save(&quot;salary_box.png&quot;)
+</code></pre>
+<p>LLM 提示词：<code>Boxplot (箱线图). Use ax.boxplot() or sns.boxplot(). Show outliers, add labels.</code></p>
+<h3 id="area">area — 面积图</h3>
+<p>适用场景：堆积趋势、成分随时间变化。</p>
+<pre><code class="language-python">lp.area(&quot;2020-2024年各产品线收入占比变化&quot;).data(revenue_df).save(&quot;area.png&quot;)
+lp.area(&quot;堆积面积图：用户获取渠道随时间变化&quot;).data(channel_df).save(&quot;channels.png&quot;)
+</code></pre>
+<p>LLM 提示词：<code>Area chart (面积图). Use ax.fill_between() or ax.stackplot(). Set alpha 0.3-0.7.</code></p>
+<h3 id="radar">radar — 雷达图</h3>
+<p>适用场景：多维指标对比、能力评估、产品对比。</p>
+<pre><code class="language-python"># 内联数据
+lp.radar(&quot;产品评分: 性能=4, 易用性=3, 稳定性=5, 价格=2, 售后=4&quot;).save(&quot;radar.png&quot;)
+
+# 双产品对比
+lp.radar(&quot;雷达图: 产品A [4,3,5,2,4] vs 产品B [3,4,4,3,5], 维度: 速度,界面,稳定性,价格,服务&quot;).save(&quot;radar2.png&quot;)
+</code></pre>
+<p>LLM 提示词：<code>Radar chart (雷达图). Use polar axes: plt.subplots(subplot_kw={'projection':'polar'}). Close the polygon loop.</code></p>
+<h3 id="map-v030">map — 地理地图（v0.3.0 新增）</h3>
+<p>适用场景：世界地图、国家/地区视图、等值区域图、地理散点标记图。</p>
+<pre><code class="language-python"># 世界地图（LLM 自动生成主要城市演示数据）
+lp.map(&quot;世界人口分布等值区域图，Blues配色&quot;).save(&quot;world.png&quot;)
+
+# 传入真实数据（含经纬度列的 DataFrame）
+lp.map(&quot;日本地震震中分布，震级颜色映射&quot;).data(eq_df).save(&quot;japan.png&quot;)
+
+# 特定国家/地区
+lp.map(&quot;中国主要城市GDP分布，大圆点表示高GDP&quot;).data(city_df).save(&quot;china.png&quot;)
+
+# 世界城市散点图
+lp.map(&quot;世界主要城市标记: 东京、纽约、伦敦、巴黎、北京、悉尼，按人口规模标记大小&quot;).save(&quot;cities.png&quot;)
+</code></pre>
+<p>LLM 提示词：<code>Geographic map (地图). Use cartopy (ccrs, cfeature) with PlateCarree projection.</code></p>
+<h3 id="subplots">subplots — 综合仪表盘</h3>
+<p>适用场景：多图综合展示、高管汇报。</p>
+<pre><code class="language-python"># 2×2 仪表盘
+lp.subplots(&quot;2x2看板: 销售额趋势折线图, 地区对比柱状图, 客户分布散点图, 月度增长直方图&quot;).save(&quot;dashboard.png&quot;)
+
+# 1×3 仪表盘
+lp.subplots(&quot;1行3列: CPU趋势, 内存趋势, 磁盘趋势&quot;).data(metrics_df).save(&quot;triple.png&quot;)
+
+# 复杂仪表盘
+lp.subplots(&quot;3x2综合看板: 营收折线, 支出对比柱状图, 利润率面积图, &quot;
+            &quot;客户增长柱状图, 地区占比饼图, 相关性热力图&quot;).data(full_df).save(&quot;executive.png&quot;)
+</code></pre>
+<p>LLM 提示词：<code>Dashboard (子图仪表盘). Use fig, axes = plt.subplots(nrows, ncols, figsize=(w,h)). Add fig.suptitle(). Each subplot is a different chart.</code></p>
+<h3 id="custom">custom — 智能推荐</h3>
+<p>适用场景：不确定该用哪种图表时。</p>
+<pre><code class="language-python">lp.custom(&quot;分析用户留存率变化趋势和影响因素&quot;).data(user_df).save(&quot;auto.png&quot;)
+lp.custom(&quot;对比各特征在ML模型中的重要性&quot;).data(feature_df).save(&quot;importance.png&quot;)
+</code></pre>
+<p>LLM 提示词：<code>Pick best chart type (line/bar/scatter/pie/hist/boxplot/heatmap/area/radar) for the data &amp; query.</code></p>
+<hr />
+<h2 id="_4">数据输入方式</h2>
+<h3 id="llm">不传数据 —— LLM 自动生成演示数据</h3>
+<p>快速探索或原型验证时，跳过 <code>.data()</code>：</p>
+<pre><code class="language-python">lp.plot(&quot;从0到2π的正弦波曲线&quot;).save(&quot;sine.png&quot;)
+lp.bar(&quot;虚拟销售数据: Q1=100, Q2=150, Q3=120, Q4=180&quot;).save(&quot;demo.png&quot;)
+lp.pie(&quot;虚拟市场份额: A=40%, B=30%, C=20%, D=10%&quot;).save(&quot;demo_pie.png&quot;)
+</code></pre>
+<p>LLM 会自动用 <code>np.linspace</code>、<code>np.random</code> 等方式生成合理的演示数据。</p>
+<h3 id="dataframe">DataFrame（生产环境推荐）</h3>
+<pre><code class="language-python">import pandas as pd
+
+df = pd.DataFrame({
+    &quot;月份&quot;: [&quot;1月&quot;, &quot;2月&quot;, &quot;3月&quot;, &quot;4月&quot;, &quot;5月&quot;, &quot;6月&quot;],
+    &quot;销售额&quot;: [120, 135, 148, 162, 155, 180],
+    &quot;利润&quot;: [20, 28, 30, 35, 32, 40],
+})
+lp.plot(&quot;月度销售额与利润趋势对比&quot;).data(df).save(&quot;sales.png&quot;)
+</code></pre>
+<p><strong>传给 LLM 的信息（不传输全部数据）：</strong>
+1. 形状：行数 × 列数
+2. 列名及数据类型
+3. 前 5 行样本
+4. 统计摘要（数据多于 5 行时）</p>
+<p>这足以让 LLM 写出正确的代码，而无需发送全部数据。</p>
+<h3 id="numpy">NumPy 数组</h3>
+<pre><code class="language-python">import numpy as np
+
+# 一维数组
+data = np.random.randn(1000)
+lp.hist(&quot;数据分布直方图&quot;).data(data).save(&quot;dist.png&quot;)
+
+# 二维数组
+matrix = np.random.rand(10, 10)
+lp.heatmap(&quot;随机矩阵热力图&quot;).data(matrix).save(&quot;matrix.png&quot;)
+</code></pre>
+<h3 id="_5">字典</h3>
+<pre><code class="language-python">lp.bar(&quot;各城市销量对比&quot;).data({
+    &quot;城市&quot;: [&quot;北京&quot;, &quot;上海&quot;, &quot;广州&quot;, &quot;深圳&quot;, &quot;杭州&quot;],
+    &quot;销量&quot;: [320, 280, 260, 240, 200],
+}).save(&quot;city.png&quot;)
+
+# 多系列数据
+lp.plot(&quot;多系列折线对比&quot;).data({
+    &quot;x&quot;: [1, 2, 3, 4, 5],
+    &quot;系列A&quot;: [10, 20, 15, 25, 30],
+    &quot;系列B&quot;: [5, 15, 25, 20, 35],
+    &quot;系列C&quot;: [12, 18, 22, 28, 32],
+}).save(&quot;multi.png&quot;)
+</code></pre>
+<h3 id="_6">列表 / 元组</h3>
+<pre><code class="language-python">lp.plot(&quot;每日温度记录&quot;).data([22, 24, 19, 26, 28, 25, 23]).save(&quot;temp.png&quot;)
+lp.bar(&quot;成绩分布&quot;).data((85, 92, 78, 88, 95)).save(&quot;scores.png&quot;)
+</code></pre>
+<p>单列表被视作一维序列，LLM 自动为 X 轴创建索引。</p>
+<h3 id="_7">纯文本</h3>
+<pre><code class="language-python">csv_text = &quot;日期,数值\n2024-01-01,100\n2024-01-02,105\n...&quot;
+lp.plot(&quot;CSV数据趋势&quot;).data(csv_text).save(&quot;from_csv.png&quot;)
+</code></pre>
+<p>文本上限 2000 字符。更大的数据请用 DataFrame 或预先聚合。</p>
+<h3 id="_8">处理大数据集</h3>
+<p>对于超大 DataFrame，提前聚合或采样以控制传给 LLM 的上下文大小：</p>
+<pre><code class="language-python"># 好：提前聚合
+lp.bar(&quot;月均值对比&quot;).data(df.groupby(&quot;月份&quot;)[&quot;数值&quot;].mean().reset_index())
+
+# 好：采样
+lp.scatter(&quot;相关性散点&quot;).data(df.sample(1000))
+
+# 无妨：大 DataFrame 也只会传前5行+统计摘要
+lp.plot(&quot;趋势图&quot;).data(huge_df)
+</code></pre>
+<hr />
+<h2 id="_9">样式定制</h2>
+<h3 id="6">6 种预设配色方案</h3>
+<table>
+<thead>
+<tr>
+<th>方案名称</th>
+<th>色值</th>
+<th>风格定位</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>blues</code></td>
+<td><code>#3498DB</code> <code>#5DADE2</code> <code>#87CEEB</code> <code>#2980B9</code> <code>#AED6F1</code></td>
+<td>专业、企业风</td>
+</tr>
+<tr>
+<td><code>warm</code></td>
+<td><code>#E74C3C</code> <code>#F39C12</code> <code>#E67E22</code> <code>#F1C40F</code> <code>#D35400</code></td>
+<td>活力、醒目</td>
+</tr>
+<tr>
+<td><code>cool</code></td>
+<td><code>#1ABC9C</code> <code>#3498DB</code> <code>#9B59B6</code> <code>#2ECC71</code> <code>#16A085</code></td>
+<td>现代、科技感</td>
+</tr>
+<tr>
+<td><code>pastel</code></td>
+<td><code>#FADBD8</code> <code>#D5F5E3</code> <code>#D6EAF8</code> <code>#F9E79F</code> <code>#E8DAEF</code></td>
+<td>柔和、适合阅读</td>
+</tr>
+<tr>
+<td><code>dark</code></td>
+<td><code>#2C3E50</code> <code>#34495E</code> <code>#7F8C8D</code> <code>#95A5A6</code> <code>#BDC3C7</code></td>
+<td>深沉、暗色背景</td>
+</tr>
+<tr>
+<td><code>grayscale</code></td>
+<td><code>#333333</code> <code>#666666</code> <code>#999999</code> <code>#BBBBBB</code> <code>#DDDDDD</code></td>
+<td>印刷友好、正式</td>
+</tr>
+</tbody>
+</table>
+<pre><code class="language-python">for scheme in [&quot;blues&quot;, &quot;warm&quot;, &quot;cool&quot;, &quot;pastel&quot;, &quot;dark&quot;, &quot;grayscale&quot;]:
+    lp.plot(&quot;月度趋势&quot;).style({&quot;color_scheme&quot;: scheme}).save(f&quot;{scheme}.png&quot;)
+</code></pre>
+<h3 id="_10">尺寸与分辨率</h3>
+<pre><code class="language-python">lp.plot(&quot;趋势&quot;).style({
+    &quot;figsize&quot;: [14, 7],         # 宽14英寸 × 高7英寸
+    &quot;dpi&quot;: 300,                  # 高分辨率（适合打印）
+}).save(&quot;large.png&quot;)
+</code></pre>
+<h3 id="_11">字体排版</h3>
+<pre><code class="language-python">lp.plot(&quot;趋势&quot;).style({
+    &quot;title_fontsize&quot;: 20,        # 大标题
+    &quot;label_fontsize&quot;: 14,        # 清晰的轴标签
+    &quot;tick_fontsize&quot;: 12,         # 刻度值清晰
+}).save(&quot;typography.png&quot;)
+</code></pre>
+<h3 id="_12">网格与背景</h3>
+<pre><code class="language-python"># 可见网格 + 深色背景
+lp.plot(&quot;趋势&quot;).style({
+    &quot;grid&quot;: True,
+    &quot;grid_alpha&quot;: 0.6,
+    &quot;facecolor&quot;: &quot;#F0F0F0&quot;,
+}).save(&quot;grid.png&quot;)
+
+# 清爽无网格
+lp.plot(&quot;趋势&quot;).style({
+    &quot;grid&quot;: False,
+    &quot;facecolor&quot;: &quot;white&quot;,
+}).save(&quot;clean.png&quot;)
+
+# 禁用紧凑布局（默认开启），手动留白
+lp.plot(&quot;趋势&quot;).style({&quot;tight_layout&quot;: False}).save(&quot;loose.png&quot;)
+</code></pre>
+<h3 id="_13">完整样式组合</h3>
+<pre><code class="language-python"># 学术论文级别
+lp.plot(&quot;实验结果: 对照组 vs 实验组&quot;).data(exp_df).style({
+    &quot;figsize&quot;: [8, 5],
+    &quot;dpi&quot;: 300,
+    &quot;color_scheme&quot;: &quot;dark&quot;,
+    &quot;title_fontsize&quot;: 16,
+    &quot;label_fontsize&quot;: 14,
+    &quot;tick_fontsize&quot;: 12,
+    &quot;grid&quot;: True,
+    &quot;grid_alpha&quot;: 0.4,
+}).save(&quot;paper.png&quot;)
+
+# PPT 汇报专用
+lp.bar(&quot;全年各季度营收&quot;).data(revenue_df).style({
+    &quot;figsize&quot;: [14, 8],
+    &quot;color_scheme&quot;: &quot;warm&quot;,
+    &quot;title_fontsize&quot;: 24,
+    &quot;label_fontsize&quot;: 18,
+    &quot;tick_fontsize&quot;: 14,
+    &quot;grid&quot;: False,
+    &quot;facecolor&quot;: &quot;#FAFAFA&quot;,
+    &quot;dpi&quot;: 200,
+}).save(&quot;ppt.png&quot;)
+
+# 快速探索 —— 使用默认样式即可
+lp.scatter(&quot;年龄vs收入&quot;).data(df).save(&quot;explore.png&quot;)
+</code></pre>
+<h3 id="json">JSON 字符串传样式</h3>
+<pre><code class="language-python">lp.plot(&quot;趋势&quot;).style('{&quot;color_scheme&quot;:&quot;cool&quot;,&quot;figsize&quot;:[12,8],&quot;dpi&quot;:200}').save(&quot;trend.png&quot;)
+</code></pre>
+<hr />
+<h2 id="_14">输出格式</h2>
+<h3 id="png">PNG（默认）</h3>
+<p>位图格式。适用于通用场景、嵌入文档、快速预览。</p>
+<pre><code class="language-python">lp.plot(&quot;趋势&quot;).save(&quot;chart.png&quot;)
+result = lp.plot(&quot;趋势&quot;).format('png').render()
+</code></pre>
+<h3 id="svg">SVG — 矢量图</h3>
+<p>适合网页嵌入、无限缩放、需要保持清晰度的场景。</p>
+<pre><code class="language-python"># 方式一：渲染前用 .format() 指定
+lp.plot(&quot;趋势&quot;).format('svg').save(&quot;chart.svg&quot;)
+
+# 方式二：根据扩展名自动检测
+result = lp.plot(&quot;趋势&quot;).render()    # 默认 PNG
+result.save(&quot;chart.svg&quot;)              # → SVG（根据 .svg 扩展名自动检测）
+
+# Base64 编码用于 HTML 嵌入
+result = lp.plot(&quot;趋势&quot;).render()
+svg_uri = result.base64_svg()
+# HTML: &lt;img src=&quot;{svg_uri}&quot; /&gt;
+</code></pre>
+<h3 id="pdf">PDF — 打印和报告</h3>
+<pre><code class="language-python">lp.plot(&quot;趋势&quot;).format('pdf').save(&quot;chart.pdf&quot;)
+result = lp.plot(&quot;趋势&quot;).render()
+result.save(&quot;报告附图.pdf&quot;)
+</code></pre>
+<h3 id="_15">懒加载格式转换</h3>
+<p>得到 <code>ChartResult</code> 后，可按需访问任意格式：</p>
+<pre><code class="language-python">result = lp.plot(&quot;CPU使用率趋势&quot;).render()  # image_bytes 为 PNG
+
+# 访问 SVG 或 PDF —— 根据存储的代码重新渲染（懒加载，首次访问后缓存）
+svg_bytes = result.svg_bytes    # 首次访问时重新渲染为 SVG（并缓存）
+pdf_bytes = result.pdf_bytes    # 首次访问时重新渲染为 PDF（并缓存）
+svg_string = result.svg          # SVG 字符串
+</code></pre>
+<p>这个特性很强大：一次 LLM 调用，三种格式都可以导出，无需重复调用。</p>
+<h3 id="_16">默认保存路径</h3>
+<pre><code class="language-python">result = lp.plot(&quot;日活跃用户趋势&quot;).render()
+result.save()  # → ~/llmpic_charts/chart_20250101_143025.png
+</code></pre>
+<p>时间戳格式为 <code>YYYYMMDD_HHMMSS</code>。目录不存在时会自动创建。</p>
+<h3 id="jupyter-notebook">Jupyter Notebook 内联显示</h3>
+<pre><code class="language-python">result = lp.plot(&quot;CPU使用率趋势&quot;).render()
+result.show()  # cell 下方直接渲染图表，无需 save()
+</code></pre>
+<p>支持 PNG、SVG、PDF 格式。在普通 Python 脚本中调用 <code>show()</code> 会记录一条警告，不会报错。</p>
+<hr />
+<h2 id="_17">迭代编辑</h2>
+<h3 id="_18">基本用法</h3>
+<pre><code class="language-python"># 第一版
+v1 = lp.plot(&quot;月度销售: 1月=100, 2月=120, 3月=90, 4月=150&quot;).render()
+v1.save(&quot;v1.png&quot;)
+
+# 第二版 —— 自然语言修改
+v2 = v1.edit(&quot;换成柱状图&quot;)
+v2.save(&quot;v2.png&quot;)
+
+# 第三版 —— 一次提出多个修改
+v3 = v2.edit(&quot;柱子颜色改为红色，标题改为'2025年Q1销售报告'，添加网格&quot;)
+v3.save(&quot;v3.png&quot;)
+
+# 第四版 —— 精细微调
+v4 = v3.edit(&quot;标题字号加大到18，使用暖色系配色&quot;)
+v4.save(&quot;v4.png&quot;)
+</code></pre>
+<h3 id="edit">edit() 工作原理</h3>
+<pre><code>1. 将当前代码 + 修改描述发给 LLM
+2. LLM 返回修改后的代码
+3. 安全检查 → 沙箱执行
+4. 返回新的 ChartResult（原对象不受影响）
+</code></pre>
+<h3 id="_19">链式编辑</h3>
+<pre><code class="language-python">final = (
+    lp.plot(&quot;月度销售: 1月=100, 2月=120, 3月=90&quot;)
+    .render()
+    .edit(&quot;换成柱状图&quot;)
+    .edit(&quot;柱子颜色改红色，暖色系&quot;)
+    .edit(&quot;标题改为'Q1营收'，Y轴加标签'万元'&quot;)
+    .edit(&quot;加网格线，标题字号加大到18&quot;)
+)
+final.save(&quot;final.png&quot;)
+final.show()
+</code></pre>
+<h3 id="edit_1">edit() 保留上下文</h3>
+<p><code>edit()</code> 方法保留原始数据、样式设置和 SDK 引用。每次 edit 复用相同的沙箱、安全审查器和 LLM 端点。</p>
+<p><strong>重要提示</strong>：<code>.edit()</code> 要求 <code>ChartResult</code> 是由 <code>llmPIC</code> 生成的（而非手动创建），因为它需要内部的 <code>_sdk</code> 引用来生成代码。</p>
+<hr />
+<h2 id="_20">自动修复机制</h2>
+<h3 id="_21">工作流程</h3>
+<pre><code>LLM 生成代码 → 安全审查 → 沙箱执行
+                              ↓ 失败（NameError、ValueError等）
+                         LLM 修复代码
+                              ↓
+                      安全审查 → 沙箱执行
+                              ↓ 再次失败
+                         LLM 再次修复（最多 max_fix_attempts 轮）
+                              ↓
+                   返回 ChartResult（成功或最终错误）
+</code></pre>
+<h3 id="_22">配置</h3>
+<pre><code class="language-python">lp = llmPIC(
+    ...,
+    max_fix_attempts=2,   # 默认 2 轮自动修复
+)
+# max_fix_attempts=0  →  关闭自动修复
+</code></pre>
+<h3 id="_23">触发条件</h3>
+<p><strong>会触发：</strong>
+- <code>NameError</code> — 引用了未定义的变量
+- <code>ValueError</code> — matplotlib 收到非法参数
+- <code>TypeError</code> — 参数类型错误
+- <code>IndexError</code> — 越界访问
+- 其他生成代码中的 Python 异常</p>
+<p><strong>不会触发：</strong>
+- LLM 返回空代码 → 由 <code>max_retries</code> 处理（重试生成）
+- 安全检查未通过 → 危险代码直接拒绝，不修复
+- 超时 → 可能的死循环，不重试（同样代码大概率再次超时）
+- 空白图表（无 Axes）→ 立即检测并返回错误，不修复</p>
+<h3 id="_24">查看自动修复日志</h3>
+<pre><code class="language-python">import logging
+logging.basicConfig(level=logging.INFO)
+
+# 你将在控制台看到类似以下日志：
+# INFO:llmpic.core:Auto-fix attempt 2: NameError: name 'data' is not defined...
+</code></pre>
+<hr />
+<h2 id="_25">异步与批量生成</h2>
+<h3 id="_26">异步单图表</h3>
+<pre><code class="language-python">import asyncio
+from llmpic import AsyncllmPIC
+
+async def main():
+    lp = AsyncllmPIC(api_key=&quot;sk-...&quot;, base_url=&quot;...&quot;)
+    result = await lp.plot(&quot;CPU使用率趋势&quot;).render()
+    result.save(&quot;cpu.png&quot;)
+
+asyncio.run(main())
+</code></pre>
+<h3 id="_27">批量并发生成（推荐）</h3>
+<p><code>batch()</code> 方法使用 <code>asyncio.gather</code> 并发生成所有图表。总耗时 ≈ 最慢的那张图。</p>
+<pre><code class="language-python">async def main():
+    lp = AsyncllmPIC(api_key=&quot;sk-...&quot;, base_url=&quot;...&quot;)
+
+    results = await lp.batch([
+        (&quot;plot&quot;,     &quot;过去12个月销售趋势&quot;),
+        (&quot;bar&quot;,      &quot;各部门营收对比&quot;),
+        (&quot;scatter&quot;,  &quot;用户行为相关性分析&quot;),
+        (&quot;heatmap&quot;,  &quot;多特征相关性矩阵&quot;),
+        (&quot;pie&quot;,      &quot;市场份额分布&quot;),
+    ])
+
+    for i, r in enumerate(results):
+        if r.success:
+            r.save(f&quot;batch_{i}.png&quot;)
+            print(f&quot;[{i}] 成功 — {r.size_kb:.1f}KB, &quot;
+                  f&quot;Token: 输入={r.token_usage['input']} 输出={r.token_usage['output']}&quot;)
+        else:
+            print(f&quot;[{i}] 失败: {r.error_message}&quot;)
+
+asyncio.run(main())
+</code></pre>
+<h3 id="batch">batch() 请求格式</h3>
+<pre><code class="language-python">requests: List[Tuple[str, str]]
+# 每个元组: (图表类型, 查询描述)
+# 图表类型必须为以下之一：
+#   &quot;line&quot; &quot;scatter&quot; &quot;bar&quot; &quot;pie&quot; &quot;hist&quot; &quot;heatmap&quot;
+#   &quot;boxplot&quot; &quot;area&quot; &quot;radar&quot; &quot;map&quot; &quot;subplots&quot; &quot;custom&quot;
+</code></pre>
+<blockquote>
+<p>注意：<code>batch()</code> 使用默认样式，且不支持为每张图绑定不同数据。如需为每张图自定义数据/样式/格式，请用下面的 Builder 方式。</p>
+</blockquote>
+<h3 id="_28">为每张图自定义数据、样式和格式</h3>
+<pre><code class="language-python">async def main():
+    lp = AsyncllmPIC(api_key=&quot;sk-...&quot;, base_url=&quot;...&quot;)
+
+    builders = [
+        lp.plot(&quot;CPU趋势&quot;).format('png'),
+        lp.bar(&quot;销售对比&quot;).data(sales_df).style({&quot;color_scheme&quot;: &quot;warm&quot;}).format('svg'),
+        lp.pie(&quot;市场份额&quot;).data(market_df).style({&quot;color_scheme&quot;: &quot;cool&quot;}).format('pdf'),
+        lp.heatmap(&quot;相关性矩阵&quot;).data(corr_df).format('png'),
+    ]
+
+    results = await asyncio.gather(*[b.render() for b in builders])
+
+    for r in results:
+        r.save()  # 每张图保存在 ~/llmpic_charts/ 下，含时间戳
+
+asyncio.run(main())
+</code></pre>
+<h3 id="_29">批量任务中的错误处理</h3>
+<pre><code class="language-python">async def main():
+    lp = AsyncllmPIC(...)
+
+    results = await lp.batch(requests)
+
+    success_count = sum(1 for r in results if r.success)
+    total_tokens = sum(
+        r.token_usage.get('input', 0) + r.token_usage.get('output', 0)
+        for r in results if r.success
+    )
+
+    print(f&quot;成功 {success_count}/{len(results)} 张图，共消耗 {total_tokens} tokens&quot;)
+
+    for i, r in enumerate(results):
+        if r.success:
+            r.save(f&quot;report_{i}.png&quot;)
+        else:
+            print(f&quot;第 {i} 张图生成失败: {r.error_message}&quot;)
+
+asyncio.run(main())
+</code></pre>
+<hr />
+<h2 id="_30">安全模型</h2>
+<h3 id="_31">架构</h3>
+<pre><code>LLM生成的代码
+      │
+      ├──→ 第一层：正则审查（32条规则，~0ms）
+      │         ↓
+      │    [不通过] → 立即拒绝
+      │    [通过] → 继续
+      │
+      └──→ 第二层：LLM 语义审查（可选，~1-2秒）
+                ↓
+           [不通过] → 拒绝并说明理由
+           [通过] → 进入沙箱执行
+</code></pre>
+<h3 id="_32">第一层：正则模式（始终启用）</h3>
+<p>32 条预编译正则阻止：</p>
+<table>
+<thead>
+<tr>
+<th>类别</th>
+<th>拦截内容</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>系统命令</td>
+<td><code>os.system()</code>, <code>os.popen()</code>, <code>os.exec*()</code>, <code>os.spawn*()</code>, <code>subprocess</code></td>
+</tr>
+<tr>
+<td>文件操作</td>
+<td><code>os.remove()</code>, <code>os.unlink()</code>, <code>os.rmdir()</code>, <code>os.rename()</code>, <code>os.mkdir/makedirs()</code>, <code>os.chmod()</code>, <code>os.environ</code>, <code>open()</code></td>
+</tr>
+<tr>
+<td>动态执行</td>
+<td><code>exec()</code>, <code>eval()</code>, <code>compile()</code>, <code>__import__()</code></td>
+</tr>
+<tr>
+<td>网络访问</td>
+<td><code>socket</code>, <code>urllib</code>, <code>requests</code>, <code>httpx</code></td>
+</tr>
+<tr>
+<td>进程退出</td>
+<td><code>sys.exit()</code></td>
+</tr>
+<tr>
+<td>危险模块</td>
+<td><code>shutil</code>, <code>ctypes</code>, <code>pickle</code></td>
+</tr>
+<tr>
+<td>反射逃逸</td>
+<td><code>__subclasses__</code>, <code>__bases__</code>, <code>__mro__</code>, <code>setattr()</code>, <code>delattr()</code></td>
+</tr>
+</tbody>
+</table>
+<h3 id="_33">第二层：沙箱执行（始终启用）</h3>
+<ul>
+<li><strong>受限内置函数</strong>：命名空间中仅包含安全的内置函数，没有 <code>open()</code>、<code>exec()</code> 等</li>
+<li><strong>Figure 猴子补丁</strong>：<code>Figure.__init__</code> 被追踪用于检测；<code>Figure.savefig</code> 被拦截，代码无法直接保存文件</li>
+<li><strong>plt 拦截</strong>：<code>plt.show()</code>, <code>plt.savefig()</code>, <code>plt.close()</code> → 空操作</li>
+<li><strong>超时熔断</strong>：ThreadPoolExecutor + 可配置超时机制终止失控代码</li>
+<li><strong>全局互斥锁</strong>：模块级锁防止并发生成时的 matplotlib 全局状态冲突</li>
+</ul>
+<h3 id="_34">安全级别选择</h3>
+<pre><code class="language-python"># 快速模式（推荐生产环境）
+lp = llmPIC(..., safety_level=&quot;fast&quot;)
+
+# 完整模式（增加 LLM 语义审查，每张图多 1-2 秒）
+lp = llmPIC(..., safety_level=&quot;full&quot;)
+</code></pre>
+<p><strong>建议</strong>：沙箱本身提供了足够强的隔离能力，<code>fast</code> 模式在生产环境安全可靠。<code>full</code> 模式适用于面向公众的对抗性场景。</p>
+<hr />
+<h2 id="_35">多语言支持</h2>
+<h3 id="_36">自动语言检测</h3>
+<p>SDK 通过 Unicode 范围分析检测查询语言：</p>
+<pre><code class="language-python">lp.plot(&quot;CPU使用率趋势&quot;)              # → 中文标题/标签
+lp.plot(&quot;CPU使用量トレンド&quot;)            # → 日文标题/标签
+lp.plot(&quot;CPU 사용량 추세&quot;)             # → 韩文标题/标签
+lp.plot(&quot;CPU usage trend&quot;)             # → 英文标题/标签
+</code></pre>
+<p>检测逻辑：
+- <strong>中文</strong>：CJK 统一表意文字（U+4E00–U+9FFF）或扩展 A 区（U+3400–U+4DBF）
+- <strong>日文</strong>：平假名（U+3040–U+309F）、片假名（U+30A0–U+30FF）或片假名扩展（U+31F0–U+31FF）
+- <strong>韩文</strong>：谚文音节（U+AC00–U+D7AF）
+- <strong>英文</strong>：默认（未检测到 CJK 字符）</p>
+<p>语言提示会传给 LLM 作为 prompt 的一部分："图表中的所有标签和标题请使用简体中文。"</p>
+<h3 id="cjk">跨平台 CJK 字体支持</h3>
+<p>当 <code>chinese_font=True</code>（默认），SDK 自动检测并配置中日韩字体：</p>
+<table>
+<thead>
+<tr>
+<th>平台</th>
+<th>字体优先级</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Windows</td>
+<td>Microsoft YaHei（微软雅黑）→ SimHei（黑体）→ SimSun（宋体）</td>
+</tr>
+<tr>
+<td>macOS</td>
+<td>PingFang SC（苹方）→ Heiti SC（黑体）→ STHeiti（华文黑体）</td>
+</tr>
+<tr>
+<td>Linux</td>
+<td>WenQuanYi Micro Hei（文泉驿微米黑）→ WenQuanYi Zen Hei → Noto Sans CJK SC → Noto Sans SC</td>
+</tr>
+</tbody>
+</table>
+<p>字体检测仅在首次执行时运行一次，之后缓存（线程安全）。</p>
+<p><strong>禁用 CJK 字体</strong>（纯英文图表）：</p>
+<pre><code class="language-python">lp = llmPIC(..., chinese_font=False)
+</code></pre>
+<h3 id="_37">混合语言图表</h3>
+<p>你可以用英文查询但通过 prompt 描述来获得中文标签：</p>
+<pre><code class="language-python">lp.plot(&quot;Sales trend with Chinese labels: 月份 as x-axis, 销售额 as y-axis&quot;)
+</code></pre>
+<hr />
+<h2 id="_38">各大模型服务商配置</h2>
+<h3 id="openai">OpenAI</h3>
+<pre><code class="language-python">lp = llmPIC(
+    api_key=&quot;sk-proj-...&quot;,
+    base_url=&quot;https://api.openai.com/v1&quot;,
+    model=&quot;gpt-4o&quot;,          # 最佳质量
+    # model=&quot;gpt-4o-mini&quot;,   # 约 1/10 价格，简单图表质量也很高
+)
+</code></pre>
+<h3 id="deepseek">DeepSeek（国内用户推荐，性价比高）</h3>
+<p>DeepSeek 提供优秀的代码生成能力，成本约为 OpenAI 的十分之一：</p>
+<pre><code class="language-python">lp = llmPIC(
+    api_key=&quot;sk-...&quot;,
+    base_url=&quot;https://api.deepseek.com/v1&quot;,
+    model=&quot;deepseek-chat&quot;,        # DeepSeek-V3
+    # model=&quot;deepseek-reasoner&quot;,  # DeepSeek-R1（推理模型，可能较慢）
+)
+</code></pre>
+<h3 id="azure-openai">Azure OpenAI</h3>
+<pre><code class="language-python">lp = llmPIC(
+    api_key=&quot;your-azure-api-key&quot;,
+    base_url=&quot;https://{your-resource}.openai.azure.com/openai/deployments/{deployment-name}&quot;,
+    model=&quot;gpt-4o&quot;,          # 你的部署名称
+    # 注意：部分 Azure 配置可能需要 structured_output=False
+)
+</code></pre>
+<h3 id="glm">智谱 GLM</h3>
+<pre><code class="language-python">lp = llmPIC(
+    api_key=&quot;your-zhipu-api-key&quot;,
+    base_url=&quot;https://open.bigmodel.cn/api/paas/v4&quot;,
+    model=&quot;glm-4-plus&quot;,
+)
+</code></pre>
+<h3 id="moonshot">月之暗面 Moonshot</h3>
+<pre><code class="language-python">lp = llmPIC(
+    api_key=&quot;your-moonshot-key&quot;,
+    base_url=&quot;https://api.moonshot.cn/v1&quot;,
+    model=&quot;moonshot-v1-8k&quot;,
+)
+</code></pre>
+<h3 id="_39">阿里通义千问</h3>
+<pre><code class="language-python">lp = llmPIC(
+    api_key=&quot;your-dashscope-key&quot;,
+    base_url=&quot;https://dashscope.aliyuncs.com/compatible-mode/v1&quot;,
+    model=&quot;qwen-plus&quot;,
+)
+</code></pre>
+<h3 id="_40">百度文心一言</h3>
+<pre><code class="language-python">lp = llmPIC(
+    api_key=&quot;your-qianfan-key&quot;,
+    base_url=&quot;https://qianfan.baidubce.com/v2&quot;,
+    model=&quot;ernie-4.0-turbo-8k&quot;,
+)
+</code></pre>
+<h3 id="ollama">Ollama（本地部署）</h3>
+<pre><code class="language-python">lp = llmPIC(
+    api_key=&quot;ollama&quot;,           # Ollama 不需要真实的 API key
+    base_url=&quot;http://localhost:11434/v1&quot;,
+    model=&quot;qwen2.5:7b&quot;,         # 也支持 llama3, codellama 等
+    structured_output=False,    # 部分本地模型不支持 JSON mode
+    max_retries=5,              # 本地模型可能需要更多重试
+    max_fix_attempts=3,         # 能力较弱的模型需要更多修复尝试
+)
+</code></pre>
+<h3 id="vllm">vLLM（自部署）</h3>
+<pre><code class="language-python">lp = llmPIC(
+    api_key=&quot;not-needed&quot;,
+    base_url=&quot;http://localhost:8000/v1&quot;,
+    model=&quot;Qwen/Qwen2.5-7B-Instruct&quot;,
+    structured_output=False,
+    max_retries=5,
+)
+</code></pre>
+<h3 id="_41">各服务商对比</h3>
+<table>
+<thead>
+<tr>
+<th>服务商</th>
+<th>成本（相对）</th>
+<th>代码质量</th>
+<th>速度</th>
+<th>推荐场景</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>OpenAI GPT-4o</td>
+<td>$$$$</td>
+<td>★★★★★</td>
+<td>★★★★</td>
+<td>复杂图表、仪表盘</td>
+</tr>
+<tr>
+<td>OpenAI GPT-4o-mini</td>
+<td>$$</td>
+<td>★★★★</td>
+<td>★★★★★</td>
+<td>大批量、简单图表</td>
+</tr>
+<tr>
+<td>DeepSeek-V3</td>
+<td>$</td>
+<td>★★★★★</td>
+<td>★★★★</td>
+<td>性价比最优、中文图表</td>
+</tr>
+<tr>
+<td>智谱 GLM-4-Plus</td>
+<td>$$</td>
+<td>★★★★</td>
+<td>★★★★</td>
+<td>中文图表</td>
+</tr>
+<tr>
+<td>本地 Qwen 7B</td>
+<td>免费</td>
+<td>★★★</td>
+<td>★★★</td>
+<td>原型开发、离线使用</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="_42">实战工作流与代码模板</h2>
+<h3 id="jupyter">模板一：快速探索（Jupyter）</h3>
+<pre><code class="language-python"># 快速出图，跳过 save()，用 show() 直接看
+lp = llmPIC(api_key=&quot;...&quot;, base_url=&quot;...&quot;)
+
+lp.plot(&quot;销售额分布&quot;).data(df).render().show()
+lp.bar(&quot;Top 10 热销产品&quot;).data(products_df).render().show()
+lp.scatter(&quot;年龄 vs 消费&quot;).data(users_df).render().show()
+lp.heatmap(&quot;相关性矩阵&quot;).data(df.corr()).render().show()
+</code></pre>
+<h3 id="_43">模板二：统一风格的报告</h3>
+<pre><code class="language-python"># 为报告中所有图表定义统一风格
+REPORT_STYLE = {
+    &quot;figsize&quot;: [12, 7],
+    &quot;dpi&quot;: 200,
+    &quot;color_scheme&quot;: &quot;dark&quot;,
+    &quot;title_fontsize&quot;: 18,
+    &quot;label_fontsize&quot;: 14,
+    &quot;tick_fontsize&quot;: 12,
+    &quot;grid&quot;: True,
+    &quot;grid_alpha&quot;: 0.3,
+}
+
+lp.plot(&quot;营收趋势&quot;).data(df).style(REPORT_STYLE).save(&quot;report_revenue.png&quot;)
+lp.bar(&quot;区域对比&quot;).data(df).style(REPORT_STYLE).save(&quot;report_regional.png&quot;)
+lp.pie(&quot;板块占比&quot;).data(df).style(REPORT_STYLE).save(&quot;report_segments.png&quot;)
+lp.scatter(&quot;用户分群&quot;).data(df).style(REPORT_STYLE).save(&quot;report_scatter.png&quot;)
+</code></pre>
+<h3 id="_44">模板三：先粗后精迭代</h3>
+<pre><code class="language-python"># 从粗略到精细，一步步修改
+r = lp.plot(&quot;月度销售额&quot;).data(df).render()
+r = r.edit(&quot;添加12个月移动平均线&quot;)
+r = r.edit(&quot;高亮标记峰值月份&quot;)
+r = r.edit(&quot;标题改为'2024销售业绩分析'，副标题'含12个月移动平均'&quot;)
+r = r.edit(&quot;使用暗色主题，分辨率提升到200 DPI&quot;)
+r.save(&quot;final_sales_analysis.png&quot;)
+</code></pre>
+<h3 id="_45">模板四：一次调用，三格式导出</h3>
+<pre><code class="language-python"># 一次 LLM 调用，输出三种格式
+result = lp.bar(&quot;各部门年度营收&quot;).data(df).render()
+
+result.save(&quot;report.png&quot;)      # 嵌入 Word/PPT
+result.save(&quot;report.svg&quot;)      # 网页展示、无限缩放
+result.save(&quot;report.pdf&quot;)      # 打印输出
+
+# 或者程序化获取
+png_bytes = result.image_bytes
+svg_html = result.base64_svg()  # 可直接 &lt;img src=&quot;...&quot;&gt;
+pdf_bytes = result.pdf_bytes
+</code></pre>
+<h3 id="_46">模板五：自动化日报生成</h3>
+<pre><code class="language-python">import asyncio
+from llmpic import AsyncllmPIC
+
+async def generate_daily_report(date_str, metrics_df):
+    lp = AsyncllmPIC(
+        api_key=os.getenv(&quot;LLMPIC_API_KEY&quot;),
+        base_url=os.getenv(&quot;LLMPIC_BASE_URL&quot;),
+    )
+
+    results = await lp.batch([
+        (&quot;plot&quot;, f&quot;{date_str} 日活跃用户趋势&quot;),
+        (&quot;bar&quot;, f&quot;{date_str} Top 10 功能使用量&quot;),
+        (&quot;pie&quot;, f&quot;{date_str} 流量来源分布&quot;),
+        (&quot;heatmap&quot;, f&quot;{date_str} 24小时活跃度热力图&quot;),
+    ])
+
+    paths = []
+    for i, r in enumerate(results):
+        if r.success:
+            path = f&quot;reports/{date_str}/chart_{i}.png&quot;
+            r.save(path)
+            paths.append(path)
+        else:
+            print(f&quot;图表 {i} 失败: {r.error_message}&quot;)
+
+    return paths
+
+# 运行: asyncio.run(generate_daily_report(&quot;2025-01-15&quot;, df))
+</code></pre>
+<h3 id="_47">模板六：可复用图表函数</h3>
+<pre><code class="language-python">def chart_timeseries(df, date_col, value_col, title, style=None):
+    &quot;&quot;&quot;创建风格统一的时序图表。&quot;&quot;&quot;
+    base_style = {
+        &quot;figsize&quot;: [14, 6],
+        &quot;color_scheme&quot;: &quot;blues&quot;,
+        &quot;title_fontsize&quot;: 16,
+        &quot;label_fontsize&quot;: 12,
+        &quot;dpi&quot;: 150,
+    }
+    if style:
+        base_style.update(style)
+
+    result = lp.plot(f&quot;{title}: {value_col} 随时间变化&quot;).data(df).style(base_style).render()
+    return result
+
+# 使用
+cpu_chart = chart_timeseries(df, &quot;date&quot;, &quot;cpu_usage&quot;, &quot;服务器CPU&quot;)
+mem_chart = chart_timeseries(df, &quot;date&quot;, &quot;mem_usage&quot;, &quot;服务器内存&quot;,
+                             style={&quot;color_scheme&quot;: &quot;warm&quot;})
+</code></pre>
+<h3 id="ab">模板七：A/B 测试可视化</h3>
+<pre><code class="language-python"># 并排对比
+lp.subplots(&quot;1行2列: 对照组转化率趋势, 实验组转化率趋势&quot;).data({
+    &quot;control&quot;: control_df,
+    &quot;treatment&quot;: treatment_df,
+}).save(&quot;ab_test.png&quot;)
+
+# 叠加对比
+lp.plot(&quot;转化率曲线: 对照组 vs 实验组，带置信区间&quot;).data({
+    &quot;control&quot;: control_df[&quot;rate&quot;],
+    &quot;treatment&quot;: treatment_df[&quot;rate&quot;],
+}).save(&quot;ab_overlay.png&quot;)
+</code></pre>
+<h3 id="_48">模板八：检查生成的代码（调试用）</h3>
+<pre><code class="language-python">result = lp.plot(&quot;复杂的多系列图表&quot;).data(df).render()
+
+if not result.success:
+    print(f&quot;错误: {result.error_message}&quot;)
+else:
+    # 查看 LLM 生成的代码
+    print(&quot;=== 生成的 Matplotlib 代码 ===&quot;)
+    print(result.code)
+    print(f&quot;\n=== Token 用量: {result.token_usage} ===&quot;)
+
+# 高级用法：手动修改生成的代码
+# 取 result.code，修改后可以通过自定义方式执行
+</code></pre>
+<hr />
+<h2 id="_49">成本优化</h2>
+<h3 id="1">1. 选择合适的模型</h3>
+<pre><code class="language-python"># 最贵、质量最高
+lp = llmPIC(..., model=&quot;gpt-4o&quot;)
+
+# 约便宜 10 倍，简单图表质量依然很好
+lp = llmPIC(..., model=&quot;gpt-4o-mini&quot;)
+
+# 性价比最高（国内用户推荐）
+lp = llmPIC(..., model=&quot;deepseek-chat&quot;, base_url=&quot;https://api.deepseek.com/v1&quot;)
+</code></pre>
+<h3 id="2">2. 描述具体（减少重试和修复）</h3>
+<pre><code class="language-python"># 好：在 prompt 中明确给出数据
+lp.bar(&quot;Q1预算: 研发=200万, 市场=150万, 销售=180万&quot;)
+
+# 差：太模糊，LLM 可能多次重试
+lp.bar(&quot;各部门预算&quot;)
+</code></pre>
+<h3 id="3">3. 提供数据减少猜测</h3>
+<pre><code class="language-python"># 好：LLM 看到列名、类型、样本数据
+lp.plot(&quot;趋势&quot;).data(df)
+
+# 差：LLM 只能猜测数据结构
+lp.plot(&quot;趋势&quot;)
+</code></pre>
+<h3 id="4">4. 用异步批量生成</h3>
+<pre><code class="language-python"># 5张图顺序生成 = 5 × (LLM时间 + 沙箱时间)
+# 5张图批量生成 = max(LLM时间) + max(沙箱时间)
+# 虽然 token 消耗相同，但总耗时可减少 3-5 倍
+</code></pre>
+<h3 id="5-token">5. 追踪 Token 用量</h3>
+<pre><code class="language-python">total_input = 0
+total_output = 0
+
+for query in queries:
+    r = lp.plot(query).render()
+    if r.success:
+        total_input += r.token_usage.get('input', 0)
+        total_output += r.token_usage.get('output', 0)
+
+print(f&quot;本次会话: 输入 {total_input} tokens, 输出 {total_output} tokens&quot;)
+</code></pre>
+<h3 id="6-sdk">6. 复用 SDK 实例</h3>
+<p>不要每次画图都新建 <code>llmPIC</code> 实例，一个实例可以反复使用：</p>
+<pre><code class="language-python"># 好：复用
+lp = llmPIC(...)
+charts = [lp.plot(q).save(f&quot;{i}.png&quot;) for i, q in enumerate(queries)]
+
+# 差：每次都创建新实例
+for q in queries:
+    lp = llmPIC(...)  # 每次都重建 sandbox、做字体检测等
+    lp.plot(q).save(...)
+</code></pre>
+<hr />
+<h2 id="_50">系统集成方案</h2>
+<h3 id="jupyter-notebook_1">Jupyter Notebook 最佳实践</h3>
+<pre><code class="language-python">%matplotlib inline  # 可选 —— llmpic 独立处理显示
+
+from llmpic import llmPIC
+lp = llmPIC(api_key=&quot;...&quot;, base_url=&quot;...&quot;)
+
+# 探索阶段：show() 内联查看
+lp.plot(&quot;用户年龄分布&quot;).data(df).render().show()
+
+# 确认后：save() 保存到报告
+lp.plot(&quot;用户年龄分布&quot;).data(df).style({
+    &quot;figsize&quot;: [10, 6],
+    &quot;dpi&quot;: 200,
+}).save(&quot;report_age_dist.png&quot;)
+</code></pre>
+<h3 id="streamlit-gradio">Streamlit / Gradio 集成</h3>
+<pre><code class="language-python">import streamlit as st
+from llmpic import llmPIC
+
+lp = llmPIC(
+    api_key=st.secrets[&quot;LLMPIC_API_KEY&quot;],
+    base_url=st.secrets[&quot;LLMPIC_BASE_URL&quot;],
+)
+
+st.title(&quot;AI 图表生成器&quot;)
+query = st.text_input(&quot;描述你想要的图表：&quot;, &quot;过去12个月销售趋势&quot;)
+
+if st.button(&quot;生成图表&quot;):
+    result = lp.plot(query).render()
+    if result.success:
+        st.image(result.image_bytes)
+        st.code(result.code, language=&quot;python&quot;)
+    else:
+        st.error(result.error_message)
+</code></pre>
+<h3 id="fastapi-flask">FastAPI / Flask 集成</h3>
+<pre><code class="language-python">from fastapi import FastAPI
+from fastapi.responses import Response
+from llmpic import llmPIC
+import os
+
+app = FastAPI()
+
+lp = llmPIC(
+    api_key=os.getenv(&quot;LLMPIC_API_KEY&quot;),
+    base_url=os.getenv(&quot;LLMPIC_BASE_URL&quot;),
+)
+
+@app.post(&quot;/chart&quot;)
+async def create_chart(query: str, format: str = &quot;png&quot;):
+    result = lp.custom(query).format(format).render()
+    if not result.success:
+        return {&quot;error&quot;: result.error_message}
+
+    media_type = {&quot;png&quot;: &quot;image/png&quot;, &quot;svg&quot;: &quot;image/svg+xml&quot;, &quot;pdf&quot;: &quot;application/pdf&quot;}
+    return Response(content=result.image_bytes, media_type=media_type.get(format, &quot;image/png&quot;))
+</code></pre>
+<h3 id="_51">数据管道集成</h3>
+<pre><code class="language-python"># 在数据管道中：自动生成每日/每周 KPI 图表
+def generate_kpi_charts(date, kpi_df):
+    style = {&quot;figsize&quot;: [12, 6], &quot;dpi&quot;: 150, &quot;color_scheme&quot;: &quot;dark&quot;}
+
+    charts = {
+        &quot;revenue&quot;: lp.plot(f&quot;每日营收趋势&quot;).data(kpi_df).style(style),
+        &quot;users&quot;: lp.plot(f&quot;每日活跃用户&quot;).data(kpi_df).style(style),
+        &quot;conversion&quot;: lp.plot(f&quot;转化率趋势&quot;).data(kpi_df).style(style),
+    }
+
+    for name, builder in charts.items():
+        builder.save(f&quot;kpi/{date}/{name}.png&quot;)
+</code></pre>
+<hr />
+<h2 id="_52">最佳实践</h2>
+<h3 id="1-fast">1. 生产环境使用 fast 安全模式</h3>
+<p><code>safety_level="fast"</code> 足够安全，沙箱已提供真正隔离。<code>full</code> 模式每张图多花 1-2 秒。</p>
+<h3 id="2-batch">2. 批量任务用异步 <code>batch()</code></h3>
+<p>多张图表用 <code>AsyncllmPIC.batch()</code> 并发生成，总耗时接近单张：</p>
+<pre><code class="language-python"># 好：3张图约 2-3 秒
+results = await lp.batch([(...), (...), (...)])
+
+# 差：3张图约 6-9 秒
+for query in queries:
+    lp.plot(query).save(...)
+</code></pre>
+<h3 id="3_1">3. 描述尽量具体</h3>
+<pre><code class="language-python"># 好：数据和意图明确
+lp.bar(&quot;Q1预算: 研发=200万, 市场=150万, 销售=180万, 人事=100万&quot;)
+
+# 差：太模糊
+lp.bar(&quot;各部门预算&quot;)
+</code></pre>
+<h3 id="4_1">4. 有真实数据就传进去</h3>
+<pre><code class="language-python">lp.plot(&quot;趋势&quot;).data(df)   # 好：LLM 看到真实数据结构
+lp.plot(&quot;趋势&quot;)             # 次优：LLM 编造演示数据
+</code></pre>
+<h3 id="5-edit">5. 用 <code>edit()</code> 迭代，不要重复描述</h3>
+<pre><code class="language-python"># 好：增量修改
+result = lp.plot(&quot;销售趋势&quot;).data(df).render()
+result = result.edit(&quot;标题字号加大&quot;)
+result = result.edit(&quot;添加网格线&quot;)
+result = result.edit(&quot;换成暖色系&quot;)
+
+# 差：每次微调都重写全部描述
+lp.plot(&quot;销售趋势，大标题&quot;).data(df).save(&quot;v1.png&quot;)
+lp.plot(&quot;销售趋势，大标题，有网格&quot;).data(df).save(&quot;v2.png&quot;)
+lp.plot(&quot;销售趋势，大标题，有网格，暖色&quot;).data(df).save(&quot;v3.png&quot;)
+</code></pre>
+<h3 id="6_1">6. 合理设置超时时间</h3>
+<pre><code class="language-python"># 简单图表：默认 30 秒足够
+lp.plot(&quot;折线图&quot;).render()
+
+# 复杂仪表盘：加大超时
+lp.subplots(&quot;4x4 综合看板&quot;).render()   # timeout=60
+lp = llmPIC(..., timeout=60)
+</code></pre>
+<h3 id="7-token">7. 追踪 Token 用量</h3>
+<pre><code class="language-python">result = lp.plot(&quot;test&quot;).render()
+print(f&quot;输入: {result.token_usage['input']}, 输出: {result.token_usage['output']}&quot;)
+</code></pre>
+<h3 id="8-custom">8. 不确定用什么图表时用 <code>.custom()</code></h3>
+<pre><code class="language-python"># 让 LLM 自动判断最佳可视化方式
+lp.custom(&quot;分析用户留存率的多维影响因素&quot;).data(df).save(&quot;auto.png&quot;)
+</code></pre>
+<h3 id="9-sdk">9. 只创建一次 SDK 实例</h3>
+<pre><code class="language-python"># 创建一次，反复使用
+lp = llmPIC(...)
+for chart_name, query in chart_configs.items():
+    lp.plot(query).save(f&quot;{chart_name}.png&quot;)
+</code></pre>
+<h3 id="10">10. 先检查成功再使用结果</h3>
+<pre><code class="language-python">result = lp.plot(&quot;复杂图表&quot;).render()
+if result.success:
+    result.save(&quot;output.png&quot;)
+    print(f&quot;成功生成 {len(result.code)} 字符代码, {result.size_kb:.1f}KB&quot;)
+else:
+    print(f&quot;生成失败: {result.error_message}&quot;)
+    # 可选：换模型重试，或简化查询
+</code></pre>
+<hr />
+<h2 id="_53">故障排查</h2>
+<h3 id="_54">生成的图表中文显示为方框 (□□□)</h3>
+<p><strong>原因</strong>：系统缺少中文字体。</p>
+<p><strong>解决</strong>：
+- Windows：安装 "Microsoft YaHei"（微软雅黑）或 "SimHei"（黑体）
+- Linux：<code>sudo apt install fonts-wqy-microhei</code>
+- macOS：通常已内置中文字体</p>
+<p>或将 <code>chinese_font=False</code> 仅使用英文标签。</p>
+<h3 id="llm_1">LLM 返回"无代码"或空白结果</h3>
+<p><strong>原因</strong>：查询描述过于模糊，模型无法理解需求。</p>
+<p><strong>解决</strong>：
+- 添加更多细节："折线图，12个数据点，展示月度销售额趋势"
+- 通过 <code>.data()</code> 传入实际数据
+- 尝试更强的模型（如 <code>gpt-4o</code> 替代 <code>gpt-4o-mini</code>）</p>
+<h3 id="code-execution-timed-out-30s">超时："Code execution timed out (30s)"</h3>
+<p><strong>原因</strong>：生成的代码中有死循环，或图表过于复杂。</p>
+<p><strong>解决</strong>：
+1. 增加超时时间：<code>llmPIC(..., timeout=60)</code>
+2. 简化查询 —— 将复杂仪表盘拆分为多个独立图表
+3. 对大数据集采样：<code>df.sample(1000)</code></p>
+<h3 id="_55">自动修复没有触发</h3>
+<p><strong>检查</strong>：
+- <code>max_fix_attempts &gt; 0</code>（默认 2）
+- 失败类型是<strong>代码执行错误</strong>（不是安全违规或超时）
+- 启用日志查看自动修复活动：
+  <code>python
+  import logging
+  logging.basicConfig(level=logging.INFO)</code></p>
+<h3 id="svgpdf">SVG/PDF 保存后无法打开</h3>
+<p><strong>原因</strong>：使用了错误的程序打开文件。</p>
+<p><strong>解决</strong>：
+- SVG：用浏览器（Chrome/Firefox）或矢量编辑软件打开
+- PDF：用 PDF 阅读器打开
+- 用 <code>result.base64_svg()</code> 嵌入 HTML 预览</p>
+<h3 id="modulenotfounderror-no-module-named-llmpic"><code>ModuleNotFoundError: No module named 'llmpic'</code></h3>
+<p><strong>解决</strong>：</p>
+<pre><code class="language-bash">pip install llmpic           # 正式安装
+# 或开发模式：
+pip install -e .             # 从仓库根目录可编辑安装
+</code></pre>
+<h3 id="runtimeerror-no-running-event-loop">异步报错 <code>RuntimeError: no running event loop</code></h3>
+<p><strong>原因</strong>：在非异步环境中直接使用了 <code>await</code>。</p>
+<p><strong>解决</strong>：用 <code>asyncio.run()</code> 包装：</p>
+<pre><code class="language-python">async def main():
+    lp = AsyncllmPIC(...)
+    await lp.plot(&quot;test&quot;).save(&quot;test.png&quot;)
+
+asyncio.run(main())  # ← 必须
+</code></pre>
+<h3 id="_56">生成的图表和我描述的不一样</h3>
+<p><strong>原因</strong>：自然语言本身存在歧义；LLM 会根据理解生成代码。</p>
+<p><strong>解决</strong>：
+- 描述更具体：不说"好看一点"，而说"标题字号改为18，用暖色系，加网格线"
+- 用 <code>.edit()</code> 迭代修改
+- 提供数据 —— 有了真实数据结构，图表会更准确</p>
+<h3 id="_57">图片文件太大</h3>
+<p><strong>原因</strong>：高 DPI + 大尺寸 = 大文件。</p>
+<p><strong>解决</strong>：</p>
+<pre><code class="language-python"># 网页用：降低 DPI，用 SVG
+lp.plot(&quot;网页图表&quot;).style({&quot;dpi&quot;: 72, &quot;figsize&quot;: [8, 5]}).format('svg').save(&quot;web.svg&quot;)
+
+# 打印用：高 DPI 是正常的
+lp.plot(&quot;打印图表&quot;).style({&quot;dpi&quot;: 300}).save(&quot;print.png&quot;)
+</code></pre>
+<h3 id="pandas-seaborn">pandas 或 seaborn 不可用</h3>
+<p><strong>原因</strong>：环境中未正常安装 pandas / seaborn（例如被锁定版本冲突覆盖）。</p>
+<p><strong>解决</strong>：</p>
+<pre><code class="language-bash">pip install llmpic --upgrade
+# 或单独补装
+pip install pandas seaborn
+</code></pre>
+<p>SDK 会自动降级为纯 matplotlib，但部分 LLM 生成的代码可能会引用 pandas/seaborn，导致执行失败。</p>
+<h3 id="api">API 频率限制</h3>
+<p><strong>原因</strong>：并发请求过多触发了 API 提供商的频率限制。</p>
+<p><strong>解决</strong>：
+- 减少批量大小
+- 批次之间加延迟
+- 升级 API 套餐</p>
+<pre><code class="language-python"># 分批处理，每批 3 张图
+for i in range(0, len(requests), 3):
+    chunk = requests[i:i+3]
+    results = await lp.batch(chunk)
+    await asyncio.sleep(2)  # 遵守频率限制
+</code></pre>
+<hr />
+<p>← <a href="../../README_CN/">返回首页</a></p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var labels=set.querySelector(".tabbed-labels");for(var tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+</div>
+      
+        
+<div class="md-social">
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://github.com/ADW-19/llmpic" target="_blank" rel="noopener" title="github.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+    </a>
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://xhslink.com/m/AQw13M5WIPc" target="_blank" rel="noopener" title="xhslink.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M357.2 48h70.6L273.6 224.2 455 464H313L201.7 318.6 74.5 464H3.8l164.9-188.5L-5.2 48h145.6l100.5 132.9zm-24.8 373.8h39.1L119.1 88h-42z"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.sections", "navigation.expand", "navigation.instant", "navigation.top", "search.suggest", "search.highlight", "content.tabs.link", "content.code.copy"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  </body>
+</html>

@@ -1,0 +1,4728 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Natural Language → Production Charts. One line.">
+      
+      
+        <meta name="author" content="ADW-19">
+      
+      
+        <link rel="canonical" href="https://ADW-19.github.io/llmpic/english/GUIDE_EN/">
+      
+      
+        <link rel="prev" href="../..">
+      
+      
+        <link rel="next" href="../API_REFERENCE_EN/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+    
+    
+      
+        <title>Getting Started - LLMPIC</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="teal" data-md-color-accent="teal">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#user-guide-llmpic" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="LLMPIC" class="md-header__button md-logo" aria-label="LLMPIC" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            LLMPIC
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Getting Started
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="teal" data-md-color-accent="teal"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="teal" data-md-color-accent="teal"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/ADW-19/llmpic" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    llmpic
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="./" class="md-tabs__link">
+          
+  
+  
+  English
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../chinese/GUIDE_CN/" class="md-tabs__link">
+          
+  
+  
+  中文文档
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="LLMPIC" class="md-nav__button md-logo" aria-label="LLMPIC" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    LLMPIC
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/ADW-19/llmpic" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    llmpic
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    English
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    English
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Getting Started
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Getting Started
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#getting-started" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Getting Started
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Getting Started">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#sdk-initialization" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        SDK Initialization
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#choosing-parameters" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Choosing Parameters
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#chart-types-in-detail" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Chart Types in Detail
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Chart Types in Detail">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#plot-line-chart" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        plot — Line Chart
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#scatter-scatter-chart" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        scatter — Scatter Chart
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bar-bar-chart" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        bar — Bar Chart
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pie-pie-chart" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        pie — Pie Chart
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hist-histogram" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        hist — Histogram
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#heatmap-heatmap" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        heatmap — Heatmap
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#boxplot-boxplot" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        boxplot — Boxplot
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#area-area-chart" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        area — Area Chart
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#radar-radar-chart" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        radar — Radar Chart
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#map-geographic-map-v030" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        map — Geographic Map (v0.3.0)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#subplots-dashboard" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        subplots — Dashboard
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#custom-auto-detect" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        custom — Auto-Detect
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#data-input-methods" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Data Input Methods
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Data Input Methods">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#no-data-llm-generates-demo-data" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        No Data — LLM Generates Demo Data
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dataframe-recommended-for-production" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        DataFrame (Recommended for Production)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#numpy-array" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        NumPy Array
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dictionary" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Dictionary
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#list-tuple" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        List / Tuple
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#raw-string" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Raw String
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#passing-large-datasets" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Passing Large Datasets
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#style-customization" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Style Customization
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Style Customization">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#quick-color-schemes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Quick Color Schemes
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#size-resolution" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Size &amp; Resolution
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#typography" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Typography
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#grid-background" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Grid &amp; Background
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#combined-styling" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Combined Styling
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#style-as-json-string" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Style as JSON String
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#output-formats" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Output Formats
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Output Formats">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#png-default" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        PNG (Default)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#svg-vector-graphics" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        SVG — Vector Graphics
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pdf-for-printing-and-reports" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        PDF — For Printing and Reports
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#lazy-format-conversion" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Lazy Format Conversion
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#default-save-path" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Default Save Path
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#jupyter-notebook-inline-display" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Jupyter Notebook Inline Display
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#iterative-editing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Iterative Editing
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Iterative Editing">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#basic-workflow" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Basic Workflow
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#how-edit-works" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How edit() Works
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#chaining-edits" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Chaining Edits
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#edit-preserves-context" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Edit Preserves Context
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#auto-fix-mechanism" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Auto-Fix Mechanism
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Auto-Fix Mechanism">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#how-it-works" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How It Works
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#configuration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Configuration
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#when-auto-fix-triggers-and-when-it-doesnt" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        When Auto-Fix Triggers (and When It Doesn't)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#checking-auto-fix-activity" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Checking Auto-Fix Activity
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#async-batch-generation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Async &amp; Batch Generation
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Async &amp; Batch Generation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#single-async-chart" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Single Async Chart
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#batch-concurrent-generation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Batch — Concurrent Generation
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#batch-request-format" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        batch() Request Format
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#batch-with-data-style-and-format" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Batch with Data, Style, and Format
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#error-handling-in-batch" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Error Handling in Batch
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#security-model" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Security Model
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Security Model">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#architecture" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Architecture
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#layer-1-regex-patterns-always-active" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Layer 1: Regex Patterns (always active)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#layer-2-sandbox-execution-always-active" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Layer 2: Sandbox Execution (always active)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#choosing-safety-level" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Choosing Safety Level
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#multi-language-support" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Multi-Language Support
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Multi-Language Support">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#auto-detection" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Auto-Detection
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cross-platform-cjk-font-support" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Cross-Platform CJK Font Support
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mixed-language-charts" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Mixed-Language Charts
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#provider-setup-guide" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Provider Setup Guide
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Provider Setup Guide">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#openai" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        OpenAI
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#deepseek-recommended-for-chinese-users" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        DeepSeek (Recommended for Chinese Users)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#azure-openai" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Azure OpenAI
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#zhipu-glm" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Zhipu GLM (智谱)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ollama-local" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Ollama (Local)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#vllm-self-hosted" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        vLLM (Self-Hosted)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#comparing-providers" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Comparing Providers
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#workflow-patterns-cookbook" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Workflow Patterns &amp; Cookbook
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Workflow Patterns &amp; Cookbook">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#pattern-1-quick-exploration-jupyter" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Pattern 1: Quick Exploration (Jupyter)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pattern-2-presentation-quality-report" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Pattern 2: Presentation-Quality Report
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pattern-3-build-iterate" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Pattern 3: Build &amp; Iterate
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pattern-4-multi-format-pipeline" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Pattern 4: Multi-Format Pipeline
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pattern-5-automated-reporting-pipeline" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Pattern 5: Automated Reporting Pipeline
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pattern-6-reusable-chart-function" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Pattern 6: Reusable Chart Function
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pattern-7-ab-test-visualization" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Pattern 7: A/B Test Visualization
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pattern-8-debugging-by-inspecting-generated-code" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Pattern 8: Debugging by Inspecting Generated Code
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cost-optimization" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Cost Optimization
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Cost Optimization">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-choose-the-right-model" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Choose the Right Model
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-be-specific-reduces-retries-fixes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Be Specific (Reduces Retries &amp; Fixes)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-provide-data-fewer-fix-attempts" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Provide Data → Fewer Fix Attempts
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-batch-with-async" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Batch with Async
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5-track-token-usage" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. Track Token Usage
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#6-cache-sdk-instances" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. Cache SDK Instances
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#integration-patterns" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Integration Patterns
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Integration Patterns">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#jupyter-notebook-best-practices" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Jupyter Notebook Best Practices
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#streamlit-gradio-integration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Streamlit / Gradio Integration
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fastapi-flask-integration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        FastAPI / Flask Integration
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#data-pipeline-integration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Data Pipeline Integration
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#best-practices" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Best Practices
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Best Practices">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-use-fast-safety-mode-for-production" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Use Fast Safety Mode for Production
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-use-async-batch-for-multiple-charts" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Use Async Batch for Multiple Charts
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-be-specific-in-prompts" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Be Specific in Prompts
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-provide-real-data" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Provide Real Data
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5-iterate-with-edit-dont-re-describe" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. Iterate with edit(), Don't Re-describe
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#6-set-reasonable-timeouts" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. Set Reasonable Timeouts
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#7-track-token-usage" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7. Track Token Usage
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#8-use-custom-when-unsure" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8. Use .custom() When Unsure
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#9-reuse-the-sdk-instance" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9. Reuse the SDK Instance
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#10-check-success-before-using-results" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10. Check success Before Using Results
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#troubleshooting" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Troubleshooting
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Troubleshooting">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#chinese-characters-display-as-boxes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Chinese characters display as boxes (□□□)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#llm-returns-no-code-or-empty-result" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        LLM returns "no code" or empty result
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#timeout-code-execution-timed-out-30s" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Timeout: "Code execution timed out (30s)"
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#auto-fix-not-triggering" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Auto-fix not triggering
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#svgpdf-files-wont-open" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        SVG/PDF files won't open
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#modulenotfounderror-no-module-named-llmpic" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ModuleNotFoundError: No module named 'llmpic'
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#runtimeerror-no-running-event-loop-with-async" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        RuntimeError: no running event loop with async
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#chart-looks-different-from-what-i-described" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Chart looks different from what I described
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#large-chart-files" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Large chart files
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pandas-or-seaborn-not-available" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        pandas or seaborn not available
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rate-limiting-from-api-provider" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Rate limiting from API provider
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../API_REFERENCE_EN/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    API Reference
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    中文文档
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    中文文档
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chinese/GUIDE_CN/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    使用指南
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chinese/API_REFERENCE_CN/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    API 参考
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#getting-started" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Getting Started
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Getting Started">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#sdk-initialization" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        SDK Initialization
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#choosing-parameters" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Choosing Parameters
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#chart-types-in-detail" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Chart Types in Detail
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Chart Types in Detail">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#plot-line-chart" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        plot — Line Chart
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#scatter-scatter-chart" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        scatter — Scatter Chart
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bar-bar-chart" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        bar — Bar Chart
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pie-pie-chart" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        pie — Pie Chart
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hist-histogram" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        hist — Histogram
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#heatmap-heatmap" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        heatmap — Heatmap
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#boxplot-boxplot" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        boxplot — Boxplot
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#area-area-chart" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        area — Area Chart
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#radar-radar-chart" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        radar — Radar Chart
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#map-geographic-map-v030" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        map — Geographic Map (v0.3.0)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#subplots-dashboard" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        subplots — Dashboard
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#custom-auto-detect" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        custom — Auto-Detect
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#data-input-methods" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Data Input Methods
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Data Input Methods">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#no-data-llm-generates-demo-data" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        No Data — LLM Generates Demo Data
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dataframe-recommended-for-production" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        DataFrame (Recommended for Production)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#numpy-array" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        NumPy Array
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dictionary" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Dictionary
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#list-tuple" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        List / Tuple
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#raw-string" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Raw String
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#passing-large-datasets" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Passing Large Datasets
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#style-customization" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Style Customization
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Style Customization">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#quick-color-schemes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Quick Color Schemes
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#size-resolution" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Size &amp; Resolution
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#typography" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Typography
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#grid-background" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Grid &amp; Background
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#combined-styling" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Combined Styling
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#style-as-json-string" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Style as JSON String
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#output-formats" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Output Formats
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Output Formats">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#png-default" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        PNG (Default)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#svg-vector-graphics" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        SVG — Vector Graphics
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pdf-for-printing-and-reports" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        PDF — For Printing and Reports
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#lazy-format-conversion" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Lazy Format Conversion
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#default-save-path" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Default Save Path
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#jupyter-notebook-inline-display" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Jupyter Notebook Inline Display
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#iterative-editing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Iterative Editing
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Iterative Editing">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#basic-workflow" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Basic Workflow
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#how-edit-works" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How edit() Works
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#chaining-edits" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Chaining Edits
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#edit-preserves-context" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Edit Preserves Context
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#auto-fix-mechanism" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Auto-Fix Mechanism
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Auto-Fix Mechanism">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#how-it-works" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How It Works
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#configuration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Configuration
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#when-auto-fix-triggers-and-when-it-doesnt" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        When Auto-Fix Triggers (and When It Doesn't)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#checking-auto-fix-activity" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Checking Auto-Fix Activity
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#async-batch-generation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Async &amp; Batch Generation
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Async &amp; Batch Generation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#single-async-chart" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Single Async Chart
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#batch-concurrent-generation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Batch — Concurrent Generation
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#batch-request-format" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        batch() Request Format
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#batch-with-data-style-and-format" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Batch with Data, Style, and Format
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#error-handling-in-batch" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Error Handling in Batch
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#security-model" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Security Model
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Security Model">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#architecture" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Architecture
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#layer-1-regex-patterns-always-active" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Layer 1: Regex Patterns (always active)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#layer-2-sandbox-execution-always-active" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Layer 2: Sandbox Execution (always active)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#choosing-safety-level" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Choosing Safety Level
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#multi-language-support" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Multi-Language Support
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Multi-Language Support">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#auto-detection" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Auto-Detection
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cross-platform-cjk-font-support" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Cross-Platform CJK Font Support
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mixed-language-charts" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Mixed-Language Charts
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#provider-setup-guide" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Provider Setup Guide
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Provider Setup Guide">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#openai" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        OpenAI
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#deepseek-recommended-for-chinese-users" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        DeepSeek (Recommended for Chinese Users)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#azure-openai" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Azure OpenAI
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#zhipu-glm" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Zhipu GLM (智谱)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ollama-local" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Ollama (Local)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#vllm-self-hosted" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        vLLM (Self-Hosted)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#comparing-providers" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Comparing Providers
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#workflow-patterns-cookbook" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Workflow Patterns &amp; Cookbook
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Workflow Patterns &amp; Cookbook">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#pattern-1-quick-exploration-jupyter" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Pattern 1: Quick Exploration (Jupyter)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pattern-2-presentation-quality-report" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Pattern 2: Presentation-Quality Report
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pattern-3-build-iterate" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Pattern 3: Build &amp; Iterate
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pattern-4-multi-format-pipeline" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Pattern 4: Multi-Format Pipeline
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pattern-5-automated-reporting-pipeline" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Pattern 5: Automated Reporting Pipeline
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pattern-6-reusable-chart-function" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Pattern 6: Reusable Chart Function
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pattern-7-ab-test-visualization" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Pattern 7: A/B Test Visualization
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pattern-8-debugging-by-inspecting-generated-code" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Pattern 8: Debugging by Inspecting Generated Code
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cost-optimization" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Cost Optimization
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Cost Optimization">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-choose-the-right-model" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Choose the Right Model
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-be-specific-reduces-retries-fixes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Be Specific (Reduces Retries &amp; Fixes)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-provide-data-fewer-fix-attempts" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Provide Data → Fewer Fix Attempts
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-batch-with-async" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Batch with Async
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5-track-token-usage" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. Track Token Usage
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#6-cache-sdk-instances" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. Cache SDK Instances
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#integration-patterns" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Integration Patterns
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Integration Patterns">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#jupyter-notebook-best-practices" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Jupyter Notebook Best Practices
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#streamlit-gradio-integration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Streamlit / Gradio Integration
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fastapi-flask-integration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        FastAPI / Flask Integration
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#data-pipeline-integration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Data Pipeline Integration
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#best-practices" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Best Practices
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Best Practices">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-use-fast-safety-mode-for-production" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Use Fast Safety Mode for Production
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-use-async-batch-for-multiple-charts" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Use Async Batch for Multiple Charts
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-be-specific-in-prompts" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Be Specific in Prompts
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-provide-real-data" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Provide Real Data
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5-iterate-with-edit-dont-re-describe" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. Iterate with edit(), Don't Re-describe
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#6-set-reasonable-timeouts" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. Set Reasonable Timeouts
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#7-track-token-usage" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7. Track Token Usage
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#8-use-custom-when-unsure" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8. Use .custom() When Unsure
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#9-reuse-the-sdk-instance" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9. Reuse the SDK Instance
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#10-check-success-before-using-results" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10. Check success Before Using Results
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#troubleshooting" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Troubleshooting
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Troubleshooting">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#chinese-characters-display-as-boxes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Chinese characters display as boxes (□□□)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#llm-returns-no-code-or-empty-result" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        LLM returns "no code" or empty result
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#timeout-code-execution-timed-out-30s" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Timeout: "Code execution timed out (30s)"
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#auto-fix-not-triggering" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Auto-fix not triggering
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#svgpdf-files-wont-open" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        SVG/PDF files won't open
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#modulenotfounderror-no-module-named-llmpic" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ModuleNotFoundError: No module named 'llmpic'
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#runtimeerror-no-running-event-loop-with-async" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        RuntimeError: no running event loop with async
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#chart-looks-different-from-what-i-described" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Chart looks different from what I described
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#large-chart-files" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Large chart files
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pandas-or-seaborn-not-available" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        pandas or seaborn not available
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rate-limiting-from-api-provider" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Rate limiting from API provider
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<h1 id="user-guide-llmpic">User Guide — llmpic</h1>
+<blockquote>
+<p>Advanced usage, best practices, complete workflows, and troubleshooting.</p>
+</blockquote>
+<hr />
+<h2 id="getting-started">Getting Started</h2>
+<h3 id="sdk-initialization">SDK Initialization</h3>
+<pre><code class="language-python">from llmpic import llmPIC
+
+lp = llmPIC(
+    api_key=&quot;sk-...&quot;,                    # Required: your API key
+    base_url=&quot;https://api.openai.com/v1&quot;,# Required: API endpoint
+    model=&quot;gpt-4o&quot;,                      # Model for code generation
+    # Optional — shown with defaults:
+    safety_level=&quot;fast&quot;,                 # &quot;fast&quot; (regex) or &quot;full&quot; (regex+LLM)
+    safety_model=None,                   # Safety review model (defaults to model)
+    chinese_font=True,                   # Enable CJK font support
+    timeout=30,                          # Code execution timeout (seconds)
+    dpi=150,                             # Default output resolution
+    output_dir=&quot;~/llmpic_charts&quot;,        # Default save directory
+    temperature=0.3,                     # LLM creativity (0-2)
+    max_tokens=2048,                     # Max LLM output tokens
+    structured_output=True,              # Use JSON structured output
+    max_retries=3,                       # LLM call retries (exp backoff)
+    max_fix_attempts=2,                  # Auto-fix attempts on code error
+)
+</code></pre>
+<h3 id="choosing-parameters">Choosing Parameters</h3>
+<table>
+<thead>
+<tr>
+<th>Scenario</th>
+<th>Recommended Settings</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Production / speed-sensitive</td>
+<td><code>safety_level="fast"</code>, <code>model="gpt-4o-mini"</code></td>
+</tr>
+<tr>
+<td>Maximum security</td>
+<td><code>safety_level="full"</code>, keep defaults</td>
+</tr>
+<tr>
+<td>Complex multi-chart dashboards</td>
+<td><code>timeout=60</code>, <code>max_tokens=4096</code></td>
+</tr>
+<tr>
+<td>Local models (Ollama/vLLM)</td>
+<td><code>max_retries=5</code>, <code>structured_output=False</code>, <code>max_fix_attempts=3</code></td>
+</tr>
+<tr>
+<td>CJK-heavy charts</td>
+<td><code>chinese_font=True</code> (default)</td>
+</tr>
+<tr>
+<td>English-only charts, smaller images</td>
+<td><code>chinese_font=False</code>, <code>dpi=100</code></td>
+</tr>
+<tr>
+<td>High-res for print/publication</td>
+<td><code>dpi=300</code></td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="chart-types-in-detail">Chart Types in Detail</h2>
+<h3 id="plot-line-chart">plot — Line Chart</h3>
+<p>Best for: trends, time series, continuous data.</p>
+<pre><code class="language-python">lp.plot(&quot;Monthly revenue for 2024&quot;).save(&quot;revenue.png&quot;)
+lp.plot(&quot;sin(x) and cos(x) from 0 to 2π&quot;).save(&quot;trig.png&quot;)
+
+# With real time-series data
+df = pd.read_csv(&quot;metrics.csv&quot;)  # columns: date, cpu, memory
+lp.plot(&quot;CPU and memory usage over time&quot;).data(df).save(&quot;metrics.png&quot;)
+</code></pre>
+<p>LLM hint: <code>Line chart. Use ax.plot(). Multiple series: different colors + legend.</code></p>
+<h3 id="scatter-scatter-chart">scatter — Scatter Chart</h3>
+<p>Best for: correlation analysis, cluster visualization, outlier detection.</p>
+<pre><code class="language-python"># With DataFrame
+lp.scatter(&quot;User age vs purchase amount&quot;).data(df).save(&quot;scatter.png&quot;)
+
+# With inline data
+lp.scatter(&quot;Scatter: x=[1,2,3,4,5], y=[2,4,1,8,7]&quot;).save(&quot;simple_scatter.png&quot;)
+
+# 3-variable scatter (color/size for 3rd dimension)
+lp.scatter(&quot;Age vs income, color by education level, size by purchase frequency&quot;).data(df).save(&quot;3d_scatter.png&quot;)
+</code></pre>
+<p>LLM hint: <code>Scatter chart. Use ax.scatter(). 3rd variable → color/size.</code></p>
+<h3 id="bar-bar-chart">bar — Bar Chart</h3>
+<p>Best for: categorical comparison, rankings, before/after contrasts.</p>
+<pre><code class="language-python"># Inline data in the prompt
+lp.bar(&quot;Q1 Budget: R&amp;D=$200K, Marketing=$150K, Sales=$180K, HR=$100K&quot;).save(&quot;budget.png&quot;)
+
+# Horizontal bar chart
+lp.bar(&quot;Top 10 cities by GDP, horizontal bars&quot;).data(city_df).save(&quot;horizontal.png&quot;)
+
+# Grouped bar chart
+lp.bar(&quot;Monthly sales by product line: Product A, B, C — grouped bars&quot;).data(sales_df).save(&quot;grouped.png&quot;)
+
+# Stacked bar
+lp.bar(&quot;Revenue composition by quarter, stacked bars&quot;).data(revenue_df).save(&quot;stacked.png&quot;)
+</code></pre>
+<p>LLM hint: <code>Bar chart. Use ax.bar() or ax.barh(). Add value labels on bars.</code></p>
+<h3 id="pie-pie-chart">pie — Pie Chart</h3>
+<p>Best for: proportions, market share, budget allocation.</p>
+<pre><code class="language-python"># Inline ratios
+lp.pie(&quot;Market share: Product A 40%, B 25%, C 20%, Others 15%&quot;).save(&quot;market.png&quot;)
+
+# With DataFrame
+lp.pie(&quot;Spending breakdown by category&quot;).data(budget_df).save(&quot;spending.png&quot;)
+
+# Donut chart (via natural language)
+lp.pie(&quot;Donut chart: Revenue by department&quot;).data(dept_df).save(&quot;donut.png&quot;)
+</code></pre>
+<p>LLM hint: <code>Pie chart. Use ax.pie() with autopct='%1.1f%%' and legend.</code></p>
+<h3 id="hist-histogram">hist — Histogram</h3>
+<p>Best for: distributions, frequency analysis, normality checks.</p>
+<pre><code class="language-python"># With raw data
+import numpy as np
+data = np.random.randn(1000)
+lp.hist(&quot;Score distribution with KDE overlay&quot;).data(data).save(&quot;hist.png&quot;)
+
+# Specify bins in query
+lp.hist(&quot;Income distribution, 50 bins&quot;).data(income_data).save(&quot;income_hist.png&quot;)
+
+# Multiple distributions overlaid
+lp.hist(&quot;Test scores: Group A vs Group B, overlaid histograms&quot;).data({
+    &quot;Group A&quot;: np.random.normal(70, 10, 500),
+    &quot;Group B&quot;: np.random.normal(75, 12, 500),
+}).save(&quot;compare_hist.png&quot;)
+</code></pre>
+<p>LLM hint: <code>Histogram. Use ax.hist(). Overlay KDE via sns.kdeplot if seaborn available.</code></p>
+<h3 id="heatmap-heatmap">heatmap — Heatmap</h3>
+<p>Best for: correlation matrices, 2D density, confusion matrices.</p>
+<pre><code class="language-python"># Correlation matrix
+lp.heatmap(&quot;Feature correlation matrix, annotated&quot;).data(corr_df).save(&quot;corr_heatmap.png&quot;)
+
+# Time-based heatmap
+lp.heatmap(&quot;Hourly website traffic by day of week&quot;).data(traffic_df).save(&quot;traffic_heatmap.png&quot;)
+</code></pre>
+<p>LLM hint: <code>Heatmap. Use ax.imshow() or sns.heatmap(). Add colorbar and annotate cells.</code></p>
+<h3 id="boxplot-boxplot">boxplot — Boxplot</h3>
+<p>Best for: statistical distribution comparison across groups.</p>
+<pre><code class="language-python"># Multi-group comparison
+lp.boxplot(&quot;Experiment results: Control vs Treatment A vs Treatment B&quot;).save(&quot;boxplot.png&quot;)
+
+# With DataFrame (categories in one column, values in another)
+lp.boxplot(&quot;Salary distribution by department&quot;).data(hr_df).save(&quot;salary_box.png&quot;)
+</code></pre>
+<p>LLM hint: <code>Boxplot. Use ax.boxplot() or sns.boxplot(). Show outliers, add labels.</code></p>
+<h3 id="area-area-chart">area — Area Chart</h3>
+<p>Best for: stacked trends, compositional changes over time.</p>
+<pre><code class="language-python">lp.area(&quot;Revenue composition by product line 2020–2024&quot;).data(revenue_df).save(&quot;area.png&quot;)
+lp.area(&quot;Stacked area: user acquisition channels over time&quot;).data(channel_df).save(&quot;channels.png&quot;)
+</code></pre>
+<p>LLM hint: <code>Area chart. Use ax.fill_between() or ax.stackplot(). Set alpha 0.3-0.7.</code></p>
+<h3 id="radar-radar-chart">radar — Radar Chart</h3>
+<p>Best for: multi-dimensional comparison, capability assessment, profile comparison.</p>
+<pre><code class="language-python"># Inline dimensions
+lp.radar(&quot;Product ratings: Performance=4, Usability=3, Reliability=5, Price=2, Support=4&quot;).save(&quot;radar.png&quot;)
+
+# Compare two profiles
+lp.radar(&quot;Radar: Product A [4,3,5,2,4] vs Product B [3,4,4,3,5], categories: Speed,UI,Reliability,Cost,Support&quot;).save(&quot;radar2.png&quot;)
+</code></pre>
+<p>LLM hint: <code>Radar chart. Use polar axes: plt.subplots(subplot_kw={'projection':'polar'}). Close the polygon loop.</code></p>
+<h3 id="map-geographic-map-v030">map — Geographic Map (v0.3.0)</h3>
+<p>Best for: world maps, country/regional views, choropleth, geographic scatter plots.</p>
+<pre><code class="language-python"># World map with demo data (LLM generates major world cities)
+lp.map(&quot;World population by country, Blues choropleth&quot;).save(&quot;world.png&quot;)
+
+# Map with real data (DataFrame with lat/lon columns)
+lp.map(&quot;Earthquake epicenters in Japan, magnitude color scale&quot;).data(eq_df).save(&quot;japan.png&quot;)
+
+# Specific country/region
+lp.map(&quot;China major cities GDP, larger markers for bigger GDP&quot;).data(city_df).save(&quot;china.png&quot;)
+
+# World cities scatter
+lp.map(&quot;Major cities: Tokyo, NYC, London, Paris, Beijing, Sydney, marked with population size&quot;).save(&quot;cities.png&quot;)
+</code></pre>
+<p>LLM hint: <code>Geographic map. Use cartopy (ccrs, cfeature) with PlateCarree projection.</code></p>
+<h3 id="subplots-dashboard">subplots — Dashboard</h3>
+<p>Best for: multi-chart composite views, executive summaries.</p>
+<pre><code class="language-python"># 2×2 dashboard
+lp.subplots(&quot;2x2: sales trend line, region bar, customer scatter, growth histogram&quot;).save(&quot;dashboard.png&quot;)
+
+# 1×3 dashboard
+lp.subplots(&quot;1 row 3 cols: CPU trend, Memory trend, Disk trend&quot;).data(metrics_df).save(&quot;triple.png&quot;)
+
+# Complex dashboard
+lp.subplots(&quot;3x2 dashboard: revenue line, expense bar, profit margin area, &quot;
+            &quot;customer growth bar, region pie, correlation heatmap&quot;).data(full_df).save(&quot;executive.png&quot;)
+</code></pre>
+<p>LLM hint: <code>Dashboard. Use fig, axes = plt.subplots(nrows, ncols, figsize=(w,h)). Add fig.suptitle(). Each subplot is a different chart.</code></p>
+<h3 id="custom-auto-detect">custom — Auto-Detect</h3>
+<p>Best for: when you're not sure which chart type fits best.</p>
+<pre><code class="language-python">lp.custom(&quot;Analyze user retention trends and contributing factors&quot;).data(user_df).save(&quot;auto.png&quot;)
+lp.custom(&quot;Compare feature importance from the ML model&quot;).data(feature_df).save(&quot;importance.png&quot;)
+</code></pre>
+<p>LLM hint: <code>Pick best chart type (line/bar/scatter/pie/hist/boxplot/heatmap/area/radar) for the data &amp; query.</code></p>
+<hr />
+<h2 id="data-input-methods">Data Input Methods</h2>
+<h3 id="no-data-llm-generates-demo-data">No Data — LLM Generates Demo Data</h3>
+<p>When exploring or prototyping, skip <code>.data()</code> entirely:</p>
+<pre><code class="language-python">lp.plot(&quot;Sine wave from 0 to 2π&quot;).save(&quot;sine.png&quot;)
+lp.bar(&quot;Fictional sales: Q1=100, Q2=150, Q3=120, Q4=180&quot;).save(&quot;demo.png&quot;)
+lp.pie(&quot;Made-up market share: A=40%, B=30%, C=20%, D=10%&quot;).save(&quot;demo_pie.png&quot;)
+</code></pre>
+<p>The LLM uses <code>np.linspace</code>, <code>np.random</code>, etc. to generate realistic demo data.</p>
+<h3 id="dataframe-recommended-for-production">DataFrame (Recommended for Production)</h3>
+<pre><code class="language-python">import pandas as pd
+
+df = pd.DataFrame({
+    &quot;Month&quot;: [&quot;Jan&quot;, &quot;Feb&quot;, &quot;Mar&quot;, &quot;Apr&quot;, &quot;May&quot;, &quot;Jun&quot;],
+    &quot;Sales&quot;: [120, 135, 148, 162, 155, 180],
+    &quot;Profit&quot;: [20, 28, 30, 35, 32, 40],
+})
+lp.plot(&quot;Monthly sales vs profit trend&quot;).data(df).save(&quot;sales.png&quot;)
+</code></pre>
+<p><strong>What the LLM receives for DataFrames:</strong>
+1. Shape: rows × columns
+2. Column names and dtypes
+3. First 5 rows (head)
+4. Statistical summary (describe) if more than 5 rows</p>
+<p>This gives the LLM enough context to write correct code without sending the entire dataset.</p>
+<h3 id="numpy-array">NumPy Array</h3>
+<pre><code class="language-python">import numpy as np
+
+# 1D array
+data = np.random.randn(1000)
+lp.hist(&quot;Data distribution&quot;).data(data).save(&quot;dist.png&quot;)
+
+# 2D array
+matrix = np.random.rand(10, 10)
+lp.heatmap(&quot;Random matrix&quot;).data(matrix).save(&quot;matrix.png&quot;)
+
+# Multi-dimensional (serialized with shape, dtype, first N elements)
+</code></pre>
+<h3 id="dictionary">Dictionary</h3>
+<pre><code class="language-python">lp.bar(&quot;Sales by city&quot;).data({
+    &quot;City&quot;: [&quot;Beijing&quot;, &quot;Shanghai&quot;, &quot;Guangzhou&quot;, &quot;Shenzhen&quot;, &quot;Hangzhou&quot;],
+    &quot;Sales&quot;: [320, 280, 260, 240, 200],
+}).save(&quot;city.png&quot;)
+
+# Multiple series
+lp.plot(&quot;Multi-line comparison&quot;).data({
+    &quot;x&quot;: [1, 2, 3, 4, 5],
+    &quot;Series A&quot;: [10, 20, 15, 25, 30],
+    &quot;Series B&quot;: [5, 15, 25, 20, 35],
+    &quot;Series C&quot;: [12, 18, 22, 28, 32],
+}).save(&quot;multi.png&quot;)
+</code></pre>
+<h3 id="list-tuple">List / Tuple</h3>
+<pre><code class="language-python">lp.plot(&quot;Temperature readings&quot;).data([22, 24, 19, 26, 28, 25, 23]).save(&quot;temp.png&quot;)
+lp.bar(&quot;Scores&quot;).data((85, 92, 78, 88, 95)).save(&quot;scores.png&quot;)
+</code></pre>
+<p>A single list is treated as a 1D series. The LLM creates an index for the x-axis.</p>
+<h3 id="raw-string">Raw String</h3>
+<pre><code class="language-python">csv_text = &quot;date,value\n2024-01-01,100\n2024-01-02,105\n...&quot;
+lp.plot(&quot;CSV trend&quot;).data(csv_text).save(&quot;from_csv.png&quot;)
+</code></pre>
+<p>Limited to 2000 characters. For larger data, use a DataFrame or pre-aggregate.</p>
+<h3 id="passing-large-datasets">Passing Large Datasets</h3>
+<p>For large DataFrames, pre-aggregate or sample to keep the serialized context reasonable:</p>
+<pre><code class="language-python"># Good: pre-aggregate
+lp.bar(&quot;Monthly average&quot;).data(df.groupby(&quot;month&quot;)[&quot;value&quot;].mean().reset_index())
+
+# Good: sample
+lp.scatter(&quot;Correlation&quot;).data(df.sample(1000))
+
+# Bad: huge raw DataFrame
+lp.plot(&quot;Trend&quot;).data(huge_df)  # Only first 5 rows + stats are sent anyway
+</code></pre>
+<hr />
+<h2 id="style-customization">Style Customization</h2>
+<h3 id="quick-color-schemes">Quick Color Schemes</h3>
+<p>6 preset schemes with 5 colors each:</p>
+<table>
+<thead>
+<tr>
+<th>Scheme</th>
+<th>Hex Colors</th>
+<th>Vibe</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>blues</code></td>
+<td><code>#3498DB</code> <code>#5DADE2</code> <code>#87CEEB</code> <code>#2980B9</code> <code>#AED6F1</code></td>
+<td>Professional, corporate</td>
+</tr>
+<tr>
+<td><code>warm</code></td>
+<td><code>#E74C3C</code> <code>#F39C12</code> <code>#E67E22</code> <code>#F1C40F</code> <code>#D35400</code></td>
+<td>Energetic, attention-grabbing</td>
+</tr>
+<tr>
+<td><code>cool</code></td>
+<td><code>#1ABC9C</code> <code>#3498DB</code> <code>#9B59B6</code> <code>#2ECC71</code> <code>#16A085</code></td>
+<td>Modern, technical</td>
+</tr>
+<tr>
+<td><code>pastel</code></td>
+<td><code>#FADBD8</code> <code>#D5F5E3</code> <code>#D6EAF8</code> <code>#F9E79F</code> <code>#E8DAEF</code></td>
+<td>Soft, readaable</td>
+</tr>
+<tr>
+<td><code>dark</code></td>
+<td><code>#2C3E50</code> <code>#34495E</code> <code>#7F8C8D</code> <code>#95A5A6</code> <code>#BDC3C7</code></td>
+<td>Serious, dark-background</td>
+</tr>
+<tr>
+<td><code>grayscale</code></td>
+<td><code>#333333</code> <code>#666666</code> <code>#999999</code> <code>#BBBBBB</code> <code>#DDDDDD</code></td>
+<td>Print-safe, formal</td>
+</tr>
+</tbody>
+</table>
+<pre><code class="language-python">for scheme in [&quot;blues&quot;, &quot;warm&quot;, &quot;cool&quot;, &quot;pastel&quot;, &quot;dark&quot;, &quot;grayscale&quot;]:
+    lp.plot(&quot;Monthly trend&quot;).style({&quot;color_scheme&quot;: scheme}).save(f&quot;{scheme}.png&quot;)
+</code></pre>
+<h3 id="size-resolution">Size &amp; Resolution</h3>
+<pre><code class="language-python">lp.plot(&quot;Trend&quot;).style({
+    &quot;figsize&quot;: [14, 7],         # 14&quot; wide × 7&quot; tall
+    &quot;dpi&quot;: 300,                  # High resolution for print
+}).save(&quot;large.png&quot;)
+</code></pre>
+<h3 id="typography">Typography</h3>
+<pre><code class="language-python">lp.plot(&quot;Trend&quot;).style({
+    &quot;title_fontsize&quot;: 20,        # Large title
+    &quot;label_fontsize&quot;: 14,        # Readable axis labels
+    &quot;tick_fontsize&quot;: 12,         # Clear tick marks
+}).save(&quot;typography.png&quot;)
+</code></pre>
+<h3 id="grid-background">Grid &amp; Background</h3>
+<pre><code class="language-python"># Visible grid with dark background
+lp.plot(&quot;Trend&quot;).style({
+    &quot;grid&quot;: True,
+    &quot;grid_alpha&quot;: 0.6,
+    &quot;facecolor&quot;: &quot;#F0F0F0&quot;,
+}).save(&quot;grid.png&quot;)
+
+# Clean, no grid
+lp.plot(&quot;Trend&quot;).style({
+    &quot;grid&quot;: False,
+    &quot;facecolor&quot;: &quot;white&quot;,
+}).save(&quot;clean.png&quot;)
+
+# Tight layout (default True) — disable if you want manual spacing
+lp.plot(&quot;Trend&quot;).style({&quot;tight_layout&quot;: False}).save(&quot;loose.png&quot;)
+</code></pre>
+<h3 id="combined-styling">Combined Styling</h3>
+<pre><code class="language-python"># Journal-quality figure
+lp.plot(&quot;Experiment results: control vs treatment&quot;).data(exp_df).style({
+    &quot;figsize&quot;: [8, 5],
+    &quot;dpi&quot;: 300,
+    &quot;color_scheme&quot;: &quot;dark&quot;,
+    &quot;title_fontsize&quot;: 16,
+    &quot;label_fontsize&quot;: 14,
+    &quot;tick_fontsize&quot;: 12,
+    &quot;grid&quot;: True,
+    &quot;grid_alpha&quot;: 0.4,
+}).save(&quot;journal_fig.png&quot;)
+
+# Dashboard / presentation
+lp.bar(&quot;Annual revenue by quarter&quot;).data(revenue_df).style({
+    &quot;figsize&quot;: [14, 8],
+    &quot;color_scheme&quot;: &quot;warm&quot;,
+    &quot;title_fontsize&quot;: 24,
+    &quot;label_fontsize&quot;: 18,
+    &quot;tick_fontsize&quot;: 14,
+    &quot;grid&quot;: False,
+    &quot;facecolor&quot;: &quot;#FAFAFA&quot;,
+    &quot;dpi&quot;: 200,
+}).save(&quot;presentation.png&quot;)
+
+# Quick exploratory — use defaults
+lp.scatter(&quot;Age vs income&quot;).data(df).save(&quot;explore.png&quot;)
+</code></pre>
+<h3 id="style-as-json-string">Style as JSON String</h3>
+<pre><code class="language-python">lp.plot(&quot;Trend&quot;).style('{&quot;color_scheme&quot;:&quot;cool&quot;,&quot;figsize&quot;:[12,8],&quot;dpi&quot;:200}').save(&quot;trend.png&quot;)
+</code></pre>
+<hr />
+<h2 id="output-formats">Output Formats</h2>
+<h3 id="png-default">PNG (Default)</h3>
+<p>Raster format. Good for general use, embedding, quick previews.</p>
+<pre><code class="language-python">lp.plot(&quot;Trend&quot;).save(&quot;chart.png&quot;)
+result = lp.plot(&quot;Trend&quot;).format('png').render()
+</code></pre>
+<h3 id="svg-vector-graphics">SVG — Vector Graphics</h3>
+<p>Ideal for web embedding, PDF reports, situations requiring scaling without quality loss.</p>
+<pre><code class="language-python"># Method 1: Specify format before rendering
+lp.plot(&quot;Trend&quot;).format('svg').save(&quot;chart.svg&quot;)
+
+# Method 2: Extension auto-detection
+result = lp.plot(&quot;Trend&quot;).render()    # Default: PNG
+result.save(&quot;chart.svg&quot;)               # → SVG (detected from .svg extension)
+
+# Base64 for HTML embedding
+result = lp.plot(&quot;Trend&quot;).render().format('svg')  # or: after render, access svg_bytes
+svg_uri = result.base64_svg()
+# HTML: &lt;img src=&quot;{svg_uri}&quot; /&gt;
+</code></pre>
+<h3 id="pdf-for-printing-and-reports">PDF — For Printing and Reports</h3>
+<pre><code class="language-python">lp.plot(&quot;Trend&quot;).format('pdf').save(&quot;chart.pdf&quot;)
+result = lp.plot(&quot;Trend&quot;).render()
+result.save(&quot;report_figure.pdf&quot;)
+</code></pre>
+<h3 id="lazy-format-conversion">Lazy Format Conversion</h3>
+<p>Once you have a <code>ChartResult</code>, you can access any format on demand:</p>
+<pre><code class="language-python">result = lp.plot(&quot;CPU trend&quot;).render()  # PNG in result.image_bytes
+
+# Access SVG or PDF — re-renders from the stored code (lazy, cached)
+svg_bytes = result.svg_bytes    # Re-renders as SVG on first access
+pdf_bytes = result.pdf_bytes    # Re-renders as PDF on first access
+svg_string = result.svg          # SVG as a Python string
+</code></pre>
+<p>This is powerful: generate once, export in all three formats without re-calling the LLM.</p>
+<h3 id="default-save-path">Default Save Path</h3>
+<pre><code class="language-python">result = lp.plot(&quot;Daily active users&quot;).render()
+result.save()  # → ~/llmpic_charts/chart_20250101_143025.png
+</code></pre>
+<p>The timestamp format is <code>YYYYMMDD_HHMMSS</code>. Directory is created automatically if it doesn't exist.</p>
+<h3 id="jupyter-notebook-inline-display">Jupyter Notebook Inline Display</h3>
+<pre><code class="language-python">result = lp.plot(&quot;CPU usage trend&quot;).render()
+result.show()  # Renders directly below the cell — no save() needed
+</code></pre>
+<p>Supports PNG, SVG, and PDF formats in Jupyter. In plain Python scripts, <code>show()</code> logs a warning.</p>
+<hr />
+<h2 id="iterative-editing">Iterative Editing</h2>
+<h3 id="basic-workflow">Basic Workflow</h3>
+<pre><code class="language-python"># Version 1
+v1 = lp.plot(&quot;Monthly sales: Jan=100, Feb=120, Mar=90, Apr=150&quot;).render()
+v1.save(&quot;v1.png&quot;)
+
+# Version 2 — natural language edit
+v2 = v1.edit(&quot;Change to bar chart&quot;)
+v2.save(&quot;v2.png&quot;)
+
+# Version 3 — multiple changes at once
+v3 = v2.edit(&quot;Make bars red, title 'Q1 2025 Sales Report', add grid&quot;)
+v3.save(&quot;v3.png&quot;)
+
+# Version 4 — fine-tuning
+v4 = v3.edit(&quot;Increase title font size to 18, use warm color scheme&quot;)
+v4.save(&quot;v4.png&quot;)
+</code></pre>
+<h3 id="how-edit-works">How edit() Works</h3>
+<pre><code>1. Sends current code + edit description to LLM
+2. LLM returns modified code
+3. Safety check → sandbox execution
+4. Returns NEW ChartResult (original is never mutated)
+</code></pre>
+<h3 id="chaining-edits">Chaining Edits</h3>
+<pre><code class="language-python">final = (
+    lp.plot(&quot;Monthly sales: Jan=100, Feb=120, Mar=90&quot;)
+    .render()
+    .edit(&quot;Change to bar chart&quot;)
+    .edit(&quot;Make bars red, warm colors&quot;)
+    .edit(&quot;Title 'Q1 Revenue', add y-axis label 'K USD'&quot;)
+    .edit(&quot;Add grid, increase title size to 18&quot;)
+)
+final.save(&quot;final.png&quot;)
+final.show()
+</code></pre>
+<h3 id="edit-preserves-context">Edit Preserves Context</h3>
+<p>The <code>edit()</code> method preserves your original data, style settings, and SDK reference. Each edit re-uses the same sandbox, safety checker, and LLM endpoint.</p>
+<p><strong>Important</strong>: <code>.edit()</code> requires the <code>ChartResult</code> to have been generated by <code>llmPIC</code> (not created manually), because it needs the <code>_sdk</code> reference for code generation.</p>
+<hr />
+<h2 id="auto-fix-mechanism">Auto-Fix Mechanism</h2>
+<h3 id="how-it-works">How It Works</h3>
+<pre><code>LLM generates code → Safety check → Sandbox execution
+                                          ↓ FAIL (NameError, ValueError, etc.)
+                                     LLM fixes code
+                                          ↓
+                                  Safety check → Sandbox execution
+                                          ↓ STILL FAILING
+                                     LLM fixes again (up to max_fix_attempts)
+                                          ↓
+                               Return ChartResult (success or final error)
+</code></pre>
+<h3 id="configuration">Configuration</h3>
+<pre><code class="language-python">lp = llmPIC(
+    ...,
+    max_fix_attempts=2,   # Default: 2 rounds of auto-fix
+)
+# max_fix_attempts=0  →  Disable auto-fix entirely
+</code></pre>
+<h3 id="when-auto-fix-triggers-and-when-it-doesnt">When Auto-Fix Triggers (and When It Doesn't)</h3>
+<p><strong>Triggers on:</strong>
+- <code>NameError</code> — referenced undefined variable
+- <code>ValueError</code> — matplotlib received bad values
+- <code>TypeError</code> — wrong argument types
+- <code>IndexError</code> — out-of-bounds access
+- Any other Python exception from the generated code</p>
+<p><strong>Does NOT trigger on:</strong>
+- LLM returns no code → handled by <code>max_retries</code> (retries the generation)
+- Safety check rejection → dangerous code is rejected outright, no fix attempted
+- Timeout → possible infinite loop, not retried (the same code would likely timeout again)
+- Empty chart (no axes) → detected immediately, no fix (the LLM didn't produce chart code)</p>
+<h3 id="checking-auto-fix-activity">Checking Auto-Fix Activity</h3>
+<p>Configure logging to see auto-fix in action:</p>
+<pre><code class="language-python">import logging
+logging.basicConfig(level=logging.INFO)
+
+# You'll see log messages like:
+# INFO:llmpic.core:Auto-fix attempt 2: NameError: name 'data' is not defined...
+</code></pre>
+<hr />
+<h2 id="async-batch-generation">Async &amp; Batch Generation</h2>
+<h3 id="single-async-chart">Single Async Chart</h3>
+<pre><code class="language-python">import asyncio
+from llmpic import AsyncllmPIC
+
+async def main():
+    lp = AsyncllmPIC(api_key=&quot;sk-...&quot;, base_url=&quot;...&quot;)
+    result = await lp.plot(&quot;CPU trend&quot;).render()
+    result.save(&quot;cpu.png&quot;)
+
+asyncio.run(main())
+</code></pre>
+<h3 id="batch-concurrent-generation">Batch — Concurrent Generation</h3>
+<p>The batch method generates all charts in parallel using <code>asyncio.gather</code>. Total time ≈ the slowest single chart.</p>
+<pre><code class="language-python">async def main():
+    lp = AsyncllmPIC(api_key=&quot;sk-...&quot;, base_url=&quot;...&quot;)
+
+    results = await lp.batch([
+        (&quot;plot&quot;,     &quot;12-month sales trend&quot;),
+        (&quot;bar&quot;,      &quot;Revenue by department&quot;),
+        (&quot;scatter&quot;,  &quot;User behavior correlation&quot;),
+        (&quot;heatmap&quot;,  &quot;Feature correlation matrix&quot;),
+        (&quot;pie&quot;,      &quot;Market share distribution&quot;),
+    ])
+
+    for i, r in enumerate(results):
+        if r.success:
+            r.save(f&quot;batch_{i}.png&quot;)
+            print(f&quot;[{i}] OK — {r.size_kb:.1f}KB, &quot;
+                  f&quot;tokens: in={r.token_usage['input']} out={r.token_usage['output']}&quot;)
+        else:
+            print(f&quot;[{i}] FAIL: {r.error_message}&quot;)
+
+asyncio.run(main())
+</code></pre>
+<h3 id="batch-request-format">batch() Request Format</h3>
+<pre><code class="language-python">requests: List[Tuple[str, str]]
+# Each tuple: (chart_type, query)
+# chart_type must be one of:
+#   &quot;line&quot; &quot;scatter&quot; &quot;bar&quot; &quot;pie&quot; &quot;hist&quot; &quot;heatmap&quot;
+#   &quot;boxplot&quot; &quot;area&quot; &quot;radar&quot; &quot;map&quot; &quot;subplots&quot; &quot;custom&quot;
+</code></pre>
+<blockquote>
+<p>Note: <code>batch()</code> uses default style and no data attachments. For custom data/style per chart, use the builder approach below.</p>
+</blockquote>
+<h3 id="batch-with-data-style-and-format">Batch with Data, Style, and Format</h3>
+<p>For per-chart customization, use builders with <code>asyncio.gather</code>:</p>
+<pre><code class="language-python">async def main():
+    lp = AsyncllmPIC(api_key=&quot;sk-...&quot;, base_url=&quot;...&quot;)
+
+    builders = [
+        lp.plot(&quot;CPU trend&quot;).format('png'),
+        lp.bar(&quot;Sales&quot;).data(sales_df).style({&quot;color_scheme&quot;: &quot;warm&quot;}).format('svg'),
+        lp.pie(&quot;Market share&quot;).data(market_df).style({&quot;color_scheme&quot;: &quot;cool&quot;}).format('pdf'),
+        lp.heatmap(&quot;Correlation&quot;).data(corr_df).format('png'),
+    ]
+
+    results = await asyncio.gather(*[b.render() for b in builders])
+
+    for r in results:
+        r.save()  # Each saves to ~/llmpic_charts/ with timestamp
+
+asyncio.run(main())
+</code></pre>
+<h3 id="error-handling-in-batch">Error Handling in Batch</h3>
+<pre><code class="language-python">async def main():
+    lp = AsyncllmPIC(...)
+
+    results = await lp.batch(requests)
+
+    success_count = sum(1 for r in results if r.success)
+    total_tokens = sum(r.token_usage.get('input', 0) + r.token_usage.get('output', 0)
+                       for r in results if r.success)
+
+    print(f&quot;Generated {success_count}/{len(results)} charts, {total_tokens} total tokens&quot;)
+
+    for i, r in enumerate(results):
+        if r.success:
+            r.save(f&quot;report_{i}.png&quot;)
+        else:
+            print(f&quot;Chart {i} failed: {r.error_message}&quot;)
+
+asyncio.run(main())
+</code></pre>
+<hr />
+<h2 id="security-model">Security Model</h2>
+<h3 id="architecture">Architecture</h3>
+<pre><code>Generated Code
+      │
+      ├──→ Layer 1: Regex Check (32 patterns, ~0ms)
+      │         ↓
+      │    [FAIL] → Reject immediately
+      │    [PASS] → Continue
+      │
+      └──→ Layer 2: LLM Semantic Review (optional, ~1-2s)
+                ↓
+           [FAIL] → Reject with reason
+           [PASS] → Proceed to sandbox
+</code></pre>
+<h3 id="layer-1-regex-patterns-always-active">Layer 1: Regex Patterns (always active)</h3>
+<p>32 precompiled patterns block:</p>
+<table>
+<thead>
+<tr>
+<th>Category</th>
+<th>Patterns</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>System commands</td>
+<td><code>os.system()</code>, <code>os.popen()</code>, <code>os.exec*()</code>, <code>os.spawn*()</code>, <code>subprocess</code></td>
+</tr>
+<tr>
+<td>File operations</td>
+<td><code>os.remove()</code>, <code>os.unlink()</code>, <code>os.rmdir()</code>, <code>os.rename()</code>, <code>os.mkdir/makedirs()</code>, <code>os.chmod()</code>, <code>os.environ</code>, <code>open()</code></td>
+</tr>
+<tr>
+<td>Dynamic execution</td>
+<td><code>exec()</code>, <code>eval()</code>, <code>compile()</code>, <code>__import__()</code></td>
+</tr>
+<tr>
+<td>Network access</td>
+<td><code>socket</code>, <code>urllib</code>, <code>requests</code>, <code>httpx</code></td>
+</tr>
+<tr>
+<td>Process exit</td>
+<td><code>sys.exit()</code></td>
+</tr>
+<tr>
+<td>Dangerous modules</td>
+<td><code>shutil</code>, <code>ctypes</code>, <code>pickle</code></td>
+</tr>
+<tr>
+<td>Reflection escapes</td>
+<td><code>__subclasses__</code>, <code>__bases__</code>, <code>__mro__</code>, <code>setattr()</code>, <code>delattr()</code></td>
+</tr>
+</tbody>
+</table>
+<h3 id="layer-2-sandbox-execution-always-active">Layer 2: Sandbox Execution (always active)</h3>
+<ul>
+<li><strong>Restricted builtins</strong>: Only safe builtins available — no <code>open()</code>, <code>exec()</code>, etc. in namespace</li>
+<li><strong>Figure monkey-patching</strong>: <code>Figure.__init__</code> tracked for detection; <code>Figure.savefig</code> intercepted — code cannot save files directly</li>
+<li><strong>plt interception</strong>: <code>plt.show()</code>, <code>plt.savefig()</code>, <code>plt.close()</code> → no-ops</li>
+<li><strong>Timeout</strong>: ThreadPoolExecutor with configurable timeout kills runaway code</li>
+<li><strong>Serialization</strong>: Module-level mutex prevents matplotlib global state races across concurrent executions</li>
+</ul>
+<h3 id="choosing-safety-level">Choosing Safety Level</h3>
+<pre><code class="language-python"># Fast mode (recommended for production)
+lp = llmPIC(..., safety_level=&quot;fast&quot;)
+
+# Full mode (adds LLM review — ~1-2s per chart)
+lp = llmPIC(..., safety_level=&quot;full&quot;)
+</code></pre>
+<p><strong>Recommendation</strong>: The sandbox already provides strong isolation. <code>fast</code> mode is production-safe. Use <code>full</code> mode for adversarial scenarios (public-facing UIs accepting arbitrary prompts).</p>
+<hr />
+<h2 id="multi-language-support">Multi-Language Support</h2>
+<h3 id="auto-detection">Auto-Detection</h3>
+<p>The SDK detects query language via Unicode range analysis:</p>
+<pre><code class="language-python">lp.plot(&quot;CPU使用率趋势&quot;)              # → Chinese labels (检测到中文)
+lp.plot(&quot;CPU使用量トレンド&quot;)            # → Japanese labels (日本語を検出)
+lp.plot(&quot;CPU 사용량 추세&quot;)             # → Korean labels (한국어 감지)
+lp.plot(&quot;CPU usage trend&quot;)             # → English labels
+</code></pre>
+<p>Detection logic:
+- <strong>Chinese</strong>: CJK Unified Ideographs (U+4E00–U+9FFF) or Extension A (U+3400–U+4DBF)
+- <strong>Japanese</strong>: Hiragana (U+3040–U+309F), Katakana (U+30A0–U+30FF), or Katakana Extension (U+31F0–U+31FF)
+- <strong>Korean</strong>: Hangul Syllables (U+AC00–U+D7AF)
+- <strong>English</strong>: Default (no CJK characters detected)</p>
+<p>The language hint is passed to the LLM in the prompt: "Use Simplified Chinese for all labels and titles."</p>
+<h3 id="cross-platform-cjk-font-support">Cross-Platform CJK Font Support</h3>
+<p>When <code>chinese_font=True</code> (default), the SDK auto-detects and configures CJK fonts:</p>
+<table>
+<thead>
+<tr>
+<th>Platform</th>
+<th>Font Priority</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Windows</td>
+<td>Microsoft YaHei → SimHei → SimSun</td>
+</tr>
+<tr>
+<td>macOS</td>
+<td>PingFang SC → Heiti SC → STHeiti</td>
+</tr>
+<tr>
+<td>Linux</td>
+<td>WenQuanYi Micro Hei → WenQuanYi Zen Hei → Noto Sans CJK SC → Noto Sans SC</td>
+</tr>
+</tbody>
+</table>
+<p>Font detection runs once on first execution and is cached for the process lifetime (thread-safe).</p>
+<p><strong>Disable CJK font</strong> for English-only charts:</p>
+<pre><code class="language-python">lp = llmPIC(..., chinese_font=False)
+</code></pre>
+<h3 id="mixed-language-charts">Mixed-Language Charts</h3>
+<p>You can use English queries but get CJK labels by describing it in the prompt:</p>
+<pre><code class="language-python">lp.plot(&quot;Sales trend with Chinese labels: 月份 as x-axis, 销售额 as y-axis&quot;)
+</code></pre>
+<hr />
+<h2 id="provider-setup-guide">Provider Setup Guide</h2>
+<h3 id="openai">OpenAI</h3>
+<pre><code class="language-python">lp = llmPIC(
+    api_key=&quot;sk-proj-...&quot;,
+    base_url=&quot;https://api.openai.com/v1&quot;,
+    model=&quot;gpt-4o&quot;,          # Best quality
+    # model=&quot;gpt-4o-mini&quot;,   # Cheaper (~1/10 cost), slightly less reliable code
+)
+</code></pre>
+<h3 id="deepseek-recommended-for-chinese-users">DeepSeek (Recommended for Chinese Users)</h3>
+<p>DeepSeek offers excellent code generation at ~1/10 OpenAI cost:</p>
+<pre><code class="language-python">lp = llmPIC(
+    api_key=&quot;sk-...&quot;,
+    base_url=&quot;https://api.deepseek.com/v1&quot;,
+    model=&quot;deepseek-chat&quot;,    # DeepSeek-V3
+    # model=&quot;deepseek-reasoner&quot;,  # DeepSeek-R1 (reasoning model, may be slower)
+)
+</code></pre>
+<h3 id="azure-openai">Azure OpenAI</h3>
+<pre><code class="language-python">lp = llmPIC(
+    api_key=&quot;your-azure-api-key&quot;,
+    base_url=&quot;https://{your-resource}.openai.azure.com/openai/deployments/{deployment-name}&quot;,
+    model=&quot;gpt-4o&quot;,          # Your deployment name
+    # Note: structured_output may need to be False for some Azure configs
+)
+</code></pre>
+<h3 id="zhipu-glm">Zhipu GLM (智谱)</h3>
+<pre><code class="language-python">lp = llmPIC(
+    api_key=&quot;your-zhipu-api-key&quot;,
+    base_url=&quot;https://open.bigmodel.cn/api/paas/v4&quot;,
+    model=&quot;glm-4-plus&quot;,
+)
+</code></pre>
+<h3 id="ollama-local">Ollama (Local)</h3>
+<pre><code class="language-python">lp = llmPIC(
+    api_key=&quot;ollama&quot;,           # Ollama doesn't require a real key
+    base_url=&quot;http://localhost:11434/v1&quot;,
+    model=&quot;qwen2.5:7b&quot;,         # Or llama3, codellama, etc.
+    structured_output=False,    # Some local models don't support JSON mode
+    max_retries=5,              # Local models may need more retries
+    max_fix_attempts=3,         # More fix attempts for less capable models
+)
+</code></pre>
+<h3 id="vllm-self-hosted">vLLM (Self-Hosted)</h3>
+<pre><code class="language-python">lp = llmPIC(
+    api_key=&quot;not-needed&quot;,
+    base_url=&quot;http://localhost:8000/v1&quot;,
+    model=&quot;Qwen/Qwen2.5-7B-Instruct&quot;,
+    structured_output=False,
+    max_retries=5,
+)
+</code></pre>
+<h3 id="comparing-providers">Comparing Providers</h3>
+<table>
+<thead>
+<tr>
+<th>Provider</th>
+<th>Cost (relative)</th>
+<th>Code Quality</th>
+<th>Speed</th>
+<th>Best For</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>OpenAI GPT-4o</td>
+<td>$$$$</td>
+<td>★★★★★</td>
+<td>★★★★</td>
+<td>Complex charts, dashboards</td>
+</tr>
+<tr>
+<td>OpenAI GPT-4o-mini</td>
+<td>$$</td>
+<td>★★★★</td>
+<td>★★★★★</td>
+<td>High-volume, simple charts</td>
+</tr>
+<tr>
+<td>DeepSeek-V3</td>
+<td>$</td>
+<td>★★★★★</td>
+<td>★★★★</td>
+<td>Best value, Chinese charts</td>
+</tr>
+<tr>
+<td>GLM-4-Plus</td>
+<td>$$</td>
+<td>★★★★</td>
+<td>★★★★</td>
+<td>Chinese-language charts</td>
+</tr>
+<tr>
+<td>Local (Qwen 7B)</td>
+<td>Free</td>
+<td>★★★</td>
+<td>★★★</td>
+<td>Prototyping, offline use</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="workflow-patterns-cookbook">Workflow Patterns &amp; Cookbook</h2>
+<h3 id="pattern-1-quick-exploration-jupyter">Pattern 1: Quick Exploration (Jupyter)</h3>
+<pre><code class="language-python"># Rapid charting — skip save(), use show()
+lp = llmPIC(api_key=&quot;...&quot;, base_url=&quot;...&quot;)
+
+lp.plot(&quot;Sales distribution&quot;).data(df).render().show()
+lp.bar(&quot;Top 10 products&quot;).data(products_df).render().show()
+lp.scatter(&quot;Age vs spend&quot;).data(users_df).render().show()
+lp.heatmap(&quot;Correlation&quot;).data(df.corr()).render().show()
+</code></pre>
+<h3 id="pattern-2-presentation-quality-report">Pattern 2: Presentation-Quality Report</h3>
+<pre><code class="language-python"># Consistent style for all charts in a report
+REPORT_STYLE = {
+    &quot;figsize&quot;: [12, 7],
+    &quot;dpi&quot;: 200,
+    &quot;color_scheme&quot;: &quot;dark&quot;,
+    &quot;title_fontsize&quot;: 18,
+    &quot;label_fontsize&quot;: 14,
+    &quot;tick_fontsize&quot;: 12,
+    &quot;grid&quot;: True,
+    &quot;grid_alpha&quot;: 0.3,
+}
+
+lp.plot(&quot;Revenue trend&quot;).data(df).style(REPORT_STYLE).save(&quot;report_revenue.png&quot;)
+lp.bar(&quot;Regional breakdown&quot;).data(df).style(REPORT_STYLE).save(&quot;report_regional.png&quot;)
+lp.pie(&quot;Segment share&quot;).data(df).style(REPORT_STYLE).save(&quot;report_segments.png&quot;)
+lp.scatter(&quot;Customer segments&quot;).data(df).style(REPORT_STYLE).save(&quot;report_scatter.png&quot;)
+</code></pre>
+<h3 id="pattern-3-build-iterate">Pattern 3: Build &amp; Iterate</h3>
+<pre><code class="language-python"># Start rough, refine step by step
+r = lp.plot(&quot;Monthly sales&quot;).data(df).render()
+r = r.edit(&quot;Add 12-month moving average line&quot;)
+r = r.edit(&quot;Highlight the peak month with annotation&quot;)
+r = r.edit(&quot;Title '2024 Sales Performance', subtitle 'with 12-month MA'&quot;)
+r = r.edit(&quot;Use dark theme, increase resolution to 200 DPI&quot;)
+r.save(&quot;final_sales_analysis.png&quot;)
+</code></pre>
+<h3 id="pattern-4-multi-format-pipeline">Pattern 4: Multi-Format Pipeline</h3>
+<pre><code class="language-python"># One LLM call, all three formats
+result = lp.bar(&quot;Annual revenue by category&quot;).data(df).render()
+
+result.save(&quot;report.png&quot;)      # For embedding in Word/Google Docs
+result.save(&quot;report.svg&quot;)      # For web — infinitely scalable
+result.save(&quot;report.pdf&quot;)      # For printing
+
+# Or access programmatically
+png_bytes = result.image_bytes
+svg_html = result.base64_svg()  # Ready for &lt;img src=&quot;...&quot;&gt;
+pdf_bytes = result.pdf_bytes
+</code></pre>
+<h3 id="pattern-5-automated-reporting-pipeline">Pattern 5: Automated Reporting Pipeline</h3>
+<pre><code class="language-python">import asyncio
+from llmpic import AsyncllmPIC
+
+async def generate_daily_report(date_str, metrics_df):
+    lp = AsyncllmPIC(
+        api_key=os.getenv(&quot;LLMPIC_API_KEY&quot;),
+        base_url=os.getenv(&quot;LLMPIC_BASE_URL&quot;),
+    )
+
+    results = await lp.batch([
+        (&quot;plot&quot;, f&quot;DAU trend for {date_str}&quot;),
+        (&quot;bar&quot;, f&quot;Top 10 features used on {date_str}&quot;),
+        (&quot;pie&quot;, f&quot;Traffic source breakdown for {date_str}&quot;),
+        (&quot;heatmap&quot;, f&quot;Hourly activity heatmap for {date_str}&quot;),
+    ])
+
+    paths = []
+    for i, r in enumerate(results):
+        if r.success:
+            path = f&quot;reports/{date_str}/chart_{i}.png&quot;
+            r.save(path)
+            paths.append(path)
+        else:
+            print(f&quot;Chart {i} failed: {r.error_message}&quot;)
+
+    return paths
+
+# Run: asyncio.run(generate_daily_report(&quot;2025-01-15&quot;, df))
+</code></pre>
+<h3 id="pattern-6-reusable-chart-function">Pattern 6: Reusable Chart Function</h3>
+<pre><code class="language-python">def chart_timeseries(df, date_col, value_col, title, style=None):
+    &quot;&quot;&quot;Create a consistently styled timeseries chart.&quot;&quot;&quot;
+    base_style = {
+        &quot;figsize&quot;: [14, 6],
+        &quot;color_scheme&quot;: &quot;blues&quot;,
+        &quot;title_fontsize&quot;: 16,
+        &quot;label_fontsize&quot;: 12,
+        &quot;dpi&quot;: 150,
+    }
+    if style:
+        base_style.update(style)
+
+    result = lp.plot(f&quot;{title}: {value_col} over time&quot;).data(df).style(base_style).render()
+    return result
+
+# Usage
+cpu_chart = chart_timeseries(df, &quot;date&quot;, &quot;cpu_usage&quot;, &quot;Server CPU&quot;)
+mem_chart = chart_timeseries(df, &quot;date&quot;, &quot;mem_usage&quot;, &quot;Server Memory&quot;,
+                             style={&quot;color_scheme&quot;: &quot;warm&quot;})
+</code></pre>
+<h3 id="pattern-7-ab-test-visualization">Pattern 7: A/B Test Visualization</h3>
+<pre><code class="language-python"># Side-by-side comparison
+lp.subplots(&quot;1 row 2 cols: Control group conversion trend, Treatment group conversion trend&quot;).data({
+    &quot;control&quot;: control_df,
+    &quot;treatment&quot;: treatment_df,
+}).save(&quot;ab_test.png&quot;)
+
+# Overlaid comparison
+lp.plot(&quot;Conversion rates: Control vs Treatment over time, with confidence bands&quot;).data({
+    &quot;control&quot;: control_df[&quot;rate&quot;],
+    &quot;treatment&quot;: treatment_df[&quot;rate&quot;],
+}).save(&quot;ab_overlay.png&quot;)
+</code></pre>
+<h3 id="pattern-8-debugging-by-inspecting-generated-code">Pattern 8: Debugging by Inspecting Generated Code</h3>
+<pre><code class="language-python">result = lp.plot(&quot;Complex multi-series chart&quot;).data(df).render()
+
+if not result.success:
+    print(f&quot;Error: {result.error_message}&quot;)
+else:
+    # Inspect the code the LLM generated
+    print(&quot;=== Generated Code ===&quot;)
+    print(result.code)
+    print(f&quot;\n=== Token Usage: {result.token_usage} ===&quot;)
+
+# Tweak the generated code manually if needed (advanced)
+# You can take result.code, modify it, and feed it back via a custom approach
+</code></pre>
+<hr />
+<h2 id="cost-optimization">Cost Optimization</h2>
+<h3 id="1-choose-the-right-model">1. Choose the Right Model</h3>
+<pre><code class="language-python"># Most expensive, best quality
+lp = llmPIC(..., model=&quot;gpt-4o&quot;)
+
+# ~10x cheaper, still very good for simple charts
+lp = llmPIC(..., model=&quot;gpt-4o-mini&quot;)
+
+# Very cost-effective, especially for Chinese users
+lp = llmPIC(..., model=&quot;deepseek-chat&quot;, base_url=&quot;https://api.deepseek.com/v1&quot;)
+</code></pre>
+<h3 id="2-be-specific-reduces-retries-fixes">2. Be Specific (Reduces Retries &amp; Fixes)</h3>
+<pre><code class="language-python"># Good: Data in the prompt → fewer follow-up calls
+lp.bar(&quot;Q1 Budget: R&amp;D=$200K, Marketing=$150K, Sales=$180K&quot;)
+
+# Less efficient: Vague → LLM may need retries
+lp.bar(&quot;Department budgets&quot;)
+</code></pre>
+<h3 id="3-provide-data-fewer-fix-attempts">3. Provide Data → Fewer Fix Attempts</h3>
+<pre><code class="language-python"># Good: LLM sees column names, types, first rows
+lp.plot(&quot;Trend&quot;).data(df)
+
+# Less efficient: LLM guesses data structure, may fail
+lp.plot(&quot;Trend&quot;)
+</code></pre>
+<h3 id="4-batch-with-async">4. Batch with Async</h3>
+<pre><code class="language-python"># 5 charts sequentially = 5 × (LLM time + sandbox time)
+# 5 charts in batch = max(LLM time) + max(sandbox time)
+
+# For 3+ charts, batch is significantly cheaper in wall-clock time
+# (same token cost, but better utilization)
+</code></pre>
+<h3 id="5-track-token-usage">5. Track Token Usage</h3>
+<pre><code class="language-python">total_input = 0
+total_output = 0
+
+for query in queries:
+    r = lp.plot(query).render()
+    if r.success:
+        total_input += r.token_usage.get('input', 0)
+        total_output += r.token_usage.get('output', 0)
+
+print(f&quot;Session: {total_input} input tokens, {total_output} output tokens&quot;)
+print(f&quot;Approximate cost (GPT-4o): ${total_input * 2.5 / 1e6 + total_output * 10 / 1e6:.4f}&quot;)
+</code></pre>
+<h3 id="6-cache-sdk-instances">6. Cache SDK Instances</h3>
+<p>Don't create a new <code>llmPIC</code> instance for each chart — reuse the same instance.</p>
+<pre><code class="language-python"># Good: reuse
+lp = llmPIC(...)
+charts = [lp.plot(q).save(f&quot;{i}.png&quot;) for i, q in enumerate(queries)]
+
+# Bad: creates new client each time
+for q in queries:
+    lp = llmPIC(...)  # New sandbox, font check, etc.
+    lp.plot(q).save(...)
+</code></pre>
+<hr />
+<h2 id="integration-patterns">Integration Patterns</h2>
+<h3 id="jupyter-notebook-best-practices">Jupyter Notebook Best Practices</h3>
+<pre><code class="language-python">%matplotlib inline  # Optional — llmpic handles display independently
+
+from llmpic import llmPIC
+lp = llmPIC(api_key=&quot;...&quot;, base_url=&quot;...&quot;)
+
+# Exploratory: show() inline
+lp.plot(&quot;Distribution of user ages&quot;).data(df).render().show()
+
+# When done exploring, save for the report
+lp.plot(&quot;Distribution of user ages&quot;).data(df).style({
+    &quot;figsize&quot;: [10, 6],
+    &quot;dpi&quot;: 200,
+}).save(&quot;report_age_dist.png&quot;)
+</code></pre>
+<h3 id="streamlit-gradio-integration">Streamlit / Gradio Integration</h3>
+<pre><code class="language-python">import streamlit as st
+from llmpic import llmPIC
+
+lp = llmPIC(
+    api_key=st.secrets[&quot;LLMPIC_API_KEY&quot;],
+    base_url=st.secrets[&quot;LLMPIC_BASE_URL&quot;],
+)
+
+st.title(&quot;AI Chart Generator&quot;)
+query = st.text_input(&quot;Describe your chart:&quot;, &quot;Monthly sales trend&quot;)
+
+if st.button(&quot;Generate&quot;):
+    result = lp.plot(query).render()
+    if result.success:
+        st.image(result.image_bytes)
+        st.code(result.code, language=&quot;python&quot;)
+    else:
+        st.error(result.error_message)
+</code></pre>
+<h3 id="fastapi-flask-integration">FastAPI / Flask Integration</h3>
+<pre><code class="language-python">from fastapi import FastAPI
+from fastapi.responses import Response
+from llmpic import llmPIC
+import os
+
+app = FastAPI()
+
+lp = llmPIC(
+    api_key=os.getenv(&quot;LLMPIC_API_KEY&quot;),
+    base_url=os.getenv(&quot;LLMPIC_BASE_URL&quot;),
+)
+
+@app.post(&quot;/chart&quot;)
+async def create_chart(query: str, format: str = &quot;png&quot;):
+    result = lp.custom(query).format(format).render()
+    if not result.success:
+        return {&quot;error&quot;: result.error_message}
+
+    media_type = {&quot;png&quot;: &quot;image/png&quot;, &quot;svg&quot;: &quot;image/svg+xml&quot;, &quot;pdf&quot;: &quot;application/pdf&quot;}
+    return Response(content=result.image_bytes, media_type=media_type.get(format, &quot;image/png&quot;))
+</code></pre>
+<h3 id="data-pipeline-integration">Data Pipeline Integration</h3>
+<pre><code class="language-python"># In a data pipeline: generate daily/weekly KPI charts
+def generate_kpi_charts(date, kpi_df):
+    style = {&quot;figsize&quot;: [12, 6], &quot;dpi&quot;: 150, &quot;color_scheme&quot;: &quot;dark&quot;}
+
+    charts = {
+        &quot;revenue&quot;: lp.plot(f&quot;Daily revenue trend&quot;).data(kpi_df).style(style),
+        &quot;users&quot;: lp.plot(f&quot;Daily active users&quot;).data(kpi_df).style(style),
+        &quot;conversion&quot;: lp.plot(f&quot;Conversion rate trend&quot;).data(kpi_df).style(style),
+    }
+
+    for name, builder in charts.items():
+        builder.save(f&quot;kpi/{date}/{name}.png&quot;)
+</code></pre>
+<hr />
+<h2 id="best-practices">Best Practices</h2>
+<h3 id="1-use-fast-safety-mode-for-production">1. Use Fast Safety Mode for Production</h3>
+<p><code>safety_level="fast"</code> is sufficient. The sandbox provides real isolation.</p>
+<h3 id="2-use-async-batch-for-multiple-charts">2. Use Async Batch for Multiple Charts</h3>
+<pre><code class="language-python"># Good: 3 charts in ~2-3 seconds
+results = await lp.batch([(...), (...), (...)])
+
+# Bad: 3 charts in ~6-9 seconds
+for query in queries:
+    lp.plot(query).save(...)
+</code></pre>
+<h3 id="3-be-specific-in-prompts">3. Be Specific in Prompts</h3>
+<pre><code class="language-python"># Good — data and intent are explicit
+lp.bar(&quot;Q1 Budget: R&amp;D=$200K, Marketing=$150K, Sales=$180K, HR=$100K&quot;)
+
+# Poor — too vague, LLM must guess
+lp.bar(&quot;Department budgets&quot;)
+</code></pre>
+<h3 id="4-provide-real-data">4. Provide Real Data</h3>
+<p>Pass DataFrames whenever you have them — less guesswork, more accurate charts:</p>
+<pre><code class="language-python">lp.plot(&quot;Trend&quot;).data(df)  # Good: LLM sees actual data structure
+lp.plot(&quot;Trend&quot;)            # OK: LLM invents demo data
+</code></pre>
+<h3 id="5-iterate-with-edit-dont-re-describe">5. Iterate with edit(), Don't Re-describe</h3>
+<pre><code class="language-python"># Good: incremental refinement
+result = lp.plot(&quot;Sales trend&quot;).data(df).render()
+result = result.edit(&quot;Increase title size&quot;)
+result = result.edit(&quot;Add grid lines&quot;)
+result = result.edit(&quot;Switch to warm colors&quot;)
+
+# Less good: re-describing everything for each tweak
+lp.plot(&quot;Sales trend, large title&quot;).data(df).save(&quot;v1.png&quot;)
+lp.plot(&quot;Sales trend, large title, with grid&quot;).data(df).save(&quot;v2.png&quot;)
+lp.plot(&quot;Sales trend, large title, with grid, warm colors&quot;).data(df).save(&quot;v3.png&quot;)
+</code></pre>
+<h3 id="6-set-reasonable-timeouts">6. Set Reasonable Timeouts</h3>
+<pre><code class="language-python"># Simple charts: default timeout=30 is fine
+lp.plot(&quot;Line chart&quot;).render()
+
+# Complex dashboards: increase timeout
+lp.subplots(&quot;4x4 dashboard&quot;).render()  # with timeout=60
+lp = llmPIC(..., timeout=60)
+</code></pre>
+<h3 id="7-track-token-usage">7. Track Token Usage</h3>
+<p>Monitor consumption to understand costs:</p>
+<pre><code class="language-python">result = lp.plot(&quot;test&quot;).render()
+print(f&quot;Input: {result.token_usage['input']}, Output: {result.token_usage['output']}&quot;)
+</code></pre>
+<h3 id="8-use-custom-when-unsure">8. Use .custom() When Unsure</h3>
+<p>The auto-detect chart type often makes good choices:</p>
+<pre><code class="language-python"># Let the LLM decide the best visualization
+lp.custom(&quot;Analyze user retention with multiple factors&quot;).data(df).save(&quot;auto.png&quot;)
+</code></pre>
+<h3 id="9-reuse-the-sdk-instance">9. Reuse the SDK Instance</h3>
+<pre><code class="language-python"># Create once, use many times
+lp = llmPIC(...)
+for chart_name, query in chart_configs.items():
+    lp.plot(query).save(f&quot;{chart_name}.png&quot;)
+</code></pre>
+<h3 id="10-check-success-before-using-results">10. Check success Before Using Results</h3>
+<pre><code class="language-python">result = lp.plot(&quot;Complex chart&quot;).render()
+if result.success:
+    result.save(&quot;output.png&quot;)
+    print(f&quot;Generated {len(result.code)} chars of code, {result.size_kb:.1f}KB&quot;)
+else:
+    print(f&quot;Failed: {result.error_message}&quot;)
+    # Optionally: try with different model or simplified query
+</code></pre>
+<hr />
+<h2 id="troubleshooting">Troubleshooting</h2>
+<h3 id="chinese-characters-display-as-boxes">Chinese characters display as boxes (□□□)</h3>
+<p><strong>Cause</strong>: Missing CJK fonts on the system.</p>
+<p><strong>Fix</strong>:
+- <strong>Windows</strong>: Install "Microsoft YaHei" or "SimHei" font
+- <strong>Linux</strong>: <code>sudo apt install fonts-wqy-microhei</code>
+- <strong>macOS</strong>: Usually pre-installed; verify with Font Book</p>
+<p>Or set <code>chinese_font=False</code> for English-only charts.</p>
+<h3 id="llm-returns-no-code-or-empty-result">LLM returns "no code" or empty result</h3>
+<p><strong>Cause</strong>: Query too vague, model can't understand what chart to make.</p>
+<p><strong>Fix</strong>:
+- Add more detail to the query: "line chart of monthly sales, 12 data points"
+- Provide data via <code>.data()</code>
+- Try a different model (e.g., <code>gpt-4o</code> instead of <code>gpt-4o-mini</code>)</p>
+<h3 id="timeout-code-execution-timed-out-30s">Timeout: "Code execution timed out (30s)"</h3>
+<p><strong>Cause</strong>: Generated code has an infinite loop, or chart is too complex.</p>
+<p><strong>Fix</strong>:
+1. Increase timeout: <code>llmPIC(..., timeout=60)</code>
+2. Simplify the query — split a complex dashboard into separate charts
+3. Sample large datasets before passing: <code>df.sample(1000)</code></p>
+<h3 id="auto-fix-not-triggering">Auto-fix not triggering</h3>
+<p><strong>Check</strong>:
+- <code>max_fix_attempts &gt; 0</code> (default 2)
+- Failure is a <strong>code execution error</strong> (not safety rejection or timeout)
+- Enable logging to see auto-fix activity:
+  <code>python
+  import logging
+  logging.basicConfig(level=logging.INFO)</code></p>
+<h3 id="svgpdf-files-wont-open">SVG/PDF files won't open</h3>
+<p><strong>Cause</strong>: Wrong program to open the file.</p>
+<p><strong>Fix</strong>:
+- <strong>SVG</strong>: Open in a browser (Chrome/Firefox) or vector editor (Inkscape, Illustrator)
+- <strong>PDF</strong>: Open in a PDF reader (Adobe Reader, Preview, browser)
+- Use <code>result.base64_svg()</code> to embed in HTML for preview</p>
+<h3 id="modulenotfounderror-no-module-named-llmpic"><code>ModuleNotFoundError: No module named 'llmpic'</code></h3>
+<p><strong>Fix</strong>:</p>
+<pre><code class="language-bash">pip install llmpic           # Production install
+# or for dev:
+pip install -e .             # Editable dev install from repo root
+</code></pre>
+<h3 id="runtimeerror-no-running-event-loop-with-async"><code>RuntimeError: no running event loop</code> with async</h3>
+<p><strong>Cause</strong>: Using <code>await</code> outside an async context.</p>
+<p><strong>Fix</strong>:</p>
+<pre><code class="language-python">async def main():
+    lp = AsyncllmPIC(...)
+    await lp.plot(&quot;test&quot;).save(&quot;test.png&quot;)
+
+asyncio.run(main())  # ← Required wrapper
+</code></pre>
+<h3 id="chart-looks-different-from-what-i-described">Chart looks different from what I described</h3>
+<p><strong>Cause</strong>: Natural language is inherently ambiguous; LLMs interpret requests.</p>
+<p><strong>Fix</strong>:
+- Be more specific: instead of "make it look better", say "increase title size to 18, use warm colors, add grid"
+- Use <code>.edit()</code> to iteratively refine
+- Provide data — charts are more accurate with actual data structure visible</p>
+<h3 id="large-chart-files">Large chart files</h3>
+<p><strong>Cause</strong>: High DPI + large figsize = large PNG files.</p>
+<p><strong>Fix</strong>:</p>
+<pre><code class="language-python"># For web: lower DPI, use SVG
+lp.plot(&quot;web chart&quot;).style({&quot;dpi&quot;: 72, &quot;figsize&quot;: [8, 5]}).format('svg').save(&quot;web.svg&quot;)
+
+# For print: high DPI is expected
+lp.plot(&quot;print chart&quot;).style({&quot;dpi&quot;: 300}).save(&quot;print.png&quot;)
+</code></pre>
+<h3 id="pandas-or-seaborn-not-available">pandas or seaborn not available</h3>
+<p><strong>Cause</strong>: pandas / seaborn not properly installed in the environment (e.g. version conflicts).</p>
+<p><strong>Fix</strong>:</p>
+<pre><code class="language-bash">pip install llmpic --upgrade
+# or install them individually
+pip install pandas seaborn
+</code></pre>
+<p>The SDK gracefully falls back to pure matplotlib when pandas/seaborn aren't available, but some LLM-generated code may reference them.</p>
+<h3 id="rate-limiting-from-api-provider">Rate limiting from API provider</h3>
+<p><strong>Cause</strong>: Too many concurrent requests hitting rate limits.</p>
+<p><strong>Fix</strong>:
+- Reduce batch size
+- Add delays between batches
+- Use a higher-tier API plan</p>
+<pre><code class="language-python"># Process in chunks of 3
+for i in range(0, len(requests), 3):
+    chunk = requests[i:i+3]
+    results = await lp.batch(chunk)
+    await asyncio.sleep(2)  # Respect rate limits
+</code></pre>
+<hr />
+<p>← <a href="../../">Back to Home</a></p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var labels=set.querySelector(".tabbed-labels");for(var tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+</div>
+      
+        
+<div class="md-social">
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://github.com/ADW-19/llmpic" target="_blank" rel="noopener" title="github.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+    </a>
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://xhslink.com/m/AQw13M5WIPc" target="_blank" rel="noopener" title="xhslink.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M357.2 48h70.6L273.6 224.2 455 464H313L201.7 318.6 74.5 464H3.8l164.9-188.5L-5.2 48h145.6l100.5 132.9zm-24.8 373.8h39.1L119.1 88h-42z"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.sections", "navigation.expand", "navigation.instant", "navigation.top", "search.suggest", "search.highlight", "content.tabs.link", "content.code.copy"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  </body>
+</html>
